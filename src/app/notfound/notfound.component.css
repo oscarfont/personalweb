@@ -1,0 +1,24 @@
+#message{
+    font-family: "Hind";
+    color: #001E3E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body-icon{
+    font-size: 10rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: #044179;
+}
+
+.btn.btn-primary{
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: white;
+    background-color: #044179;
+}

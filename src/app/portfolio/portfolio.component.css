@@ -1,0 +1,150 @@
+#contents-row{
+    margin-top: 1em;
+}
+
+#header-card{
+    margin-top: 1em;
+}
+
+#content-card, #header-card, #v-pills-presentation{
+    font-family: "Hind";
+    margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6, #sections-column{
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: #044179;
+}
+
+.profile-container{
+    width: 10%;
+}
+
+#profile-pic{
+    width: 18%;
+    position: absolute;
+    top: 25%;
+    right: 6%;
+}
+
+.presentation-text {
+    font-size: 1.2em;
+    margin-right: 1em;
+    color: #001E3E;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.language-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin: 1em;
+}
+
+.skill-bar {
+    font-size: 2em;
+}
+
+.skill-bar li {
+    display: inline;
+}
+
+.skill-bar li:before {
+    content: '•';
+}
+
+.level-1-skill li:nth-child(-n+10) {
+    color: green;
+}
+
+.level-2-skill li:nth-child(-n+10) {
+    color: green;
+}
+
+.level-3-skill li:nth-child(-n+9) {
+    color: green;
+}
+
+.level-4-skill li:nth-child(-n+8) {
+    color: green;
+}
+
+.firma-logo{
+    width: 10em;
+    margin-top: -1em;
+    margin-right: 2em;
+}
+
+.date-text{
+    margin-left: 1em;
+}
+
+.uni-logo{
+    width: 5em;
+    display: block;
+    margin-top: -0.3em;
+    margin-left: 1rem;
+    /*margin-right: auto;*/
+    margin-bottom: 1em;
+}
+
+.lang-logo{
+    width: 4em;
+    margin-left: 4.2em;
+}
+
+.experience-description{
+    font-size: 0.9em;
+    margin-top: -0.5em;
+    margin-right: 1em;
+    color: #001E3E;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.top-buffer{
+    margin-top: 1em;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: white;
+    background-color: #044179;
+}
+
+.nav-pills .nav-link{
+    color: #044179;
+}
+
+.btn-primary{
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: white;
+    background-color: #044179;
+}
+
+.skill-icon{
+    font-size: 3.5em;
+    color: #044179;
+}
+
+.skill-description{
+    font-size: 0.9em;
+    margin-top: -0.5em;
+    color: #001E3E;
+    text-align: center;
+}
+
+.tab-content{
+    padding: 2em;
+}
+
+#v-pills-tab{
+    margin-left: 1em;
+}
+
+a:hover {
+    background-color: rgba(0,0,0,0.15);
+}

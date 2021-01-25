@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face{
+    font-family: "Domine";
+    src: local("Domine"), url(./assets/fonts/Domine/Domine-Regular.ttf) format("truetype");
+}
+
+@font-face{
+    font-family: "Roboto";
+    src: local("Roboto"), url(./assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+}
+
+@font-face{
+    font-family: "Montserrat";
+    src: local("Montserrat"), url(./assets/fonts/montserrat/Montserrat-Regular.ttf) format("truetype");
+}
+
+@font-face{
+    font-family: "Hind";
+    src: local("Hind"), url(./assets/fonts/hind/Hind-Regular.ttf) format("truetype");
+}
+
+body{
+    position: absolute !important;
+    height: 100% !important;
+    width: 100% !important;
+    background-color: #EEF7FF !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}

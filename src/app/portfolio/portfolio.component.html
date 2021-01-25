@@ -1,0 +1,258 @@
+<body>
+    <div class="container-fluid">
+        <div class=row>
+            <div class="col-md">
+                <div id="header-card" class="card mb-3">
+                    <img id="profile-pic" src="/assets/portfolio/portfolio-profile.png" class="img-responsive img-thumbnail">
+                    <img class="card-img-top" src="/assets/portfolio/portfolio-cover.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Óscar Font - Computer Science graduate</h4>
+                        <div id="contents-row" class="row">
+                            <div id="sections-column" class="col-6 col-sm-2">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <a (click)="scroll('v-pills-presentation')" class="nav-link active" id="v-pills-present-tab" data-toggle="pill" href="#v-pills-presentation" role="tab" aria-controls="v-pills-present-tab" aria-selected="true">Presentation</a>
+                                    <a (click)="scroll('v-pills-experience')" class="nav-link" id="v-pills-exp-tab" data-toggle="pill" href="#v-pills-experience" role="tab" aria-controls="v-pills-exp-tab" aria-selected="false">Experience</a>
+                                    <a (click)="scroll('v-pills-education')" class="nav-link" id="v-pills-edu-tab" data-toggle="pill" href="#v-pills-education" role="tab" aria-controls="v-pills-edu-tab" aria-selected="false">Education</a>
+                                    <a (click)="scroll('v-pills-languages')" class="nav-link" id="v-pills-lang-tab" data-toggle="pill" href="#v-pills-languages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Languages</a>
+                                    <a (click)="scroll('v-pills-skills')" class="nav-link" id="v-pills-skills-tab" data-toggle="pill" href="#v-pills-skills" role="tab" aria-controls="v-pills-settings" aria-selected="false">Skills</a>
+                                </div>
+                            </div>
+                            <div id="sections-content" class="col-6 col-sm-10">
+                                <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="v-pills-presentation" role="tabpanel" aria-labelledby="v-pills-present-tab">
+                                        <div class="presentation-text">
+                                            <p> Hello and welcome to my personal webpage! I am a Computer Science graduate
+                                                soon to become a Software Engineer by Master. I have experience in Full Stack
+                                                Development and I am interested in Software Development, specially for Mobile 
+                                                platforms, and in the fields of Machine and Deep Learning. 
+                                                Feel free to check my portfolio with the left hand side menu. However if you
+                                                feel tired or don't want to skeem through it you can download my CV as .pdf here! :)
+                                            </p>
+                                            <button (click)="openPdf()" class="btn btn-primary">Check my CV</button>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-experience" role="tabpanel" aria-labelledby="v-pills-exp-tab">
+                                        <div class="row top-buffer">
+                                            <div class="col-6 col-lg-3 col-xl-2">
+                                                <img class="firma-logo" src="/assets/portfolio/fourthhub.png" alt="Card image cap">
+                                            </div>
+                                            <div class="col-6 col-lg-5 col-xl-3">
+                                                <h6>Full Stack Jr. Engineer</h6>
+                                            </div>
+                                            <div class="col-6 col-lg-4 col-xl-3">
+                                                <h6 class="date-text">(Oct. 2019 - Jul. 2020)</h6>
+                                            </div>
+                                            <div class="col-6 col-lg-8 col-xl-4">
+                                                <div class="experience-description">
+                                                    <p>Decision, design and infrastrucutre (AWS, Ansible and Circle CI) tasks. Python and 
+                                                        Full Stack development: Angular (Frontend) and Java Spring Boot (Backend). 
+                                                        Databse management with MySQL.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row top-buffer">
+                                            <div class="col-6 col-lg-3 col-xl-2">
+                                                <img class="firma-logo" src="/assets/portfolio/awerty.png" alt="Card image cap">
+                                            </div>
+                                            <div class="col-6 col-lg-5 col-xl-3">
+                                                <h6>Junior Developer Intern</h6>
+                                            </div>
+                                            <div class="col-6 col-lg-4 col-xl-3">
+                                                <h6 class="date-text">(Jul. 2018 - Sept. 2018)</h6>
+                                            </div>
+                                            <div class="col-6 col-lg-8 col-xl-4">
+                                                <div class="experience-description">
+                                                    <p>6 months internship, satarted summer of 2017 same months. Dynamics 365
+                                                        CRM solution for lawyers with C#, HTML, CSS and JavaScript: iusUp.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-education" role="tabpanel" aria-labelledby="v-pills-edu-tab">
+                                        <div class="row top-buffer">
+                                            <div class="col-6 col-lg-3 col-xl-2">
+                                                <img class="uni-logo" src="/assets/portfolio/upm.jpg" alt="Card image cap">
+                                            </div>
+                                            <div class="col-6 col-lg-5 col-xl-3">
+                                                <h6>European Master of Software Engineering</h6>
+                                            </div>
+                                            <div class="col-6 col-lg-4 col-xl-3">
+                                                <h6 class="date-text"> (Sept. 2020 - Curr.)</h6>
+                                            </div>
+                                            <div class="col-6 col-lg-8 col-xl-4">
+                                                <div class="experience-description">
+                                                    <p>From the most technical advanced aspects in the world of 
+                                                        sofware engineering to day to day business problems and 
+                                                        goals to be faced in an enterprise.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row top-buffer">
+                                            <div class="col-6 col-lg-3 col-xl-2">
+                                                <img class="uni-logo" src="/assets/portfolio/tum-logo.png" alt="Card image cap">
+                                            </div>
+                                            <div class="col-6 col-lg-5 col-xl-3">
+                                                <h6>Erasmus in Munich</h6>
+                                            </div>
+                                            <div class="col-6 col-lg-4 col-xl-3">
+                                                <h6 class="date-text"> (Oct. 2018 - Apr. 2019)</h6>
+                                            </div>
+                                            <div class="col-6 col-lg-8 col-xl-4">
+                                                <div class="experience-description">
+                                                    <p>
+                                                    Erasmus+ exchange during 2018-19 Winter Semester. Project Management 
+                                                    Bachelor course Cloud Computing and Information and Knowledge Management
+                                                    Courses.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row top-buffer">
+                                            <div class="col-6 col-lg-3 col-xl-2">
+                                                <img class="uni-logo" src="/assets/portfolio/upf-logo.png" alt="Card image cap">
+                                            </div>
+                                            <div class="col-6 col-lg-5 col-xl-3">
+                                                <h6>Bachelor in Computer Science</h6>
+                                            </div>
+                                            <div class="col-6 col-lg-4 col-xl-3">
+                                                <h6 class="date-text"> (Sept. 2015 - Jul. 2019)</h6>
+                                            </div>
+                                            <div class="col-6 col-lg-8 col-xl-4">
+                                                <div class="experience-description">
+                                                    <p>Bachelor in Computer Science. No mention but Software Development and 
+                                                        Machine and Deep Learning optional subjects were chosen.
+                                                        Avergae Score: 8.0
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-languages" role="tabpanel" aria-labelledby="v-pills-lang-tab">
+                                        <div class="language-container">
+                                            <div class="skill-container">
+                                                <h6>🇪🇸 Spanish - Native</h6>
+                                                <ul class="level-1-skill skill-bar">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <img class="lang-logo" src="/assets/portfolio/ins-logo.jpg" alt="Card image cap">
+                                            </div>
+                                                    
+                                            <div class="skill-container">
+                                                <h6>🏴󠁥󠁳󠁣󠁴󠁿 Catalan - Native</h6>
+                                                <ul class="level-2-skill skill-bar">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <img class="lang-logo" src="/assets/portfolio/ins-logo.jpg" alt="Card image cap">
+                                            </div>
+                
+                                            <div class="skill-container">
+                                                <h6>🇬🇧 English - C1</h6>
+                                                <ul class="level-3-skill skill-bar">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <img class="lang-logo" src="/assets/portfolio/cambridge-logo.png" alt="Card image cap">
+                                            </div>
+                
+                                            <div class="skill-container">
+                                                <h6>🇩🇪 German - B2</h6>
+                                                <ul class="level-4-skill skill-bar">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <img class="lang-logo" src="/assets/portfolio/eoi-logo.png" alt="Card image cap">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-skills" role="tabpanel" aria-labelledby="v-pills-skills-tab">
+                                        <div class="row">
+                                            <div class="col" style="text-align: center;">
+                                                <fa-icon class="skill-icon" [icon]="cloudIcon"></fa-icon>
+                                                <h6>Cloud Computing</h6>
+                                                <div class="skill-description"> AWS and Docker</div>
+                                            </div>
+                                            <div class="col" style="text-align: center;">
+                                                <fa-icon class="skill-icon" [icon]="codeIcon"></fa-icon>
+                                                <h6>Object Oriented Programming</h6>
+                                                <div class="skill-description"> C++, Java, Python and C#</div>
+                                            </div>
+                                            <div class="col" style="text-align: center;">
+                                                <fa-icon class="skill-icon" [icon]="barainIcon"></fa-icon>
+                                                <h6>Machine & Deep Learning</h6>
+                                                <div class="skill-description"> Weka, PyTorch and TorchText</div>
+                                            </div>
+                                            <div class="col" style="text-align: center;">
+                                                <fa-icon class="skill-icon" [icon]="layersIcon"></fa-icon>
+                                                <h6>Full Stack Web Development</h6>
+                                                <div class="skill-description"> Angular, PHP or React (Frontend), Spring (Backend), and MySQL (Databases)</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col" style="text-align: center;">
+                                                <fa-icon class="skill-icon" [icon]="syncIcon"></fa-icon>
+                                                <h6>Continuous Integration</h6>
+                                                <div class="skill-description"> Circle CI and Github</div>
+                                            </div>
+                                            <div class="col" style="text-align: center;">
+                                                <fa-icon class="skill-icon" [icon]="mobileIcon"></fa-icon>
+                                                <h6>Android Mobile Programming</h6>
+                                                <div class="skill-description"> Java and React Native</div>
+                                            </div>
+                                            <div class="col" style="text-align: center;">
+                                                <fa-icon class="skill-icon" [icon]="desktopIcon"></fa-icon>
+                                                <h6>Desktop User Level</h6>
+                                                <div class="skill-description"> Windows, Linux, Office and Photoshop</div>
+                                            </div>
+                                            <div class="col" style="text-align: center;">
+                                                <fa-icon class="skill-icon" [icon]="elipsisIcon"></fa-icon>
+                                                <h6>More to come</h6>
+                                                <div class="skill-description"> Always Learning!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

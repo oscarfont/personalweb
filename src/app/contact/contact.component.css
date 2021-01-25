@@ -1,0 +1,21 @@
+.col{
+    display: flex;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: #044179;
+}
+
+a:hover {
+    background-color: rgba(0,0,0,0.15);
+}
+
+.contact-row{
+    height: inherit;
+}
