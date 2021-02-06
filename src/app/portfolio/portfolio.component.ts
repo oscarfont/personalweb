@@ -18,7 +18,7 @@ export class PortfolioComponent implements OnInit {
   desktopIcon = faDesktop;
   elipsisIcon = faEllipsisH;
 
-  pdfLink = "../../assets/portfolio/cv.pdf"
+  pdfLink = "./assets/portfolio/cv.pdf"
   
 
   constructor(private appStateService : AppStateService) { 
