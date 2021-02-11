@@ -8,11 +8,11 @@ import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: CoverComponent, data: {animation: 'AboutPage'}},
-  { path: 'portfolio', component: PortfolioComponent, data: {animation: 'AboutPage'}},
-  { path: 'blog', component: BlogComponent, data: {animation: 'FilterPage'} },
-  { path: 'contact', component: ContactComponent, data: {animation: 'HomePage'}},
-  { path: '**', component: NotfoundComponent }
+  { path: 'home', component: CoverComponent, data: {animation: 'HomePage'}},
+  { path: 'portfolio', component: PortfolioComponent, data: {animation: 'PortfolioPage'}},
+  { path: 'blog', component: BlogComponent, data: {animation: 'BlogPage'}},
+  { path: 'contact', component: ContactComponent, data: {animation: 'ContactPage'}},
+  { path: '**', component: NotfoundComponent}
 ];
 
 @NgModule({
