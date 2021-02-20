@@ -6,6 +6,10 @@
     margin-top: 1em;
 }
 
+#sections-column, #sections-content{
+    background-color: transparent;
+}
+
 #content-card, #header-card, #v-pills-presentation{
     font-family: "Hind";
     margin-bottom: 1em;
@@ -26,6 +30,11 @@ h1, h2, h3, h4, h5, h6, #sections-column{
     position: absolute;
     top: 25%;
     right: 6%;
+    border-top: 4px solid #044179;
+}
+
+#cover-pic{
+    border-top: 4px solid #044179;
 }
 
 .presentation-text {

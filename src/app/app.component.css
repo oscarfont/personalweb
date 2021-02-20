@@ -1,0 +1,6 @@
+/* The magic here that makes animations wait */ 
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}

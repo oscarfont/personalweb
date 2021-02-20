@@ -19,3 +19,8 @@ a:hover {
 .contact-row{
     height: inherit;
 }
+
+.card-img-top, #contact-header {
+    border-top: 4px solid;
+    border-color: #044179;
+}
