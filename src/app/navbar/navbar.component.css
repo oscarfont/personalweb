@@ -1,6 +1,7 @@
 /*NAVBAR STANDAR COLORS*/
 .navbar{
-    background-color: rgba(236,235,254,0.15);
+    /*background-color: rgba(236,235,254,0.15);*/
+    background-color: #EEF7FF;
     padding: 0;
     margin-top: 0;
     border-bottom: 4px solid;

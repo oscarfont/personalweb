@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "personalweb"
+    }
+  },
+  "defaultProject": "personalweb",
+  "cli": {
+    "analytics": "65b2a53c-a93c-406f-8cb2-6051952887fe"
+  }
 }
