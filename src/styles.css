@@ -23,10 +23,7 @@ body{
     position: absolute !important;
     background-color: #EEF7FF !important;
     width: 100% !important;
+    height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-}
-
-#app-navbar{
-    margin-top: 2rem;
 }
