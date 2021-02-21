@@ -86,9 +86,14 @@ export class NavbarComponent implements OnInit {
   // check activated route
   checkCurrentRoute(router: Router, optionsMap : Map<String, Number>){
     let path = window.location.href;
-    let urlParts = path.split('#');
-    let location = urlParts[1];
-    if(location == "/"){location = "/home"}
+    let location = "";
+    if(path.includes('#')){
+      let urlParts = path.split('#');
+      location = urlParts[1];
+      if(location == '/'){location = "/home"};
+    }else{
+      location = "/home";
+    }
     return optionsMap.get(location) == 1;
   }
 
