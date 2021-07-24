@@ -1,7 +1,9 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { AppStateService } from '../app-state.service';
-import { faHome, faFolderOpen, faBlog, faInbox } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faFolderOpen, faBlog, faInbox, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { Router, Route } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthComponent } from '../auth/auth.component';
 
 @Component({
   selector: 'app-navbar',
@@ -14,10 +16,11 @@ export class NavbarComponent implements OnInit {
   folderIcon = faFolderOpen;
   blogIcon = faBlog;
   inboxIcon = faInbox;
+  userIcon = faUserCircle;
   possibleRoutes = new Array();
   optionsMap = new Map();
 
-  constructor(private appStateService : AppStateService, private router : Router) {
+  constructor(private appStateService : AppStateService, private router : Router, private modalService: NgbModal) {
     // get all available routes 
     this.possibleRoutes = this.getAvailableRoutes('',this.router.config);
   }
@@ -153,6 +156,8 @@ export class NavbarComponent implements OnInit {
     contactIcon.style.fontSize = "large";
     contactOption.style.fontSize = "medium";
     contactOption.style.flexDirection = "column";
+    let userIcon = document.getElementById("user-icon");
+    userIcon.style.fontSize = "large";
   }
 
   changeNavBarToDesktop(){
@@ -176,6 +181,15 @@ export class NavbarComponent implements OnInit {
     contactIcon.style.fontSize = "x-large";
     contactOption.style.fontSize = "large";
     contactOption.style.flexDirection = "row";
+    let userIcon = document.getElementById("user-icon");
+    userIcon.style.fontSize = "x-large";
+  }
+
+  openAuthModal() {
+    const modalRef = this.modalService.open(AuthComponent,
+      {
+        scrollable: true
+      });
   }
 
 }

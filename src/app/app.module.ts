@@ -12,6 +12,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AuthComponent } from './auth/auth.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,16 @@ import { ToastrModule } from 'ngx-toastr';
     ContactComponent,
     PortfolioComponent,
     BlogComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -34,14 +34,14 @@
     border-color: #044179;
 }
 
-#home-tab, #portfolio-tab, #blog-tab, #contact-tab{
+#home-tab, #portfolio-tab, #blog-tab, #contact-tab,#login-tab{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
 }
 
-#home-icon, #portfolio-icon, #blog-icon, #contact-icon{
+#home-icon, #portfolio-icon, #blog-icon, #contact-icon, #user-icon{
     margin-left: 1rem;
     margin-right: 1rem;
 }

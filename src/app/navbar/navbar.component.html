@@ -13,6 +13,9 @@
             <div class="col" style="padding: 0;">
                 <a id="contact-tab" (click)="onClick('contact-tab')" class="nav-link" routerLink="/contact"> <fa-icon id="contact-icon" [icon]="inboxIcon"></fa-icon>Contact</a>
             </div>
+            <div class="col-1" style="padding: 0;">
+                <a id="login-tab" (click)="openAuthModal()" class="nav-link"> <fa-icon id="user-icon" [icon]="userIcon"></fa-icon></a>
+            </div>
         </div>
     </div>
 </nav>
