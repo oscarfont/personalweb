@@ -188,6 +188,8 @@ export class NavbarComponent implements OnInit {
   openAuthModal() {
     const modalRef = this.modalService.open(AuthComponent,
       {
+        size: 'lg',
+        centered: true,
         scrollable: true
       });
   }
