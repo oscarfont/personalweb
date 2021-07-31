@@ -15,6 +15,7 @@ export class AuthComponent implements OnInit {
 
   userName: string;
   password: string;
+  name: string;
   formData: FormGroup;
   errorMessage: string;
 
@@ -28,7 +29,7 @@ export class AuthComponent implements OnInit {
     });
   }
 
-  onClickSubmit(data: any) {
+  onSignIn(data: any) {
     this.userName = data.userName;
     this.password = data.password;
 
@@ -45,10 +46,11 @@ export class AuthComponent implements OnInit {
         document.cookie = `username=${data.username}`;
         
         // close modal
-        this.closeModal();
+        //this.closeModal();
+        this.name = data.username
 
         // show login success message
-        this.toastrService.success('Welcome '+ data.username + '!');
+        this.toastrService.success('Welcome '+ this.name + '!');
         
         // redirect to blog posts
         if(data) this.router.navigate(['/blog']);
@@ -57,10 +59,22 @@ export class AuthComponent implements OnInit {
       (response) => {
         this.errorMessage = response.error.message;
       });
- }
+  }
+
+  onSignOut(){
+    this.authService.logout();
+    this.formData = new FormGroup({
+      userName: new FormControl(""),
+      password: new FormControl(""),
+    });
+  }
 
   closeModal() {
     this.activeModal.close();
+  }
+
+  isUserLoggedIn(){
+    return this.authService.isUserLoggedIn();
   }
 
 }
