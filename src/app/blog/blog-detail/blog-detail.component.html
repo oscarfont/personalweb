@@ -1,0 +1,25 @@
+<body>
+    <div class="row justify-content-center" style="text-align: center; margin: 0; padding: 1rem;">
+        <div class="container-fluid">
+            <!-- HEADER TITLE CARD-->
+            <div class="card" style="width: 97%;">
+                <div class="card-header header-container">
+                    <button (click)="goBack()" >BACK</button>
+                    <h4>{{this.blogTitle}}</h4>
+                    <div style="width:2rem;"></div>
+                </div>
+                <div id="message" class="card-body">
+                   {{this.blogSummary}}
+                </div>
+            </div>
+
+            <!-- BLOG POST CONTENT-->
+            <div class="card blog-card" style="width: 97%;">
+                <div class="card-body">
+                   {{this.blogContent}}
+                </div>
+                <img src="this.picsURL[0]">
+            </div>
+        </div>
+    </div>
+</body>

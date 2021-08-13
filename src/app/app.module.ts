@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth-interceptor';
+import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
     PortfolioComponent,
     BlogComponent,
     NotfoundComponent,
-    AuthComponent
+    AuthComponent,
+    BlogDetailComponent
   ],
   imports: [
     BrowserModule,

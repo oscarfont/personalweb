@@ -1,0 +1,21 @@
+.blog-card{
+    margin: 2rem 0rem 0rem 0rem;
+    border-top: 4px solid #044179;
+}
+
+#message{
+    font-family: "Hind";
+    color: #001E3E;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: #044179;
+}
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

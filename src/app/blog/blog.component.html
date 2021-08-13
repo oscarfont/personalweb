@@ -1,13 +1,30 @@
 <body>
     <div class="row justify-content-center" style="text-align: center; margin: 0; padding: 1rem;">
         <div class="container-fluid">
+            <!-- HEADER TITLE CARD-->
             <div class="card" style="width: 97%;">
                 <div class="card-header">
-                    <h4>Blog</h4>
+                    <h4>Welcome to the Blog!</h4>
                 </div>
                 <div id="message" class="card-body">
-                   Part of the web under construction :(
+                   Find whatever post you need most or read the ones you get an eye on! Dive in and have fun :)
                 </div>
+            </div>
+
+            <!-- BLOG POST LIST-->
+            <div class="list-group">
+                <a *ngFor="let post of blogPostList" [routerLink]="['/detail', post.category, post.id]" class="list-group-item list-group-item-action flex-column align-items-start blog-card">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">{{post.info.title}}</h5>
+                      <small>3 days ago</small>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <p class="mb-1">{{post.info.summary}}</p>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <small>category: {{post.category}}</small>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
