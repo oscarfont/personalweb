@@ -4,7 +4,7 @@
             <!-- HEADER TITLE CARD-->
             <div class="card" style="width: 97%;">
                 <div class="card-header header-container">
-                    <button (click)="goBack()" >BACK</button>
+                    <button (click)="goBack()" class="btn btn-primary"><-</button>
                     <h4>{{this.blogTitle}}</h4>
                     <div style="width:2rem;"></div>
                 </div>
@@ -15,9 +15,7 @@
 
             <!-- BLOG POST CONTENT-->
             <div class="card blog-card" style="width: 97%;">
-                <div class="card-body">
-                   {{this.blogContent}}
-                </div>
+                <div class="card-body" [innerHTML]="this.blogContent"></div>
                 <img src="this.picsURL[0]">
             </div>
         </div>

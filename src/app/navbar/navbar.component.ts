@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
     let path = "";
     for (let i = 0; i < config.length; i++) {
       const route = config[i];
-      if(route.path == ""){path = "home"}else if(route.path == "**" || route.path.includes("detail")){continue;}else{path = route.path};
+      if(route.path == ""){path = "home"}else if(route.path == "**" || route.path.includes("detail") || route.path.includes("newpost")){continue;}else{path = route.path};
       routeArray.push(parent + '/' + path);
       if (route.children) {
         const currentPath = route.path ? parent + '/' + route.path : parent;
@@ -97,7 +97,12 @@ export class NavbarComponent implements OnInit {
     }else{
       location = "/home";
     }
-    return optionsMap.get(location) == 1;
+
+    if(optionsMap.get(location) != undefined){
+      return optionsMap.get(location) == 1;
+    }else{
+      return true;
+    }
   }
 
   ngOnInit(): void {

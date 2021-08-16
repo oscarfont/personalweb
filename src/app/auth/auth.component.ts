@@ -33,7 +33,7 @@ export class AuthComponent implements OnInit {
     this.userName = data.userName;
     this.password = data.password;
 
-    console.log("Login page: " + this.userName);
+    //console.log("Login page: " + this.userName);
     //console.log("Login page: " + this.password);
 
     this.authService.login(this.userName, this.password)

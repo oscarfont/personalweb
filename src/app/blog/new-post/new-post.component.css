@@ -1,0 +1,13 @@
+#inputCategory, #inputTitle, #editor, #inputSummary{
+    margin: 0rem 0rem 1rem 0rem;
+}
+
+#publishButton{
+    margin: 1rem 0rem 0rem 0rem;
+}
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

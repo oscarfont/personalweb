@@ -5,7 +5,9 @@ import { ContactComponent } from './contact/contact.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
+import { NewPostComponent } from './blog/new-post/new-post.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,6 +15,7 @@ const routes: Routes = [
   { path: 'portfolio', component: PortfolioComponent, data: {animation: 'PortfolioPage'}},
   { path: 'blog', component: BlogComponent, data: {animation: 'BlogPage'}},
   { path: 'detail/:category/:id', component: BlogDetailComponent, data: {animation: 'BlogPage'}},
+  { path: 'newpost', component: NewPostComponent, data: {animation: 'BlogPage'}, canActivate: [AuthGuard]},
   { path: 'contact', component: ContactComponent, data: {animation: 'ContactPage'}},
   { path: '**', component: NotfoundComponent}
 ];

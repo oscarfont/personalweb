@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../services/blog.service';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-blog',
@@ -8,9 +9,15 @@ import { BlogService } from '../../services/blog.service';
 })
 export class BlogComponent implements OnInit {
 
-  public blogPostList : any[] = [];
+  blogPostList : any[] = [];
+  userCookie : string;
+  userName : string;
 
-  constructor(private blogService : BlogService) { 
+  constructor(private blogService : BlogService, public authService: AuthService) {
+    if(this.authService.isUserLoggedIn()){
+      this.userCookie = this.authService.getCookie('token');
+      this.userName = this.authService.getCookie('username');
+    } 
     this.blogService.getAllBlogs().forEach((req) => {
       req.subscribe((res : any)=>{
         //console.log(res.data);
@@ -22,5 +29,11 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  deletePost(category, id){
+    this.blogService.deleteBlog(category,id).subscribe((data)=>{
+      console.log('SUCCESS');
+    },(error)=>{console.log(error);});
+  }
 
 }

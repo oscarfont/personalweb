@@ -3,8 +3,13 @@
         <div class="container-fluid">
             <!-- HEADER TITLE CARD-->
             <div class="card" style="width: 97%;">
-                <div class="card-header">
+                <div *ngIf="!this.authService.isUserLoggedIn()" class="card-header">
                     <h4>Welcome to the Blog!</h4>
+                </div>
+                <div *ngIf="this.authService.isUserLoggedIn()" class="card-header header-container">
+                    <div style="width:2rem;"></div>
+                    <h4>{{this.userName}}, welcome to the Blog!</h4>
+                    <a routerLink="/newpost">New Post</a>
                 </div>
                 <div id="message" class="card-body">
                    Find whatever post you need most or read the ones you get an eye on! Dive in and have fun :)
@@ -13,16 +18,29 @@
 
             <!-- BLOG POST LIST-->
             <div class="list-group">
-                <a *ngFor="let post of blogPostList" [routerLink]="['/detail', post.category, post.id]" class="list-group-item list-group-item-action flex-column align-items-start blog-card">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">{{post.info.title}}</h5>
-                      <small>3 days ago</small>
+                <div *ngIf="this.blogPostList.length != 0">
+                    <a *ngFor="let post of blogPostList" [routerLink]="['/detail', post.category, post.id]" class="list-group-item list-group-item-action flex-column align-items-start blog-card">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">{{post.info.title}}</h5>
+                          <small>3 days ago</small>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <p class="mb-1">{{post.info.summary}}</p>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <small>category: {{post.category}}</small>
+                            <button (click)="deletePost(post.category, post.id)">DELETE</button>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- NO BLOG POSTS MESSAGE-->
+                <a *ngIf="this.blogPostList.length == 0" [routerLink]="" class="list-group-item list-group-item-action flex-column align-items-start blog-card">
+                    <div class="d-flex w-100 justify-content-center">
+                      <h5 class="mb-1">Oops :(</h5>
                     </div>
-                    <div class="d-flex align-items-start">
-                        <p class="mb-1">{{post.info.summary}}</p>
-                    </div>
-                    <div class="d-flex align-items-start">
-                        <small>category: {{post.category}}</small>
+                    <div class="d-flex justify-content-center">
+                        <p class="mb-1">There are no blog posts yet!</p>
                     </div>
                 </a>
             </div>

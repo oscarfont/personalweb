@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth-interceptor';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
+import { NewPostComponent } from './blog/new-post/new-post.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
     BlogComponent,
     NotfoundComponent,
     AuthComponent,
-    BlogDetailComponent
+    BlogDetailComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularEditorModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

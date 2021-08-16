@@ -1,6 +1,7 @@
 .blog-card{
     margin: 2rem 0rem 0rem 0rem;
     border-top: 4px solid #044179;
+    text-align: justify;
 }
 
 #message{

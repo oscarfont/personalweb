@@ -25,7 +25,7 @@ export class BlogService {
         fromString: `category=${this.categories[i]}`
       });
       //params.append("category", this.categories[i]);
-      console.log(this.categories[i]);
+      //console.log(this.categories[i]);
       httpReqs.push(this.http.get<any>(this.baseURL + 'blog/getBlogs', {headers: this.httpHeader, params: params}));
     }
     return httpReqs;
@@ -36,5 +36,22 @@ export class BlogService {
       fromString: `category=${categoryName}&id=${blogId}`
     });
     return this.http.get<any>(this.baseURL + 'blog/getBlogDetail', {headers: this.httpHeader, params: params});
+  }
+
+  publishBlog(title,category,summary,content){
+    const data = {'category': category, 'title': title, 'summary': summary, 'content': content};
+
+    return this.http.post<any>(this.baseURL + 'blog/postBlog', data, {headers: this.httpHeader});
+  }
+
+  deleteBlog(category,id){
+    const data = {'category': category, 'id': id};
+
+    const options = {
+      headers: this.httpHeader,
+      body: data,
+    };
+
+    return this.http.delete<any>(this.baseURL + 'blog/deleteBlog', options);
   }
 }
