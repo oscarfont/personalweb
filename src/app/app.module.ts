@@ -20,6 +20,8 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
 import { NewPostComponent } from './blog/new-post/new-post.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     ToastrModule.forRoot(),
     NgbModule,
     HttpClientModule,
-    AngularEditorModule
+    AngularEditorModule,
+    DragDropModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

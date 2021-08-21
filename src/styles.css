@@ -19,11 +19,54 @@
     src: local("Hind"), url(./assets/fonts/hind/Hind-Regular.ttf) format("truetype");
 }
 
-body{
-    position: absolute !important;
-    background-color: #EEF7FF !important;
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+@font-face{
+    font-family: "Catamaran";
+    src: local("Catamaran"), url(./assets/fonts/catamaran/Catamaran-Regular.woff) format("truetype");
+}
+
+html,body{
+    height: 100vh;
+    width: 100%;
+}
+
+#app-content {
+    height: 100vh;
+    background-color:#f6d1c1;
+    overflow-y: scroll;
+}
+
+.page-title-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 0rem 0rem 0rem;
+}
+
+.page-subtitle-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 2rem 0rem 2rem;
+}
+
+.standard-card{
+    margin: 2rem 0rem 0rem 0rem;
+    width: 100%;
+}
+
+.title-text{
+    font-family: "Domine";
+    color: #557d48;
+}
+
+.subtitle-text{
+    font-family: "Montserrat";
+    color: #f9655b;
+}
+
+.body-text{
+    font-family: "Catamaran";
+    color: #557d48;
 }

@@ -1,11 +1,8 @@
 /*NAVBAR STANDAR COLORS*/
 .navbar{
-    /*background-color: rgba(236,235,254,0.15);*/
-    background-color: #EEF7FF;
+    background-color: #f9655b70;
     padding: 0;
     margin-top: 0;
-    border-bottom: 4px solid;
-    border-color: #044179;
 }
 
 /*NAVBAR STANDARD OPTION*/
@@ -13,25 +10,24 @@
     font-family: "Montserrat";
     font-size: large;
     text-align: center;
-    color: #044179;
+    color: #557d48;
+    text-shadow: 2px 2px #f2f2f2;
 }
 
 /*NAVBAR OPTION MOUSE HOVER*/
 .nav-link:hover{
-    background-color: rgba(0,0,0,0.15);
+    background-color: #f9655b70;
 }
 
 /*NAVBAR OPTION SELECTED*/
 .nav-link.active{
     font-family: "Montserrat";
-    background-color:rgba(0,0,0,0.15);
-    font-weight: "bold";
-    color: #EEF7FF;
-    border-top: 4px solid;
-    /*border-left: 4px solid;
-    border-right: 4px solid;
-    border-bottom: 4px solid;*/
-    border-color: #044179;
+    background-color: transparent;
+    font-weight: bold;
+    color: #f2f2f2;
+    background-color: #f2f2f259;
+    border-radius: 2px;
+    text-shadow: 2px 2px #557d48;
 }
 
 #home-tab, #portfolio-tab, #blog-tab, #contact-tab,#login-tab{
@@ -41,7 +37,16 @@
     flex-direction: row;
 }
 
-#home-icon, #portfolio-icon, #blog-icon, #contact-icon, #user-icon{
+.nav-link #home-icon, .nav-link #portfolio-icon, .nav-link #blog-icon, .nav-link #contact-icon, #user-icon{
     margin-left: 1rem;
     margin-right: 1rem;
+    color: #557d48;
+    filter:drop-shadow(2px 2px #f2f2f2);
+}
+
+.nav-link.active #home-icon, .nav-link.active #portfolio-icon, .nav-link.active #blog-icon, .nav-link.active #contact-icon, .nav-link.active #user-icon{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: #f2f2f2;
+    filter:drop-shadow(2px 2px #557d48);
 }
