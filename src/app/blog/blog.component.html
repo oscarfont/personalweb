@@ -1,7 +1,7 @@
-<body>
+<!--<body>
     <div class="row justify-content-center" style="text-align: center; margin: 0; padding: 1rem;">
         <div class="container-fluid">
-            <!-- HEADER TITLE CARD-->
+            HEADER TITLE CARD
             <div class="card" style="width: 97%;">
                 <div *ngIf="!this.authService.isUserLoggedIn()" class="card-header">
                     <h4>Welcome to the Blog!</h4>
@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <!-- BLOG POST LIST-->
+            BLOG POST LIST
             <div class="list-group">
                 <div *ngIf="this.blogPostList.length != 0">
                     <a *ngFor="let post of blogPostList" [routerLink]="['/detail', post.category, post.id]" class="list-group-item list-group-item-action flex-column align-items-start blog-card">
@@ -34,7 +34,7 @@
                     </a>
                 </div>
 
-                <!-- NO BLOG POSTS MESSAGE-->
+                NO BLOG POSTS MESSAGE
                 <a *ngIf="this.blogPostList.length == 0" [routerLink]="" class="list-group-item list-group-item-action flex-column align-items-start blog-card">
                     <div class="d-flex w-100 justify-content-center">
                       <h5 class="mb-1">Oops :(</h5>
@@ -46,4 +46,32 @@
             </div>
         </div>
     </div>
-</body>
+</body>-->
+
+<div class="row header-row">
+    <div class="page-title-container">
+        <h1 class="title-text" id="blog-title">Blog</h1>
+        <p class="subtitle-text" id="blog-subtitle">Posts about almost everything</p>
+    </div>
+    <div class="page-subtitle-container">
+        <p class="subtitle-text" id="blog-headline">Read from technical guides to my favourite hobbies and adventures</p>
+    </div>
+</div>
+<div class="row body-row">
+    <!--<div class="col-6" style="height: 100vh;">
+        Picture
+    </div>
+    <div class="col-6" style="height: 100vh;">
+        <div class="card standard-card">
+            <div class="card-content">
+                <div class="card-body">
+                    <h6>Timer: {{this.timerString}} s</h6>
+                    <div id="element-user-list" cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+                        <div *ngFor="let number of this.numbersArray" [id]="'element_'+this.numbersArray.indexOf(number)" class="example-box" cdkDrag>{{number}}</div>
+                    </div>
+                    <button (click)="startGame()">Start</button>  
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>

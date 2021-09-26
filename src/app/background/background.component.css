@@ -1,0 +1,42 @@
+/*.background{
+    background-color:var(--main-color)!important;
+}*/
+
+.top-left-hexagon{
+    width:25rem; 
+    z-index: 0; 
+    position:absolute; 
+    top: 0; 
+    left:0; 
+    transform: scaleX(-1) scaleY(-1); 
+    filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
+}
+
+.bottom-right-hexagon{
+    width:25rem; 
+    z-index: 0; 
+    position:absolute; 
+    bottom: 0; 
+    right:0; 
+    filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
+}
+
+.top-right-hexagon{
+    width:25rem; 
+    z-index: 0; 
+    position:absolute; 
+    bottom: -18.2rem; 
+    right:0; 
+    filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
+    transform: scaleY(-1); 
+}
+
+.bottom-left-hexagon{
+    width:25rem; 
+    z-index: 0; 
+    position:absolute; 
+    bottom: -100vh; 
+    left:0; 
+    filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
+    transform: scaleX(-1); 
+}

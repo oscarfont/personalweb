@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { slideInAnimations } from '../app/animations';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,10 @@ import { slideInAnimations } from '../app/animations';
 })
 export class AppComponent {
   title = 'personalweb';
+
+  ngOnInit(){
+    AOS.init();
+  }
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;

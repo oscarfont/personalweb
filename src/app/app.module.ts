@@ -21,7 +21,7 @@ import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
 import { NewPostComponent } from './blog/new-post/new-post.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-
+import { BackgroundComponent } from './background/background.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NotfoundComponent,
     AuthComponent,
     BlogDetailComponent,
-    NewPostComponent
+    NewPostComponent,
+    BackgroundComponent
   ],
   imports: [
     BrowserModule,

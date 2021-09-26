@@ -168,26 +168,26 @@ export class NavbarComponent implements OnInit {
   changeNavBarToDesktop(){
     let homeOption = document.getElementById("home-tab");
     let homeIcon = document.getElementById("home-icon");
-    homeIcon.style.fontSize = "x-large";
-    homeOption.style.fontSize = "large";
+    homeIcon.style.fontSize = "large";
+    homeOption.style.fontSize = "medium";
     homeOption.style.flexDirection = "row";
     let portfolioOption = document.getElementById("portfolio-tab");
     let portfolioIcon = document.getElementById("portfolio-icon");
-    portfolioIcon.style.fontSize = "x-large";
-    portfolioOption.style.fontSize = "large";
+    portfolioIcon.style.fontSize = "large";
+    portfolioOption.style.fontSize = "medium";
     portfolioOption.style.flexDirection = "row";
     let blogOption = document.getElementById("blog-tab");
     let blogIcon = document.getElementById("blog-icon");
-    blogIcon.style.fontSize = "x-large";
-    blogOption.style.fontSize = "large";
+    blogIcon.style.fontSize = "large";
+    blogOption.style.fontSize = "medium";
     blogOption.style.flexDirection = "row";
     let contactOption = document.getElementById("contact-tab");
     let contactIcon = document.getElementById("contact-icon");
-    contactIcon.style.fontSize = "x-large";
-    contactOption.style.fontSize = "large";
+    contactIcon.style.fontSize = "large";
+    contactOption.style.fontSize = "medium";
     contactOption.style.flexDirection = "row";
     let userIcon = document.getElementById("user-icon");
-    userIcon.style.fontSize = "x-large";
+    userIcon.style.fontSize = "large";
   }
 
   openAuthModal() {

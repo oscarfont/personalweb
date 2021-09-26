@@ -1,4 +1,5 @@
-<div class="container-fluid" id="app-content" [@routeAnimations]="prepareRoute(outlet)">
+<app-navbar id="app-navbar"></app-navbar>
+<div id="app-content" [@routeAnimations]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
-    <app-navbar id="app-navbar"></app-navbar>
 </div>
+<!-- INSERT FOOTER -->
