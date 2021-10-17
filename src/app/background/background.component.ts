@@ -18,21 +18,21 @@ export class BackgroundComponent implements OnInit {
   constructor() { }
 
   setCornerPositions(){
-    if(document.getElementById(this.topLeftID) != null){
+    /*if(document.getElementById(this.topLeftID) != null){
       document.getElementById(this.topLeftID).style.top = (this.numberOfScreen*100).toString() + 'vh';
-    }
+    }*/
 
-    if(document.getElementById(this.bottomRightID) != null){
-      document.getElementById(this.bottomRightID).style.top = 'calc('+((100 + this.numberOfScreen*100)).toString() + 'vh'+ ' - '+this.figureHeight.toString()+'rem)';
-    }
+    /*if(document.getElementById(this.bottomRightID) != null){
+      document.getElementById(this.bottomRightID).style.top = 'calc('+((100 + this.numberOfScreen*100)).toString() + 'vh';
+    }*/
 
-    if(document.getElementById(this.topRightID) != null){
+    /*if(document.getElementById(this.topRightID) != null){
       document.getElementById(this.topRightID).style.top = (this.numberOfScreen*100).toString() + 'vh';
-    }
+    }*/
 
-    if(document.getElementById(this.bottomLefttID) != null){
-      document.getElementById(this.bottomLefttID).style.top = 'calc('+((100 + this.numberOfScreen*100)).toString() + 'vh'+ ' - '+this.figureHeight.toString()+'rem)';
-    }
+    /*if(document.getElementById(this.bottomLefttID) != null){
+      document.getElementById(this.bottomLefttID).style.top = 'calc('+((100 + this.numberOfScreen*100)).toString() + 'vh';
+    }*/
   }
 
   ngOnInit(): void {
@@ -40,7 +40,6 @@ export class BackgroundComponent implements OnInit {
     this.bottomRightID = 'bottom-right-corner-'+this.numberOfScreen.toString();
     this.topRightID = 'top-right-corner-'+this.numberOfScreen.toString();
     this.bottomLefttID = 'bottom-left-corner-'+this.numberOfScreen.toString();
-    this.figureHeight = 18.2;
   }
 
   ngAfterViewInit(){

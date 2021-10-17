@@ -25,6 +25,7 @@ export class CoverComponent implements OnInit {
   startBool : boolean;
   lastScrollTop : number;
   isAutoScrollOn : boolean;
+  scrollTimeout : any;
 
   constructor(private toastrService : ToastrService, private routerService : Router) { 
     this.numbersArray = [48,35,20,2,81,50,100,63,77,13];
@@ -192,29 +193,30 @@ export class CoverComponent implements OnInit {
     let elementName = this.coverPagesId[this.currentPageIndex];
     console.log(elementName);
     let elmnt = document.getElementById(elementName);
-    elmnt.scrollIntoView({block: "end", behavior: "smooth"});
-    /*setTimeout(() => {
+    //elmnt.scrollIntoView({block: "end", behavior: "smooth"});
+    this.scrollTimeout = setTimeout(() => {
       elmnt.scrollIntoView({block: "end", behavior: "smooth"});
-    },1000);*/
+    },1000);
   }
 
   checkAutoScrollFinished(){
     this.isAutoScrollOn = window.pageYOffset % window.innerHeight == 0 ? false : true;
+    if(this.isAutoScrollOn) clearTimeout(this.scrollTimeout);
     console.log(this.isAutoScrollOn);
   }
 
-  @HostListener('window:scroll', ['$event']) 
+  /*@HostListener('window:scroll', ['$event']) 
   scrollListener(event:any) {
     if(this.isAutoScrollOn == false){
       //console.log("auto scroll is not on :)");
       if (window.pageYOffset > this.lastScrollTop) {
-        this.isAutoScrollOn = true;
         this.scrollTo(false);
+        this.isAutoScrollOn = true;
         this.lastScrollTop = window.pageYOffset + window.innerHeight;
         console.log("scroll down");
       } else if(window.pageYOffset < this.lastScrollTop){
-        this.isAutoScrollOn = true;
         this.scrollTo(true);
+        this.isAutoScrollOn = true;
         this.lastScrollTop = window.pageYOffset - window.innerHeight
         console.log("scroll up");
       }
@@ -222,5 +224,5 @@ export class CoverComponent implements OnInit {
       this.checkAutoScrollFinished();
       this.lastScrollTop = window.pageYOffset;
     }
-  }
+  }*/
 }

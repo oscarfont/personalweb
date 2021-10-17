@@ -3,13 +3,6 @@
   z-index: 2;
 }
 
-#hexa-quarter{
-  width: 20rem!important;
-  position: relative;
-  top: 10rem;
-  left: 5rem;
-}
-
 /* HEADER ROW */
 .header-row{
   justify-content: space-evenly;
@@ -29,7 +22,6 @@
 #cover-headline{
   font-weight: bold;
   font-style: italic;
-  font-size: large;
   color: #edf1dd;
   /*text-shadow: 2px 2px #f2f2f2;*/
 }
@@ -40,7 +32,8 @@
 }
 
 #cover-pic{
-  height: 70vh;
+  max-height: 100vh;
+  width:auto;
   padding: 6rem 2rem 0rem 2rem;
   filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
   animation: fadeInUpBig;
@@ -75,7 +68,6 @@
 }
 
 #question{
-  font-size:2.75rem;
   color:var(--secondary-color);
 }
 
@@ -107,7 +99,6 @@
   box-sizing: border-box;
   cursor: move;
   background: var(--main-color);
-  font-size: 16px;
   flex-grow: 1;
   flex-basis: 0;
 }
@@ -143,7 +134,11 @@
 
 #experienceCarousel{
   width: 100%;
-  padding: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.carousel-inner{
+  margin-bottom: 2rem;
 }
 
 .carousel-control-prev{
@@ -152,4 +147,121 @@
 
 .carousel-control-next{
   justify-content: flex-end;
+}
+
+.image-card{
+  width: 85%;
+  padding: 3.5rem;
+}
+
+.carousel-indicators > li{
+  text-indent:0;
+  text-align: center;
+  width: 100%;
+  max-width: 16rem;
+  min-width: 5rem;
+  height: 2rem;
+  background-color: transparent;
+  color: #969fb2;
+  border-bottom:2px solid #969fb2;
+  margin: 0rem 0rem 0.5rem 0rem;
+}
+
+.carousel-indicators > li.active{
+  text-indent:0;
+  text-align: center;
+  width: 100%;
+  max-width: 16rem;
+  min-width: 5rem;
+  height: 2rem;
+  background-color: transparent;
+  color: var(--accent-color-1);
+  font-weight: bold;
+  border-bottom:2px solid var(--accent-color-1);
+  margin: 0rem 0rem 0.5rem 0rem;
+}
+
+.carousel-indicators > li.active > div > span.subtitle-text{
+  color: var(--accent-color-1);
+}
+
+.carousel-indicators > li > div > span.subtitle-text{
+  color: #969fb2;
+}
+
+.carousel-indicators > li.active > div > span.point{
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: fixed;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  background-color: var(--accent-color-1);
+  margin-top: 1.65rem;
+  align-self: center;
+}
+.carousel-indicators > li > div > span.point{
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: fixed;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  margin-top: 1.65rem;
+  align-self: center;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+.slider {
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+}
+.slider::before, .slider::after {
+  background: linear-gradient(to right, #2f4066 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  -webkit-animation: scroll 40s linear infinite;
+          animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 3);
+}
+.slider .slide {
+  height: 100px;
+  width: 250px;
 }

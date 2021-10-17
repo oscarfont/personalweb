@@ -97,3 +97,98 @@
 .btn-outline-primary:hover {
     background-color: #4a598d94!important;
 }
+
+/* DIFFERENT TEXT SIZES FOR DIFFERENT SCREEN SIZES */
+@media (min-width: 240px) {
+    .lg-text{
+        font-size: 2rem;
+    }
+    
+    .md-text{
+        font-size: 1rem;
+    }
+    
+    .sm-text{
+        font-size: 0.5rem;
+    }
+    
+    .micro-text{
+        font-size: 0.25rem;
+    }
+}
+
+/* SMALL DEVIVCES */
+@media (min-width: 576px) {
+    .lg-text{
+        font-size: 2.5rem;
+    }
+    
+    .md-text{
+        font-size: 1rem;
+    }
+    
+    .sm-text{
+        font-size: 0.5rem;
+    }
+    
+    .micro-text{
+        font-size: 0.25rem;
+    }
+}
+
+/*Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .lg-text{
+        font-size: 3.5rem;
+    }
+    
+    .md-text{
+        font-size: 1.5rem;
+    }
+    
+    .sm-text{
+        font-size: 0.75rem;
+    }
+    
+    .micro-text{
+        font-size: 0.4rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .lg-text{
+        font-size: 4.5rem;
+    }
+
+    .md-text{
+        font-size: 1.75rem;
+    }
+
+    .sm-text{
+        font-size: 1rem;
+    }
+
+    .micro-text{
+        font-size: 0.5rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .lg-text{
+        font-size: 5rem;
+    }
+
+    .md-text{
+        font-size: 2rem;
+    }
+
+    .sm-text{
+        font-size: 1.25rem;
+    }
+
+    .micro-text{
+        font-size: 0.75rem;
+    }
+}
