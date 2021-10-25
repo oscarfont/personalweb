@@ -1,77 +1,8 @@
-<!--<body>
-    <div class="container-fluid">
-        <div class="row justify-content-center" style="text-align: center; padding: 1rem;">
-            <div class="card" style="width: 97%;">
-                <div id="contact-header" class="card-body">
-                    <blockquote class="blockquote mb-0">
-                    <p style="font-family: Hind; color:#001E3E;">One good conversation can shift the direction of change forever</p>
-                    <footer class="blockquote-footer"><cite title="Source Title">Linda Lam</cite></footer>
-                    </blockquote>
-                </div>
-                <div class="card-header">
-                    <h4>Let's have a conversation :)</h4>
-                </div>
-            </div>
-        </div>
-        <div id="contact-row" class="row justify-content-center">
-            <div class="col">
-                <div class="card" style="width: 90%;">
-                    <a (click)="copyEmail('oscar.font99@gmail.com', 'contact-row')" [routerLink]="">
-                        <img class="card-img-top" src="./assets/contact/email-image.png" alt="email-icon">
-                        <div class="card-body" style="text-align: center; background-color: rgba(0, 0, 0, 0.06);">
-                            <h5>Write me an email!</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 90%;">
-                    <a href="https://www.linkedin.com/in/ofont99/?locale=en_US" target="_blank" rel="noopener noreferrer">
-                        <img class="card-img-top" src="./assets/contact/linkedin-image.png" alt="Card image cap">
-                        <div class="card-body" style="text-align: center; background-color: rgba(0, 0, 0, 0.06);">
-                            <h5>Check out my LinkedIn!</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 90%;">
-                    <a href="https://github.com/oscarfont" target="_blank" rel="noopener noreferrer">
-                        <img class="card-img-top" src="./assets/contact/github-image.png" alt="Card image cap">
-                        <div class="card-body" style="text-align: center; background-color: rgba(0, 0, 0, 0.06);">
-                            <h5>Discover my best projects!</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid d-flex flex-column" style="height:100vh;">
+    <app-background [first]="false"
+                    [numberOfScreen]="0"></app-background>
+    <div class="row flex-grow-1">
+        <div class="col-6 d-flex flex-column align-items-center justify-content-center"></div>
+        <div class="col-6 d-flex flex-column align-items-center justify-content-center"></div>
     </div>
-</body>-->
-
-<div class="row header-row">
-    <div class="page-title-container">
-        <h1 class="title-text" id="contact-title">Contact me</h1>
-        <p class="subtitle-text" id="contact-subtitle">If yours truly can help you in some way</p>
-    </div>
-    <div class="page-subtitle-container">
-        <p class="subtitle-text" id="contact-headline">One good conversation can shift the direction of change forever</p>
-    </div>
-</div>
-<div class="row body-row">
-    <!--<div class="col-6" style="height: 100vh;">
-        Picture
-    </div>
-    <div class="col-6" style="height: 100vh;">
-        <div class="card standard-card">
-            <div class="card-content">
-                <div class="card-body">
-                    <h6>Timer: {{this.timerString}} s</h6>
-                    <div id="element-user-list" cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
-                        <div *ngFor="let number of this.numbersArray" [id]="'element_'+this.numbersArray.indexOf(number)" class="example-box" cdkDrag>{{number}}</div>
-                    </div>
-                    <button (click)="startGame()">Start</button>  
-                </div>
-            </div>
-        </div>
-    </div>-->
 </div>

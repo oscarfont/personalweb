@@ -181,4 +181,8 @@ a:hover {
     height: 100vh;
     padding: 0rem 2.5rem 0rem 2.5rem;
 }
-  
+
+#skills-charts{
+    width: 20rem;
+    height: 40rem;
+}

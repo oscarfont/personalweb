@@ -42,8 +42,8 @@ export class BackgroundComponent implements OnInit {
     this.bottomLefttID = 'bottom-left-corner-'+this.numberOfScreen.toString();
   }
 
-  ngAfterViewInit(){
+  /*ngAfterViewInit(){
     this.setCornerPositions();
-  }
+  }*/
 
 }

@@ -22,6 +22,7 @@ import { NewPostComponent } from './blog/new-post/new-post.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BackgroundComponent } from './background/background.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,10 @@ import { BackgroundComponent } from './background/background.component';
     NgbModule,
     HttpClientModule,
     AngularEditorModule,
-    DragDropModule
+    DragDropModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
