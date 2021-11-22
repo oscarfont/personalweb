@@ -25,6 +25,77 @@ export class PortfolioComponent implements OnInit {
   constructor(private appStateService : AppStateService) {
   }
 
+  setSkillsChartOption(){
+    this.option = {
+      color: ['#67F9D8'],
+      title: {
+        text: 'Skills Chart',
+        bottom: '94%',
+        left: '16%',
+        textStyle : {
+          fontFamily : 'Domine',
+          color: '#f2f3f0',
+          fontSize: '2rem'
+        }
+      },
+      radar: [
+        {
+          indicator: [
+            { text: 'Frontend', max: 100 },
+            { text: 'Backend', max: 100 },
+            { text: 'Database', max: 100 },
+            { text: 'Deployment', max: 100 },
+            { text: 'Testing', max: 100 },
+            { text: 'Object Oriented', max: 100 },
+            { text: 'Machine and Deep Learning', max: 100 }
+          ],
+          center: ['50%', '50%'],
+          radius: 216,
+          axisName: {
+            color: '#f2f3f0',
+            fontFamily: 'Montserrat',
+            fontSize: '1rem',
+            borderRadius: 3,
+            padding: [3, 5]
+          },
+          shape: 'circle'
+        }
+      ],
+      series: [
+        {
+          type: 'radar',
+          emphasis: {
+            lineStyle: {
+              width: 4,
+              color: '#ef9841'
+            }
+          },
+          data: [
+            {
+              value: [80, 90, 75, 60, 80, 85, 90],
+              name: 'My Skills (out of 100)',
+              areaStyle: {
+                color: '#817c5f'
+              },
+              label: {
+                show: true,
+                fontFamily: 'Montserrat',
+                fontWeight: 'bold',
+                color: '#f2f3f0'
+              },
+              lineStyle:{
+                color:'#817c5f'
+              },
+              itemStyle:{
+                color: '#ef9841'
+              }
+            },
+          ],
+        },
+      ]
+    };
+  }
+
   ngOnInit(): void {
     /*if(this.appStateService.getIsMobileResolution()){
       this.changeNavBarMobile();
@@ -33,56 +104,7 @@ export class PortfolioComponent implements OnInit {
       this.changeNavBarToDesktop();
       this.positionPictureDesktop();
     }*/
-    this.option = {
-      color: ['#67F9D8', '#FFE434', '#56A3F1', '#FF917C'],
-      title: {
-        text: 'Customized Radar Chart'
-      },
-      legend: {},
-      radar: [
-        {
-          indicator: [
-            { text: 'Indicator1', max: 150 },
-            { text: 'Indicator2', max: 150 },
-            { text: 'Indicator3', max: 150 },
-            { text: 'Indicator4', max: 120 },
-            { text: 'Indicator5', max: 108 },
-            { text: 'Indicator6', max: 72 }
-          ],
-          center: ['75%', '50%'],
-          radius: 120,
-          axisName: {
-            color: '#fff',
-            backgroundColor: '#666',
-            borderRadius: 3,
-            padding: [3, 5]
-          }
-        }
-      ],
-      series: [
-        {
-          type: 'radar',
-          emphasis: {
-            lineStyle: {
-              width: 4
-            }
-          },
-          data: [
-            {
-              value: [100, 8, 0.4, -80, 2000],
-              name: 'Data A'
-            },
-            {
-              value: [60, 5, 0.3, -100, 1500],
-              name: 'Data B',
-              areaStyle: {
-                color: 'rgba(255, 228, 52, 0.6)'
-              }
-            }
-          ]
-        }
-      ]
-    };
+    this.setSkillsChartOption();
   }
 
   @HostListener('window:resize', ['$event'])
