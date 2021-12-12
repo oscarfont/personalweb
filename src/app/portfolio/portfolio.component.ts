@@ -29,7 +29,7 @@ export class PortfolioComponent implements OnInit {
   setSkillsChartOption(){
     this.option = {
       color: ['#67F9D8'],
-      title: {
+      /*title: {
         text: 'Software Engineering Skills',
         bottom: '96%',
         left: '8%',
@@ -38,7 +38,7 @@ export class PortfolioComponent implements OnInit {
           color: '#f2f3f0',
           fontSize: '1.5rem'
         }
-      },
+      },*/
       radar: [
         {
           indicator: [

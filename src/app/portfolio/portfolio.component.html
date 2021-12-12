@@ -30,9 +30,19 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-6 col-xl-6">
-                <div echarts [options]="this.option" id="skills-chart" style="min-width: 100%; min-height: 45rem; margin-top:1.25rem;" 
-                [autoResize]="true"
-                (chartInit)="onChartInit($event)"></div>
+                <div class="row flex-column" id="skills-row">
+                    <div class="row player-personal-section">
+                        <div class="subtitle-text sm-text">Software Engineering Skills</div>
+                    </div>
+                    <div class="row" style="margin-left: 0.25rem">
+                        <div echarts [options]="this.option" id="skills-chart" style="min-width: 100%; min-height: 40rem;" 
+                        [autoResize]="true"
+                        (chartInit)="onChartInit($event)"></div>
+                    </div>
+                    <div class="row player-personal-section">
+                        <a class="btn btn-primary" (click)="this.openPdf()">Check my CV</a>
+                    </div>
+                </div>
             </div>
             <div class="col-12 col-lg-6 col-xl-6">
                 <div class="row flex-column" id="experience-row">
