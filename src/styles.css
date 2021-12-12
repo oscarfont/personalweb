@@ -24,6 +24,10 @@
     src: local("Catamaran"), url(./assets/fonts/catamaran/Catamaran-Regular.woff) format("truetype");
 }
 
+html{
+    scroll-snap-type: y mandatory;
+}
+
 :root {
     /*--main-color:#404e7c;*/
     --main-color:#16274d;

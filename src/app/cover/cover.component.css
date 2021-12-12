@@ -1,6 +1,7 @@
-#cover-page{
-  height: 100%;
+#cover-page, #experience-page, #projects-page, #contact-page{
+  height: 100vh;
   z-index: 2;
+  scroll-snap-align: start;
 }
 
 /* HEADER ROW */

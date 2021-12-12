@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { AppStateService } from '../app-state.service';
 import { faCloud, faCode, faBrain, faLayerGroup, faSyncAlt, faDesktop, faMobileAlt, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
-import { EChartsOption } from 'echarts';
+import { EChartsOption, EChartsType } from 'echarts';
 
 @Component({
   selector: 'app-portfolio',
@@ -21,6 +21,7 @@ export class PortfolioComponent implements OnInit {
 
   pdfLink = "./assets/portfolio/cv.pdf";
   option : EChartsOption;
+  skillsChart : EChartsType;
   
   constructor(private appStateService : AppStateService) {
   }
@@ -29,13 +30,13 @@ export class PortfolioComponent implements OnInit {
     this.option = {
       color: ['#67F9D8'],
       title: {
-        text: 'Skills Chart',
-        bottom: '94%',
-        left: '16%',
+        text: 'Software Engineering Skills',
+        bottom: '96%',
+        left: '8%',
         textStyle : {
           fontFamily : 'Domine',
           color: '#f2f3f0',
-          fontSize: '2rem'
+          fontSize: '1.5rem'
         }
       },
       radar: [
@@ -49,7 +50,7 @@ export class PortfolioComponent implements OnInit {
             { text: 'Object Oriented', max: 100 },
             { text: 'Machine and Deep Learning', max: 100 }
           ],
-          center: ['50%', '50%'],
+          center: ['45%', '50%'],
           radius: 216,
           axisName: {
             color: '#f2f3f0',
@@ -58,7 +59,7 @@ export class PortfolioComponent implements OnInit {
             borderRadius: 3,
             padding: [3, 5]
           },
-          shape: 'circle'
+          shape: 'polygon'
         }
       ],
       series: [
@@ -96,6 +97,10 @@ export class PortfolioComponent implements OnInit {
     };
   }
 
+  onChartInit(event){
+    this.skillsChart = event;
+  }
+
   ngOnInit(): void {
     /*if(this.appStateService.getIsMobileResolution()){
       this.changeNavBarMobile();
@@ -109,14 +114,16 @@ export class PortfolioComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    /*console.log(this.appStateService.getIsMobileResolution());*/
+    //  console.log(event);
+    this.skillsChart.resize();
+    /*console.log(this.appStateService.getIsMobileResolution());
     if(this.appStateService.getIsMobileResolution()){
       this.changeNavBarMobile();
       this.positionPictureMobile();
     }else{
       this.changeNavBarToDesktop();
       this.positionPictureDesktop();
-    }
+    }*/
   }
 
   scroll(name) {

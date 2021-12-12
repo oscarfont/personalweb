@@ -1,183 +1,54 @@
-#contents-row{
-    margin-top: 1em;
-}
-
-#header-card{
-    margin-top: 1em;
-}
-
-#sections-column, #sections-content{
-    background-color: transparent;
-}
-
-#content-card, #header-card, #v-pills-presentation{
-    font-family: "Hind";
-    margin-bottom: 1em;
-}
-
-.profile-container{
-    width: 10%;
-}
-
-#profile-pic{
-    width: 18%;
-    position: absolute;
-    top: 25%;
-    right: 6%;
-    border-top: 4px solid #044179;
-}
-
-#cover-pic{
-    border-top: 4px solid #044179;
-}
-
-.presentation-text {
-    font-size: 1.2em;
-    margin-right: 1em;
-    color: #001E3E;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.language-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    width: 100%;
-    margin: 1em;
-}
-
-.skill-bar {
-    font-size: 2em;
-}
-
-.skill-bar li {
-    display: inline;
-}
-
-.skill-bar li:before {
-    content: '•';
-}
-
-.level-1-skill li:nth-child(-n+10) {
-    color: green;
-}
-
-.level-2-skill li:nth-child(-n+10) {
-    color: green;
-}
-
-.level-3-skill li:nth-child(-n+9) {
-    color: green;
-}
-
-.level-4-skill li:nth-child(-n+8) {
-    color: green;
-}
-
-.firma-logo{
-    width: 10em;
-    margin-top: -1em;
-    margin-right: 2em;
-}
-
-.date-text{
-    margin-left: 1em;
-}
-
-.uni-logo{
-    width: 5em;
-    display: block;
-    margin-top: -0.3em;
-    margin-left: 1rem;
-    /*margin-right: auto;*/
-    margin-bottom: 1em;
-}
-
-.lang-logo{
-    width: 4em;
-    margin-left: 4.2em;
-}
-
-.experience-description{
-    font-size: 0.9em;
-    margin-top: -0.5em;
-    margin-right: 1em;
-    color: #001E3E;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.top-buffer{
-    margin-top: 1em;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: white;
-    background-color: #044179;
-}
-
-.nav-pills .nav-link{
-    color: #044179;
-}
-
-.btn-primary{
-    font-family: "Montserrat";
-    font-weight: bold;
-    color: white;
-    background-color: #044179;
-}
-
-.skill-icon{
-    font-size: 3.5em;
-    color: #044179;
-}
-
-.skill-description{
-    font-size: 0.9em;
-    margin-top: -0.5em;
-    color: #001E3E;
-    text-align: center;
-}
-
-.tab-content{
-    padding: 2em;
-}
-
-#v-pills-tab{
-    margin-left: 1em;
-}
-
-a:hover {
-    background-color: rgba(0,0,0,0.15);
-}
-
-/* HEADER ROW */
-.header-row{
-    justify-content: space-evenly;
-}
-
-#portfolio-title{
-    font-weight: bold;
-    text-shadow: 2px 2px #f2f2f2;
-}
-
-#portfolio-subtitle{
-    margin-top: -0.75rem;
-    font-weight: bold;
-    color: #f2f2f2;
-    text-shadow: 2px 2px #557d48;
-}
-
-#portfolio-headline{
-    font-weight: bold;
-    font-style: italic;
-    font-size: large;
-    text-shadow: 2px 2px #f2f2f2;
-}
-
 /* BODY ROW */
 .body-row{
-    height: 100vh;
     padding: 0rem 2.5rem 0rem 2.5rem;
+    z-index: 2;
+}
+
+#portfolio-page{
+    height: 100%;
+    z-index: 2;
+}
+
+.player-img{
+    width: 8rem;
+}
+
+.company-img{
+    width: 6rem;
+    padding: 0.25rem;
+    border-radius: 3rem;
+}
+
+.personal-stats, .working-stats{
+    margin: 0.75rem 0 0 0.5rem;
+}
+
+.player-personal-section{
+    margin: 0 0 0 4rem;
+}
+
+#experience-row, #education-row{
+    padding: 0.5rem;
+}
+
+.portfolio-thmb-img{
+    margin: 0.5rem;
+    background-color: rgb(47, 64, 102, 0.58);
+    border-radius: 0.25rem;
+}
+
+.stats-border{
+    border: 1px solid #f2f3f0;
+}
+
+.less-bottom-margin{
+    margin-bottom: -1rem;
+}
+
+.education-title{
+    margin-left: 0.25rem;
+}
+
+.no-margin{
+    margin: 0!important;
 }

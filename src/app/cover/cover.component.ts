@@ -181,7 +181,7 @@ export class CoverComponent implements OnInit {
     },100);
   }
 
-  scrollTo(isUp){
+    /*scrollTo(isUp){
     if(isUp == true){
       this.currentPageIndex -= 1;
       this.currentPageIndex = this.currentPageIndex < 0 ? this.coverPagesId.length - 1 : this.currentPageIndex;
@@ -205,7 +205,7 @@ export class CoverComponent implements OnInit {
     console.log(this.isAutoScrollOn);
   }
 
-  /*@HostListener('window:scroll', ['$event']) 
+@HostListener('window:scroll', ['$event']) 
   scrollListener(event:any) {
     if(this.isAutoScrollOn == false){
       //console.log("auto scroll is not on :)");

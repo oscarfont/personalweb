@@ -1,12 +1,209 @@
-<div class="container-fluid d-flex flex-column" style="height:100vh;">
+<div class="container-fluid d-flex flex-column" id="portfolio-page">
     <app-background [first]="false"
                     [numberOfScreen]="0"></app-background>
-    <div class="row flex-grow-1">
-        <div class="col-6 d-flex flex-column align-items-center justify-content-center">
-            <div echarts [options]="this.option" id="skills-chart" style="width: 100%; height: 65%;"></div>
+    <div class="row flex-grow-1 flex-column body-row">
+        <div class="row" style="margin-top: 4rem;">
+            <div class="col-12 col-lg-6 col-xl-6">
+                <div class="row player-personal-section">
+                    <div class="col-2">
+                        <img src="../../assets/portfolio/profile-pic-transparent.png" class="player-img"/>
+                    </div>
+                    <div class="col personal-stats">
+                        <div class="subtitle-text">Óscar Font</div>
+                        <div class="subtitle-text">Spanish</div>
+                        <div class="subtitle-text">24 years old (26/03/1997)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-6">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="../../assets/portfolio/gopick-logo.jpeg" class="company-img"/>
+                    </div>
+                    <div class="col working-stats">
+                        <div class="subtitle-text">Software Engineer</div>
+                        <div class="subtitle-text">Under contract since 20/09/2021</div>
+                        <div class="subtitle-text">Breakthrough prospect</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-6 d-flex flex-column align-items-center justify-content-center">
-            card
+        <div class="row">
+            <div class="col-12 col-lg-6 col-xl-6">
+                <div echarts [options]="this.option" id="skills-chart" style="min-width: 100%; min-height: 45rem; margin-top:1.25rem;" 
+                [autoResize]="true"
+                (chartInit)="onChartInit($event)"></div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-6">
+                <div class="row flex-column" id="experience-row">
+                    <div class="row" style="margin-left: 0.25rem">
+                        <div class="subtitle-text sm-text">Last experiences</div>
+                    </div>
+                    <div class="row flex-row" id="experience-row">
+                        <div class="col-4 d-flex flex-column align-items-center less-bottom-margin">
+                            <img src="../../assets/portfolio/redsys.png" class="portfolio-thmb-img" width="148"/>
+                            <div class="subtitle-text sm-text">Web Dev and BI</div>
+                            <div class="subtitle-text micro-text">8 months, part-time job</div>
+                        </div>
+                        <div class="col-4 d-flex flex-column align-items-center less-bottom-margin">
+                            <img src="../../assets/portfolio/fourthhub.png" class="portfolio-thmb-img" width="148"/>
+                            <div class="subtitle-text sm-text">FullStack Engineer</div>
+                            <div class="subtitle-text micro-text">10 months, full-time job</div>
+                        </div>
+                        <div class="col-4 d-flex flex-column align-items-center less-bottom-margin">
+                            <img src="../../assets/portfolio/awerty.png" class="portfolio-thmb-img" width="148"/>
+                            <div class="subtitle-text sm-text">Web Dev</div>
+                            <div class="subtitle-text micro-text">6 months, internship</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row flex-column" id="education-row">
+                    <div class="row" style="margin-left: 0.25rem">
+                        <div class="subtitle-text sm-text">Education</div>
+                    </div>
+                    <div class="row flex-row" id="experience-row">
+                        <div class="col-4 d-flex flex-row align-items-center">
+                            <img src="../../assets/portfolio/upm.png" class="portfolio-thmb-img" width="92"/>
+                            <div class="d-flex flex-column education-title">
+                                <div class="subtitle-text sm-text">Master EMSE</div>
+                                <div class="subtitle-text micro-text">2022 - 2020</div>
+                            </div>
+                        </div>
+                        <div class="col-4 d-flex flex-row align-items-center">
+                            <img src="../../assets/portfolio/tum-logo.png" class="portfolio-thmb-img" width="92"/>
+                            <div class="d-flex flex-column education-title">
+                                <div class="subtitle-text sm-text">ERASMUS</div>
+                                <div class="subtitle-text micro-text">1 semester, 2019</div>
+                            </div>
+                        </div>
+                        <div class="col-4 d-flex flex-row align-items-center">
+                            <img src="../../assets/portfolio/upf-logo.png" class="portfolio-thmb-img" width="92"/>
+                            <div class="d-flex flex-column education-title">
+                                <div class="subtitle-text sm-text">CS Bachelor</div>
+                                <div class="subtitle-text micro-text">2019 - 2015</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="details-row">
+                    <div class="col-12 col-lg-6 col-xl-6" id="preferred-stack">
+                        <div class="row" style="padding: 1rem">
+                            <span class="subtitle-text sm-text">Preferred</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-8 d-flex flex-column">
+                                <span class="subtitle-text sm-text">Paradigm</span>
+                                <div class="d-flex flex-row space-between">
+                                    <img src="../../assets/portfolio/programming.png" width="35rem" style="margin: 0 0.5rem 0.5rem 0;"/>
+                                    <span class="subtitle-text sm-text">Object Oriented</span>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <span class="subtitle-text sm-text">85</span>
+                            </div>
+                        </div>
+                        <div class="row d-flex">
+                            <div class="col-8 d-flex flex-column">
+                                <span class="subtitle-text sm-text">Frontend Framework</span>
+                                <div class="d-flex flex-row space-between">
+                                    <img src="../../assets/portfolio/angular-logo.png" width="35rem" style="margin: 0 0.5rem 0.5rem 0;"/>
+                                    <span class="subtitle-text sm-text">Angular</span>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <span class="subtitle-text sm-text">80</span>
+                            </div>
+                        </div>
+                        <div class="row d-flex">
+                            <div class="col-8 d-flex flex-column">
+                                <span class="subtitle-text sm-text">Backend Framework</span>
+                                <div class="d-flex flex-row space-between">
+                                    <img src="../../assets/portfolio/nodejs.png" width="35rem" style="margin: 0 0.5rem 0.5rem 0;"/>
+                                    <span class="subtitle-text sm-text">Node JS</span>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <span class="subtitle-text sm-text">90</span>
+                            </div>
+                        </div>
+                        <div class="row d-flex">
+                            <div class="col-8 d-flex flex-column">
+                                <span class="subtitle-text sm-text">Database Framework</span>
+                                <div class="d-flex flex-row space-between">
+                                    <img src="../../assets/portfolio/postgresql.png" width="35rem" style="margin: 0 0.5rem 0.5rem 0;"/>
+                                    <span class="subtitle-text sm-text">PostgreSQL</span>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <span class="subtitle-text sm-text">75</span>
+                            </div>
+                        </div>
+                        <div class="row d-flex">
+                            <div class="col-8 d-flex flex-column">
+                                <span class="subtitle-text sm-text">Vendor Host</span>
+                                <div class="d-flex flex-row space-between">
+                                    <img src="../../assets/portfolio/aws.png" width="40rem" style="margin: 0.5rem 0.5rem 0.5rem 0;"/>
+                                    <span class="subtitle-text sm-text">AWS</span>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <span class="subtitle-text sm-text">60</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-6" id="other-highlights">
+                        <div class="row d-flex flex-column no-margin">
+                            <div class="row" style="padding: 1rem;">
+                                <span class="subtitle-text sm-text">Other stats</span>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col d-flex" style="justify-content: space-between;">
+                                    <img src="../../assets/portfolio//espana.png" width="35rem" style="margin-bottom: 0.5rem;"/>
+                                    <span class="subtitle-text sm-text">Native</span>
+                                </div>
+                                <div class="col d-flex" style="justify-content: space-between;">
+                                    <img src="../../assets/portfolio//catalonia.png" width="35rem" style="margin-bottom: 0.5rem"/>
+                                    <span class="subtitle-text sm-text">Native</span>
+                                </div>
+                                <div class="col d-flex" style="justify-content: space-between;">
+                                    <img src="../../assets/portfolio//reino-unido.png" width="35rem" style="margin-bottom: 0.5rem"/>
+                                    <span class="subtitle-text sm-text">C1</span>
+                                </div>
+                                <div class="col d-flex" style="justify-content: space-between;">
+                                    <img src="../../assets/portfolio//alemania.png" width="35rem" style="margin-bottom: 0.5rem"/>
+                                    <span class="subtitle-text sm-text">B2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex flex-column">
+                            <div class="col d-flex" style="justify-content: space-between;">
+                                <span class="subtitle-text sm-text">Teamwork</span>
+                                <span class="subtitle-text sm-text">90</span>
+                            </div>
+                            <div class="col d-flex" style="justify-content: space-between;">
+                                <span class="subtitle-text sm-text">Creativity</span>
+                                <span class="subtitle-text sm-text">80</span>
+                            </div>
+                            <div class="col d-flex" style="justify-content: space-between;">
+                                <span class="subtitle-text sm-text">Decisions</span>
+                                <span class="subtitle-text sm-text">85</span>
+                            </div>
+                            <div class="col d-flex" style="justify-content: space-between;">
+                                <span class="subtitle-text sm-text">Mental Strength</span>
+                                <span class="subtitle-text sm-text">80</span>
+                            </div>
+                            <div class="col d-flex" style="justify-content: space-between;">
+                                <span class="subtitle-text sm-text">Stamina</span>
+                                <span class="subtitle-text sm-text">95</span>
+                            </div>
+                            <div class="col d-flex" style="justify-content: space-between;">
+                                <span class="subtitle-text sm-text">Leadership</span>
+                                <span class="subtitle-text sm-text">90</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
