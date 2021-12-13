@@ -59,6 +59,18 @@
   animation-duration: 1s;
 }
 
+@media (min-width: 240px) {
+  #title-container{
+    position: absolute;
+    bottom: 7rem;
+    left:-1.5rem;
+    z-index: 1;
+    padding: 1.25rem;
+    animation: fadeInLeftBig;
+    animation-duration: 1s;
+  }
+}
+
 #question-container{ 
   margin-top: 3rem; 
   animation: pulse;
