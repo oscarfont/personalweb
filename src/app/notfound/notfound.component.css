@@ -6,13 +6,13 @@
     align-items: center;
 }
 
-.body-icon{
-    font-size: 10rem;
-}
-
 .btn.btn-primary{
     font-family: "Montserrat";
     font-weight: bold;
     color: white;
     background-color: #044179;
+}
+
+#face-icon{
+    font-size: 10rem;
 }
