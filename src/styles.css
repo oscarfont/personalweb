@@ -37,8 +37,12 @@ html{
     --accent-color-2: #817c5f;
 }
 
+body{
+    background-color: var(--main-color)!important;
+}
+
 #app-content {
-    height: 100vh;
+    width: 100%;
     background-color: var(--main-color);
 }
 

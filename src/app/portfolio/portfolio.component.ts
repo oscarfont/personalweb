@@ -20,13 +20,14 @@ export class PortfolioComponent implements OnInit {
   elipsisIcon = faEllipsisH;
 
   pdfLink = "./assets/portfolio/cv.pdf";
-  option : EChartsOption;
-  skillsChart : EChartsType;
-  
-  constructor(private appStateService : AppStateService) {
+  option: EChartsOption;
+  skillsChart: EChartsType;
+  changeBackground: boolean;
+
+  constructor(private appStateService: AppStateService) {
   }
 
-  setSkillsChartOption(){
+  setSkillsChartOption() {
     this.option = {
       color: ['#67F9D8'],
       /*title: {
@@ -84,10 +85,10 @@ export class PortfolioComponent implements OnInit {
                 fontWeight: 'bold',
                 color: '#f2f3f0'
               },
-              lineStyle:{
-                color:'#817c5f'
+              lineStyle: {
+                color: '#817c5f'
               },
-              itemStyle:{
+              itemStyle: {
                 color: '#ef9841'
               }
             },
@@ -97,7 +98,7 @@ export class PortfolioComponent implements OnInit {
     };
   }
 
-  onChartInit(event){
+  onChartInit(event) {
     this.skillsChart = event;
   }
 
@@ -109,12 +110,14 @@ export class PortfolioComponent implements OnInit {
       this.changeNavBarToDesktop();
       this.positionPictureDesktop();
     }*/
+    this.changeBackground = this.appStateService.getIsMobileResolution();
     this.setSkillsChartOption();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     //  console.log(event);
+    this.changeBackground = this.appStateService.getIsMobileResolution();
     this.skillsChart.resize();
     /*console.log(this.appStateService.getIsMobileResolution());
     if(this.appStateService.getIsMobileResolution()){
@@ -130,12 +133,12 @@ export class PortfolioComponent implements OnInit {
     let el = document.getElementById(name);
     //console.log(name);
     //console.log(el);
-    setTimeout(()=>{                           
-      el.scrollIntoView({behavior:"smooth"});
+    setTimeout(() => {
+      el.scrollIntoView({ behavior: "smooth" });
     }, 500);
   }
 
-  changeNavBarMobile(){
+  changeNavBarMobile() {
     // do not move top of profile pic
     /*let profilePic = document.getElementById('profile-pic');
     profilePic.style.top = '8rem';*/
@@ -148,7 +151,7 @@ export class PortfolioComponent implements OnInit {
     pillsContent.className = 'row';
   }
 
-  changeNavBarToDesktop(){
+  changeNavBarToDesktop() {
     // do not move top of profile pic
     /*let profilePic = document.getElementById('profile-pic');
     profilePic.style.top = '12rem';*/
@@ -161,19 +164,19 @@ export class PortfolioComponent implements OnInit {
     pillsContent.className = 'col-6 col-sm-10';
   }
 
-  positionPictureMobile(){
+  positionPictureMobile() {
     let profilePic = document.getElementById('profile-pic');
     profilePic.style.top = '6%';
     profilePic.style.right = '6%';
   }
 
-  positionPictureDesktop(){
+  positionPictureDesktop() {
     let profilePic = document.getElementById('profile-pic');
     profilePic.style.top = '20%';
     profilePic.style.right = '6%';
   }
 
-  openPdf(){
+  openPdf() {
     window.open(this.pdfLink);
   }
 
