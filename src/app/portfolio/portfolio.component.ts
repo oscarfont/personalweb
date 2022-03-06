@@ -23,6 +23,7 @@ export class PortfolioComponent implements OnInit {
   option: EChartsOption;
   skillsChart: EChartsType;
   changeBackground: boolean;
+  initOpts: any;
 
   constructor(private appStateService: AppStateService) {
   }
@@ -52,7 +53,7 @@ export class PortfolioComponent implements OnInit {
             { text: 'Machine and Deep Learning', max: 100 }
           ],
           center: ['45%', '50%'],
-          radius: 216,
+          radius: '72%',
           axisName: {
             color: '#f2f3f0',
             fontFamily: 'Montserrat',
@@ -98,8 +99,9 @@ export class PortfolioComponent implements OnInit {
     };
   }
 
-  onChartInit(event) {
+  onChartInit(event: any) {
     this.skillsChart = event;
+    //console.log(event);
   }
 
   ngOnInit(): void {
@@ -115,10 +117,11 @@ export class PortfolioComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    //  console.log(event);
+  onResize(event: any) {
+    //console.log(event);
     this.changeBackground = this.appStateService.getIsMobileResolution();
     this.skillsChart.resize();
+    //console.log(this.skillsChart);
     /*console.log(this.appStateService.getIsMobileResolution());
     if(this.appStateService.getIsMobileResolution()){
       this.changeNavBarMobile();

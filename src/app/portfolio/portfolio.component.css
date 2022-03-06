@@ -29,10 +29,24 @@
     padding: 0.5rem;
 }
 
-.portfolio-thmb-img{
+.thumbnail-background{
     margin: 0.5rem;
     background-color: rgb(47, 64, 102, 0.58);
     border-radius: 0.25rem;
+}
+
+.experience-img{
+    display: block;
+    width: 100%;
+    min-width: 7.5rem;
+    max-width:9.25rem;
+}
+
+.education-img{
+    display: block;
+    width: 100%;
+    min-width: 3.5rem;
+    max-width: 6rem;
 }
 
 .stats-border{
