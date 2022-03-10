@@ -9,37 +9,30 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private toastrService : ToastrService,
-              private appStateService : AppStateService) { }
+  changeBackground: boolean;
+
+  constructor(private toastrService: ToastrService,
+    private appStateService: AppStateService) { }
 
   ngOnInit(): void {
-    if(this.appStateService.getIsMobileResolution()){
-      // MOBILE
-    }else{
-      // DESKTOP
-    }
+    this.changeBackground = this.appStateService.getIsMobileResolution();
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    /*console.log(this.appStateService.getIsMobileResolution());*/
-    if(this.appStateService.getIsMobileResolution()){
-      // MOBILE
-    }else{
-      // DESKTOP
-    }
+  onResize(event: any) {
+    this.changeBackground = this.appStateService.getIsMobileResolution();
   }
 
-  scroll(name:string) {
+  scroll(name: string) {
     let el = document.getElementById(name);
     //console.log(name);
     //console.log(el);
-    setTimeout(()=>{                           
-      el.scrollIntoView({behavior:"smooth"});
+    setTimeout(() => {
+      el.scrollIntoView({ behavior: "smooth" });
     }, 500);
   }
 
-  copyEmail(val: string, element:string){
+  copyEmail(val: string, element: string) {
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
