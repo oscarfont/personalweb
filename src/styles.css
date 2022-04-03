@@ -1,202 +1,131 @@
 /* You can add global styles to this file, and also import other style files */
-@font-face{
-    font-family: "Domine";
-    src: local("Domine"), url(./assets/fonts/Domine/Domine-Regular.ttf) format("truetype");
+@font-face {
+  font-family: "Domine";
+  src: local("Domine"), url(./assets/fonts/Domine/Domine-Regular.ttf) format("truetype");
 }
 
-@font-face{
-    font-family: "Roboto";
-    src: local("Roboto"), url(./assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(./assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
 }
 
-@font-face{
-    font-family: "Montserrat";
-    src: local("Montserrat"), url(./assets/fonts/montserrat/Montserrat-Regular.ttf) format("truetype");
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(./assets/fonts/montserrat/Montserrat-Regular.ttf) format("truetype");
 }
 
-@font-face{
-    font-family: "Hind";
-    src: local("Hind"), url(./assets/fonts/hind/Hind-Regular.ttf) format("truetype");
+@font-face {
+  font-family: "Hind";
+  src: local("Hind"), url(./assets/fonts/hind/Hind-Regular.ttf) format("truetype");
 }
 
-@font-face{
-    font-family: "Catamaran";
-    src: local("Catamaran"), url(./assets/fonts/catamaran/Catamaran-Regular.woff) format("truetype");
+@font-face {
+  font-family: "Catamaran";
+  src: local("Catamaran"), url(./assets/fonts/catamaran/Catamaran-Regular.woff) format("truetype");
 }
 
-html{
-    scroll-snap-type: y mandatory;
+html {
+  scroll-snap-type: y mandatory;
 }
 
 :root {
-    /*--main-color:#404e7c;*/
-    --main-color:#16274d;
-    --main-lighter-color: #1b2b50;
-    --secondary-color:#f2f3f0;
-    --accent-color-1: #ef9841;
-    --accent-color-2: #817c5f;
+  /* Theme color variables */
+  --main-color: #16274d;
+  --main-lighter-color: #1b2b50;
+  --secondary-color: #f2f3f0;
+  --accent-color-1: #ef9841;
+  --accent-color-2: #817c5f;
+
+  /* Typography variables */
+  --titles-font: "Domine";
+  --subtitles-font: "Montserrat";
+  --body-font: "Catamaran";
+
+  --titles-size: clamp(1rem, 4vw + 1rem, 5rem);
+  --subtitles-size: max(2vw, 1.25rem);
+  --body-size: 1rem;
 }
 
-body{
-    background-color: var(--main-color)!important;
+.accent-1 {
+  color: var(--accent-color-1);
+}
+
+.accent-2 {
+  color: var(--accent-color-2);
+}
+
+body {
+  background-color: var(--main-color) !important;
 }
 
 #app-content {
-    width: 100%;
-    background-color: var(--main-color);
+  width: 100%;
+  background-color: var(--main-color);
 }
 
-.page-title-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3.5rem 0rem 0rem 0rem;
+.page-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 0rem 0rem 0rem;
 }
 
-.page-subtitle-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3.5rem 2rem 0rem 2rem;
+.page-subtitle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 2rem 0rem 2rem;
 }
 
-.standard-card{
-    width: 100%;
-    /*border-radius: 1rem 4rem 1rem 4rem !important;*/
-    background-color: #2f4066 !important;
-    /*box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px !important;*/
-    /*filter: drop-shadow(6px 6px #557d48);*/
-    /*border: 10px dotted var(--accent-color-1)!important;*/
-}
-
-.title-text{
-    font-family: "Domine";
-    color: var(--accent-color-2);
-    font-weight: 800;
-}
-
-.subtitle-text{
-    font-family: "Montserrat";
-    color: var(--secondary-color);
-    font-weight: 600;
-}
-
-.body-text{
-    font-family: "Catamaran";
-    color: var(--secondary-color);
-}
-
-.accent-word-1{
-    color: var(--accent-color-1);
-}
-.accent-word-2{
-    color: var(--accent-color-2);
+.standard-card {
+  width: 100%;
+  background-color: #2f4066 !important;
 }
 
 .btn-outline-primary {
-    font-family: "Catamaran";
-    font-weight: bold!important;
-    color: var(--secondary-color)!important; 
-    border-color: var(--secondary-color)!important;
+  font-family: "Catamaran";
+  font-weight: bold !important;
+  color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
 }
 
 .btn-outline-primary:hover {
-    background-color: #4a598d94!important;
+  background-color: #4a598d94 !important;
 }
 
-/* DIFFERENT TEXT SIZES FOR DIFFERENT SCREEN SIZES */
-@media (min-width: 240px) {
-    .lg-text{
-        font-size: 2rem;
-    }
-    
-    .md-text{
-        font-size: 1rem;
-    }
-    
-    .sm-text{
-        font-size: 0.5rem;
-    }
-    
-    .micro-text{
-        font-size: 0.25rem;
-    }
+/* SMALL DEVICES */
+@media (max-width: 576px) {
+  :root {
+    --body-size: 0.75rem;
+  }
 }
 
-/* SMALL DEVIVCES */
-@media (min-width: 576px) {
-    .lg-text{
-        font-size: 2.5rem;
-    }
-    
-    .md-text{
-        font-size: 1rem;
-    }
-    
-    .sm-text{
-        font-size: 0.5rem;
-    }
-    
-    .micro-text{
-        font-size: 0.25rem;
-    }
+/* MEDIUM DEVICES */
+@media (min-width:576px) and (max-width:768px) {
+  :root {
+    --body-size: 1rem;
+  }
 }
 
-/*Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
-    .lg-text{
-        font-size: 3.5rem;
-    }
-    
-    .md-text{
-        font-size: 1.5rem;
-    }
-    
-    .sm-text{
-        font-size: 0.75rem;
-    }
-    
-    .micro-text{
-        font-size: 0.4rem;
-    }
+/* STANDARD VERSION DEVICES */
+@media (min-width:768px) and (max-width:992px) {
+  :root {
+    --body-size: 1rem;
+  }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-    .lg-text{
-        font-size: 4.5rem;
-    }
-
-    .md-text{
-        font-size: 1.75rem;
-    }
-
-    .sm-text{
-        font-size: 1rem;
-    }
-
-    .micro-text{
-        font-size: 0.5rem;
-    }
+/* LARGE DESKTOP DEVICES */
+@media (min-width: 992px) and (max-width:1200px) {
+  :root {
+    --body-size: 1.25rem;
+  }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
-    .lg-text{
-        font-size: 5rem;
-    }
-
-    .md-text{
-        font-size: 2rem;
-    }
-
-    .sm-text{
-        font-size: 1.25rem;
-    }
-
-    .micro-text{
-        font-size: 0.75rem;
-    }
+/* EXTRALARGE DESKTOP DEVICES */
+@media (min-width: 1200px) {
+  :root {
+    --body-size: 1.25rem;
+  }
 }
