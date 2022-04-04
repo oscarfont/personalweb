@@ -42,8 +42,9 @@ html {
   --body-font: "Catamaran";
 
   --titles-size: clamp(1rem, 4vw + 1rem, 5rem);
-  --subtitles-size: max(2vw, 1.25rem);
-  --body-size: 1rem;
+  --subtitles-size: max(1.5vw, 1.5rem);
+  --body-size: 1.25rem;
+  --micro-body-size: 1rem;
 }
 
 .accent-1 {
@@ -95,10 +96,19 @@ body {
   background-color: #4a598d94 !important;
 }
 
-/* SMALL DEVICES */
-@media (max-width: 576px) {
+/* MICRO DEVICES */
+@media (max-width: 280px) {
   :root {
     --body-size: 0.75rem;
+    --micro-body-size: 0.5rem;
+  }
+}
+
+/* SMALL DEVICES */
+@media (min-width:281px) and (max-width:576px) {
+  :root {
+    --body-size: 1rem;
+    --micro-body-size: 0.85rem;
   }
 }
 
@@ -106,6 +116,7 @@ body {
 @media (min-width:576px) and (max-width:768px) {
   :root {
     --body-size: 1rem;
+    --micro-body-size: 0.85rem;
   }
 }
 
@@ -113,6 +124,7 @@ body {
 @media (min-width:768px) and (max-width:992px) {
   :root {
     --body-size: 1rem;
+    --micro-body-size: 1rem;
   }
 }
 
@@ -120,6 +132,7 @@ body {
 @media (min-width: 992px) and (max-width:1200px) {
   :root {
     --body-size: 1.25rem;
+    --micro-body-size: 1rem;
   }
 }
 
@@ -127,5 +140,6 @@ body {
 @media (min-width: 1200px) {
   :root {
     --body-size: 1.25rem;
+    --micro-body-size: 1rem;
   }
 }
