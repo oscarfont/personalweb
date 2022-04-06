@@ -25,9 +25,6 @@
           <div echarts (chartInit)="onChartInit($event)" [options]="this.option" style="height:100%; width:100%;">
           </div>
         </div>
-        <div class="row player-personal-section">
-          <a class="btn btn-outline-primary" (click)="this.openPdf()">Check my CV</a>
-        </div>
       </div>
       <div class="row">
         <div class="col" id="preferred-stack" style="border: 1px solid red">
@@ -198,6 +195,13 @@
             <div class="col d-flex" style="justify-content: space-between; border: 1px solid red">
               <span class="section-text">Leadership</span>
               <span class="stats-description">90</span>
+            </div>
+          </div>
+          <div class="row d-flex flex-column">
+            <div class="col d-flex" style="justify-content: space-between; border: 1px solid red">
+              <span class="section-text">Wanna know more details?</span>
+              <span class="stats-description"> <a class="btn btn-outline-primary" (click)="this.openPdf()">Check my
+                  CV</a> </span>
             </div>
           </div>
         </div>
