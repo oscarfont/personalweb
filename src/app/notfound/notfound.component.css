@@ -1,18 +1,26 @@
-#message{
-    font-family: "Hind";
-    color: #001E3E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.title {
+  font-family: var(--titles-font);
+  color: var(--accent-color-1);
+  font-size: var(--subtitles-size);
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.btn.btn-primary{
-    font-family: "Montserrat";
-    font-weight: bold;
-    color: white;
-    background-color: #044179;
+.message {
+  font-family: var(--subtitles-font);
+  font-size: var(--subtitles-size);
+  color: var(--secondary-color);
 }
 
-#face-icon{
-    font-size: 10rem;
+.btn.btn-primary {
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: white;
+  background-color: #044179;
+}
+
+#face-icon {
+  font-size: 10rem;
 }
