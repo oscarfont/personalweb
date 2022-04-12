@@ -1,17 +1,43 @@
-#phrase-header{
-    margin-top: 1rem;
+#phrase-header {
+  margin-top: 1rem;
 }
 
-#contact-image{
-    width: 100%;
-    min-width: 22rem;
-    max-width: 50rem;
-    border-radius: 20rem; 
-    margin-top: 1rem;
-    padding: 1rem;
-    z-index: 1;
+#contact-image {
+  width: 100%;
+  min-width: 22rem;
+  max-width: 50rem;
+  border-radius: 20rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  z-index: 1;
 }
 
-.under-navbar{
-    margin-top: 3.5rem;
+.under-navbar {
+  margin-top: 3.5rem;
+}
+
+.form-box {
+  background-color: rgb(47, 64, 102, 0.58);
+  border: 1px solid var(--main-color);
+  color: var(--secondary-color);
+}
+
+/* typography classes */
+.quote {
+  font-family: var(--title-font);
+  font-size: var(--subtitles-size);
+  color: var(--secondary-color);
+  font-style: italic;
+}
+
+.form-header {
+  font-family: var(--subtitles-font);
+  font-size: var(--subtitles-size);
+  color: var(--accent-color-1);
+}
+
+.form-subtitles {
+  font-family: var(--subtitles-font);
+  font-size: var(--body-size);
+  color: var(--accent-color-2);
 }

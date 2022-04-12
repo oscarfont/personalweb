@@ -1,45 +1,42 @@
 <div class="container-fluid d-flex flex-column" style="height:100vh;">
-    <div *ngIf="!this.changeBackground">
+  <div *ngIf="!this.changeBackground">
+    <app-background [first]="false" [numberOfScreen]="0"></app-background>
+  </div>
+  <div class="row flex-grow-1">
+    <div class="col-12 col-lg-6 col-xl-6">
+      <div *ngIf="this.changeBackground">
         <app-background [first]="false" [numberOfScreen]="0"></app-background>
+      </div>
+      <div class="row under-navbar" style="padding: 2rem">
+        <span id="phrase-header" class="quote">One good conversation can shift the direction of change forever - Linda
+          Lam</span>
+        <img id="contact-image" src="../../assets/contact/me-and-stormi.jpg" />
+      </div>
     </div>
-    <div class="row flex-grow-1">
-        <div class="col-12 col-lg-6 col-xl-6">
-            <div *ngIf="this.changeBackground">
-                <app-background [first]="false" [numberOfScreen]="0"></app-background>
-            </div>
-            <div class="row under-navbar">
-                <span id="phrase-header" class="subtitle-text sm-text">One good conversation can shift the direction of
-                    change forever -
-                    Linda
-                    Lam</span>
-                <img id="contact-image" src="../../assets/contact/me-and-stormi.jpg" />
-            </div>
-        </div>
-        <div class="col-12 col-lg-6 col-xl-6">
-            <div *ngIf="this.changeBackground">
-                <app-background [first]="true" [numberOfScreen]="1"></app-background>
-            </div>
-            <div class="row under-navbar">
-                <span class="subtitle-text sm-text" style="z-index:1">Wanna say hi? Fill the form below :)</span>
-                <form style="width:100%; z-index:1;">
-                    <div class="form-group">
-                        <label for="email" class="subtitle-text">Email address</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                            placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="name" class="subtitle-text">Name</label>
-                        <input class="form-control" id="name" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="comment" class="subtitle-text">Comment</label>
-                        <textarea class="form-control" id="comment" rows="10"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        </div>
+    <div class="col-12 col-lg-6 col-xl-6">
+      <div *ngIf="this.changeBackground">
+        <app-background [first]="true" [numberOfScreen]="1"></app-background>
+      </div>
+      <div class="row under-navbar" style="padding: 2rem">
+        <span class="form-header" style="z-index:1">Wanna say hi? Fill the form below :)</span>
+        <form style="width:100%; z-index:1;">
+          <div class="form-group">
+            <label for="email" class="form-subtitles">Email address</label>
+            <input type="email" class="form-control form-box" id="email" aria-describedby="emailHelp"
+              placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Your email will not be shared with someone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="name" class="form-subtitles">Name</label>
+            <input class="form-control form-box" id="name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="comment" class="form-subtitles">Comment</label>
+            <textarea class="form-control form-box" id="comment" rows="10"></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline-primary">Send!</button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
