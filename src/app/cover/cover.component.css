@@ -163,7 +163,7 @@
 .carousel-title {
   font-family: var(--titles-font);
   font-size: var(--subtitles-size);
-  color: var(--secondary-color);
+  color: var(--accent-color-1);
 }
 
 .carousel-body-text {
@@ -320,7 +320,7 @@
 .project-title {
   font-family: var(--titles-font);
   font-size: var(--subtitles-size);
-  color: var(--secondary-color);
+  color: var(--accent-color-1);
 }
 
 .project-description {

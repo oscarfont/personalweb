@@ -1,11 +1,7 @@
-#phrase-header {
-  margin-top: 1rem;
-}
-
 #contact-image {
   width: 100%;
   min-width: 22rem;
-  max-width: 50rem;
+  max-width: 44rem;
   border-radius: 20rem;
   margin-top: 1rem;
   padding: 1rem;
@@ -40,4 +36,8 @@
   font-family: var(--subtitles-font);
   font-size: var(--body-size);
   color: var(--accent-color-2);
+}
+
+.accent-1 {
+  color: var(--accent-color-1);
 }
