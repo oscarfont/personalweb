@@ -17,6 +17,13 @@
   color: var(--secondary-color);
 }
 
+.stat-value {
+  font-family: var(--subtitles-font);
+  font-size: var(--micro-body-size);
+  color: var(--accent-color-2);
+  font-weight: bold;
+}
+
 /* typography classes */
 
 .player-img {
@@ -28,7 +35,7 @@
 
 #experience-row,
 #education-row {
-  margin: 0;
+  margin-bottom: var(--portfolio-rows-margin);
 }
 
 .company-img {
@@ -79,14 +86,30 @@
   border: 1px solid #f2f3f0;
 }
 
-.less-bottom-margin {
-  margin-bottom: -1rem;
-}
-
 .education-title {
   margin-left: 0.25rem;
 }
 
 .no-margin {
   margin: 0 !important;
+}
+
+/* stats cells */
+.stats-cell {
+  background-color: rgb(47, 64, 102, 0.58);
+  border-bottom: 1px solid var(--main-color);
+  border-top: 1px solid var(--main-color);
+}
+
+.padding-cell {
+  padding: 0.5rem;
+}
+
+.highlight-stat {
+  border-left: 8px solid var(--accent-color-1);
+}
+
+.float-container {
+  background-color: rgb(47, 64, 102, 0.58);
+  border: none;
 }

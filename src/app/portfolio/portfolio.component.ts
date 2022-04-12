@@ -24,11 +24,14 @@ export class PortfolioComponent implements OnInit {
   skillsChart: EChartsType;
   changeBackground: boolean;
   initOpts: any;
+  chartToolTip: Array<string>;
 
   constructor(private appStateService: AppStateService) {
+    this.chartToolTip = ["Frontend", "Backend", "Database", "DevOps", "Quality Assurance", "Object Oriented Programming", "Machine Learning"];
   }
 
   setSkillsChartOption() {
+    var labelSize = getComputedStyle(document.body).getPropertyValue('--body-size');
     this.option = {
       color: ['#67F9D8'],
       /*title: {
@@ -44,24 +47,25 @@ export class PortfolioComponent implements OnInit {
       radar: [
         {
           indicator: [
-            { text: 'Frontend', max: 100 },
-            { text: 'Backend', max: 100 },
-            { text: 'Database', max: 100 },
-            { text: 'Deployment', max: 100 },
-            { text: 'Testing', max: 100 },
-            { text: 'Object Oriented', max: 100 },
-            { text: 'Machine and Deep Learning', max: 100 }
+            { text: 'Front', max: 100 },
+            { text: 'Back', max: 100 },
+            { text: 'DB', max: 100 },
+            { text: 'DevOps', max: 100 },
+            { text: 'QA', max: 100 },
+            { text: 'OOP', max: 100 },
+            { text: 'ML', max: 100 }
           ],
           center: ['45%', '50%'],
           radius: '72%',
           axisName: {
             color: '#f2f3f0',
             fontFamily: 'Montserrat',
-            fontSize: '1rem',
+            fontSize: labelSize,
             borderRadius: 3,
-            padding: [3, 5]
+            padding: [3, 5],
+            overflow: 'break'
           },
-          shape: 'polygon'
+          shape: 'polygon',
         }
       ],
       series: [
@@ -75,7 +79,7 @@ export class PortfolioComponent implements OnInit {
           },
           data: [
             {
-              value: [80, 90, 75, 60, 80, 85, 90],
+              value: [75, 85, 90, 80, 75, 95, 95],
               name: 'My Skills (out of 100)',
               areaStyle: {
                 color: '#817c5f'
@@ -95,7 +99,27 @@ export class PortfolioComponent implements OnInit {
             },
           ],
         },
-      ]
+      ],
+      tooltip: {
+        show: true,
+        renderMode: 'html',
+        formatter: (params: any): string => {
+          let htmlList: string = '<span> My Skills (out of 100) </span><ul>'
+          for (let index = 0; index < params.value.length; index++) {
+            const tooltipName = this.chartToolTip[index];
+            const chartValue = params.value[index];
+            htmlList += '<li>' + tooltipName + ': ' + chartValue + '</li>'
+          }
+          htmlList += '</ul>';
+          return htmlList;
+        },
+        className: 'tooltip-container'
+      },
+      /*legend: {
+        data: ['My Skills (out of 100)'],
+        align: 'auto',
+        bottom: 0
+      }*/
     };
   }
 
@@ -118,8 +142,12 @@ export class PortfolioComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
+    var labelSize = getComputedStyle(document.body).getPropertyValue('--body-size');
     //console.log(event);
     this.changeBackground = this.appStateService.getIsMobileResolution();
+    var option = this.skillsChart.getOption();
+    option.radar[0].axisName.fontSize = labelSize;
+    this.skillsChart.setOption(option);
     this.skillsChart.resize();
     //console.log(this.skillsChart);
     /*console.log(this.appStateService.getIsMobileResolution());
