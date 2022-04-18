@@ -1,60 +1,61 @@
-.background{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-}
-.top-left-hexagon{
-    width: 100%;
-    max-width: 25rem;
-    min-width: 8rem;
-    max-height: 18.2rem;
-    min-height: 8.7rem; 
-    z-index: 0; 
-    position:absolute; 
-    top: 0.025rem; 
-    left:0; 
-    transform: scaleX(-1) scaleY(-1); 
-    filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
+.background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
 }
 
-.bottom-right-hexagon{
-    width: 100%;
-    max-width: 25rem;
-    min-width: 8rem;
-    max-height: 18.2rem;
-    min-height: 8.7rem; 
-    z-index: 0; 
-    position:absolute; 
-    bottom: 0; 
-    right:0; 
-    filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
+.top-left-hexagon {
+  width: 100%;
+  max-width: 25rem;
+  min-width: 8rem;
+  max-height: 18.2rem;
+  min-height: 8.7rem;
+  z-index: -1;
+  position: absolute;
+  top: 0.025rem;
+  left: 0;
+  transform: scaleX(-1) scaleY(-1);
+  filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
 }
 
-.top-right-hexagon{
-    width: 100%;
-    max-width: 25rem;
-    min-width: 8rem;
-    max-height: 18.2rem;
-    min-height: 8.7rem; 
-    z-index: 0; 
-    position:absolute; 
-    top: 0; 
-    right:0; 
-    filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
-    transform: scaleY(-1); 
+.bottom-right-hexagon {
+  width: 100%;
+  max-width: 25rem;
+  min-width: 8rem;
+  max-height: 18.2rem;
+  min-height: 8.7rem;
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
 }
 
-.bottom-left-hexagon{
-    width: 100%;
-    max-width: 25rem;
-    min-width: 8rem;
-    max-height: 18.2rem;
-    min-height: 8.7rem;  
-    z-index: 0; 
-    position:absolute; 
-    bottom: 0.025rem; 
-    left:0; 
-    filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
-    transform: scaleX(-1); 
+.top-right-hexagon {
+  width: 100%;
+  max-width: 25rem;
+  min-width: 8rem;
+  max-height: 18.2rem;
+  min-height: 8.7rem;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
+  transform: scaleY(-1);
+}
+
+.bottom-left-hexagon {
+  width: 100%;
+  max-width: 25rem;
+  min-width: 8rem;
+  max-height: 18.2rem;
+  min-height: 8.7rem;
+  z-index: -1;
+  position: absolute;
+  bottom: 0.025rem;
+  left: 0;
+  filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
+  transform: scaleX(-1);
 }
