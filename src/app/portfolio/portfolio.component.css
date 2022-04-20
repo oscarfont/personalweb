@@ -24,6 +24,10 @@
   font-weight: bold;
 }
 
+.accent-color-1 {
+  color: var(--accent-color-1);
+}
+
 /* typography classes */
 
 .player-img {
