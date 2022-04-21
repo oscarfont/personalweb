@@ -117,3 +117,16 @@
   background-color: rgb(47, 64, 102, 0.58);
   border: none;
 }
+
+#check-cv {
+  animation: pulse;
+  animation-duration: 4s;
+  /*animation-delay: 2s;*/
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, paused;
+}
+
+#cv-button {
+  margin-left: 1rem;
+  font-size: 0.8rem;
+}

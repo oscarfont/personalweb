@@ -140,7 +140,7 @@ body {
   :root {
     --body-size: 1.25rem;
     --micro-body-size: 1rem;
-    --portfolio-rows-margin: -1.2rem;
+    --portfolio-rows-margin: -1.5rem;
   }
 }
 
@@ -149,6 +149,6 @@ body {
   :root {
     --body-size: 1.25rem;
     --micro-body-size: 1rem;
-    --portfolio-rows-margin: -1.2rem;
+    --portfolio-rows-margin: -1.5rem;
   }
 }

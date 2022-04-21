@@ -11,7 +11,7 @@
 .main-heading {
   font-family: var(--titles-font);
   font-size: var(--titles-size);
-  color: var(--accent-color-2);
+  color: var(--accent-color-1);
   font-weight: bold;
 }
 
