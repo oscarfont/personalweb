@@ -1,24 +1,38 @@
-<nav id="navbar-div" class="navbar fixed-top">
-    <div class="container-fluid" style="padding: 0;">
-        <div class="row justify-content-center" style="width: 100%; margin: 0;">
-            <div class="col-1" style="padding: 0; margin-right: auto;">
-                <!--<a id="login-tab" (click)="openAuthModal()" class="nav-link"> <fa-icon id="user-icon" [icon]="userIcon"></fa-icon></a>-->
-            </div>
-            <div class="col-2" style="padding: 0;">
-                <a id="home-tab" (click)="onClick('home-tab')" class="nav-link active" routerLink="/home"> <fa-icon id="home-icon" [icon]="homeIcon"></fa-icon>Home</a>
-            </div>
-            <div class="col-2" style="padding: 0;">
-                <a id="portfolio-tab" (click)="onClick('portfolio-tab')" class="nav-link" routerLink="/portfolio"><fa-icon id="portfolio-icon" [icon]="folderIcon"></fa-icon>Portfolio</a>
-            </div>
-            <div class="col-2" style="padding: 0;">
-                <a id="blog-tab" (click)="onClick('blog-tab')" class="nav-link" routerLink="/blog"><fa-icon id="blog-icon" [icon]="blogIcon"></fa-icon>Blog</a>
-            </div>
-            <div class="col-2" style="padding: 0;">
-                <a id="contact-tab" (click)="onClick('contact-tab')" class="nav-link" routerLink="/contact"> <fa-icon id="contact-icon" [icon]="inboxIcon"></fa-icon>Contact</a>
-            </div>
-            <div class="col-1" style="padding: 0; margin-left: auto;">
-                <a id="login-tab" (click)="openAuthModal()" class="nav-link"> <fa-icon id="user-icon" [icon]="userIcon"></fa-icon></a>
-            </div>
-        </div>
+<nav id="navbar-div" [ngClass]="'navbar ' + navbarClass">
+  <div class="container-fluid" style="padding: 0;">
+    <div class="row d-flex align-items-center justify-content-center" style="width: 100%; margin: 0;">
+      <div id="fake-option" class="col-1" style="padding: 0; margin-right: auto;">
+        <!--<a id="login-tab" (click)="openAuthModal()" class="nav-link"> <fa-icon id="user-icon" [icon]="userIcon"></fa-icon></a>-->
+      </div>
+      <div class="col" style="padding: 0;">
+        <a id="home-tab" (click)="onClick('home-tab')" class="nav-link active" routerLink="/home">
+          <fa-icon id="home-icon" [icon]="homeIcon"></fa-icon>
+          <span id="home-title">Home</span>
+        </a>
+      </div>
+      <div class="col" style="padding: 0;">
+        <a id="portfolio-tab" (click)="onClick('portfolio-tab')" class="nav-link" routerLink="/portfolio">
+          <fa-icon id="portfolio-icon" [icon]="folderIcon"></fa-icon>
+          <span id="portfolio-title">Portoflio</span>
+        </a>
+      </div>
+      <div class="col" style="padding: 0;">
+        <a id="blog-tab" (click)="onClick('blog-tab')" class="nav-link" routerLink="/blog">
+          <fa-icon id="blog-icon" [icon]="blogIcon"></fa-icon>
+          <span id="blog-title">Blog</span>
+        </a>
+      </div>
+      <div class="col" style="padding: 0;">
+        <a id="contact-tab" (click)="onClick('contact-tab')" class="nav-link" routerLink="/contact">
+          <fa-icon id="contact-icon" [icon]="inboxIcon"></fa-icon>
+          <span id="contact-title">Contact</span>
+        </a>
+      </div>
+      <div [ngClass]="authClass" style="padding: 0;">
+        <a id="login-tab" (click)="openAuthModal()" class="nav-link">
+          <fa-icon id="user-icon" [icon]="userIcon"></fa-icon>
+        </a>
+      </div>
     </div>
+  </div>
 </nav>
