@@ -1,17 +1,8 @@
-<div *ngIf="this.first" class="background row">
-    <div class="col">
-        <img src="../../assets/quarter-hexagon-3.png" class="top-left-hexagon" [id]="'top-left-corner-'+this.numberOfScreen.toString()">
-    </div>
-    <div class="col">
-        <img src="../../assets/quarter-hexagon-3.png" class="bottom-right-hexagon" [id]="'bottom-right-corner-'+this.numberOfScreen.toString()">
-    </div>
-</div>
-
-<div *ngIf="!this.first" class="background row">
-    <div class="col">
-        <img src="../../assets/quarter-hexagon-3.png" class="bottom-left-hexagon" [id]="'bottom-left-corner-'+this.numberOfScreen.toString()">
-    </div>
-    <div class="col">
-        <img src="../../assets/quarter-hexagon-3.png" class="top-right-hexagon" [id]="'top-right-corner-'+this.numberOfScreen.toString()">
-    </div>
+<div class="background row">
+  <div class="col">
+    <img *ngIf="leftHex" [src]="'../../assets/'+leftHex+'.png'" [ngClass]="leftHexPos+'-'+leftHex">
+  </div>
+  <div class="col">
+    <img *ngIf="rightHex" [src]="'../../assets/'+rightHex+'.png'" [ngClass]="rightHexPos+'-'+rightHex">
+  </div>
 </div>

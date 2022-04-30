@@ -26,7 +26,18 @@ export class PortfolioComponent implements OnInit {
   initOpts: any;
   chartToolTip: Array<string>;
 
+  backgroundRight: { name: string, pos: string };
+  backgroundLeft: { name: string, pos: string };
+
   constructor(private appStateService: AppStateService) {
+    this.backgroundRight = {
+      name: 'quarter-hexagon',
+      pos: 'top-right'
+    }
+    this.backgroundLeft = {
+      name: 'quarter-hexagon',
+      pos: 'bottom-left'
+    }
     this.chartToolTip = ["Frontend", "Backend", "Database", "DevOps", "Quality Assurance", "Object Oriented Programming", "Machine Learning"];
   }
 
@@ -34,16 +45,6 @@ export class PortfolioComponent implements OnInit {
     var labelSize = getComputedStyle(document.body).getPropertyValue('--body-size');
     this.option = {
       color: ['#67F9D8'],
-      /*title: {
-        text: 'Software Engineering Skills',
-        bottom: '96%',
-        left: '8%',
-        textStyle : {
-          fontFamily : 'Domine',
-          color: '#f2f3f0',
-          fontSize: '1.5rem'
-        }
-      },*/
       radar: [
         {
           indicator: [
@@ -114,28 +115,15 @@ export class PortfolioComponent implements OnInit {
           return htmlList;
         },
         className: 'tooltip-container'
-      },
-      /*legend: {
-        data: ['My Skills (out of 100)'],
-        align: 'auto',
-        bottom: 0
-      }*/
+      }
     };
   }
 
   onChartInit(event: any) {
     this.skillsChart = event;
-    //console.log(event);
   }
 
   ngOnInit(): void {
-    /*if(this.appStateService.getIsMobileResolution()){
-      this.changeNavBarMobile();
-      this.positionPictureMobile();
-    }else{
-      this.changeNavBarToDesktop();
-      this.positionPictureDesktop();
-    }*/
     this.changeBackground = this.appStateService.getIsMobileResolution();
     this.setSkillsChartOption();
   }
@@ -143,68 +131,11 @@ export class PortfolioComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     var labelSize = getComputedStyle(document.body).getPropertyValue('--body-size');
-    //console.log(event);
     this.changeBackground = this.appStateService.getIsMobileResolution();
     var option = this.skillsChart.getOption();
     option.radar[0].axisName.fontSize = labelSize;
     this.skillsChart.setOption(option);
     this.skillsChart.resize();
-    //console.log(this.skillsChart);
-    /*console.log(this.appStateService.getIsMobileResolution());
-    if(this.appStateService.getIsMobileResolution()){
-      this.changeNavBarMobile();
-      this.positionPictureMobile();
-    }else{
-      this.changeNavBarToDesktop();
-      this.positionPictureDesktop();
-    }*/
-  }
-
-  scroll(name) {
-    let el = document.getElementById(name);
-    //console.log(name);
-    //console.log(el);
-    setTimeout(() => {
-      el.scrollIntoView({ behavior: "smooth" });
-    }, 500);
-  }
-
-  changeNavBarMobile() {
-    // do not move top of profile pic
-    /*let profilePic = document.getElementById('profile-pic');
-    profilePic.style.top = '8rem';*/
-    // change navbar pills and content
-    let tagCol = document.getElementById('sections-column');
-    tagCol.className = 'row';
-    let sections = document.getElementById('v-pills-tab');
-    sections.className = 'nav nav-pills';
-    let pillsContent = document.getElementById('sections-content');
-    pillsContent.className = 'row';
-  }
-
-  changeNavBarToDesktop() {
-    // do not move top of profile pic
-    /*let profilePic = document.getElementById('profile-pic');
-    profilePic.style.top = '12rem';*/
-    // change navbar pills and content
-    let tagCol = document.getElementById('sections-column');
-    tagCol.className = 'col-6 col-sm-2';
-    let sections = document.getElementById('v-pills-tab');
-    sections.className = 'nav flex-column nav-pills';
-    let pillsContent = document.getElementById('sections-content');
-    pillsContent.className = 'col-6 col-sm-10';
-  }
-
-  positionPictureMobile() {
-    let profilePic = document.getElementById('profile-pic');
-    profilePic.style.top = '6%';
-    profilePic.style.right = '6%';
-  }
-
-  positionPictureDesktop() {
-    let profilePic = document.getElementById('profile-pic');
-    profilePic.style.top = '20%';
-    profilePic.style.right = '6%';
   }
 
   openPdf() {

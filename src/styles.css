@@ -48,6 +48,9 @@ html {
 
   /* some margins */
   --portfolio-rows-margin: -1.2rem;
+
+  /* mobile devices vh */
+  --height-of-slide: 100vh;
 }
 
 .accent-1 {
@@ -105,6 +108,7 @@ body {
     --body-size: 0.75rem;
     --micro-body-size: 0.5rem;
     --portfolio-rows-margin: 0rem;
+    --height-of-slide: 93vh;
   }
 }
 
@@ -114,6 +118,7 @@ body {
     --body-size: 1rem;
     --micro-body-size: 0.85rem;
     --portfolio-rows-margin: 0rem;
+    --height-of-slide: 93vh;
   }
 }
 

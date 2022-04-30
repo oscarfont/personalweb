@@ -1,12 +1,14 @@
 <div class="container-fluid d-flex flex-column" id="portfolio-page">
   <div *ngIf="!this.changeBackground">
-    <app-background [first]="false" [numberOfScreen]="0"></app-background>
+    <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
+      [rightHexPos]="backgroundRight.pos">
+    </app-background>
   </div>
   <div class="row flex-grow-1 no-margin">
     <div class="col-12 col-lg-6 col-xl-6">
-      <div *ngIf="this.changeBackground">
+      <!--<div *ngIf="this.changeBackground">
         <app-background [first]="false" [numberOfScreen]="0"></app-background>
-      </div>
+      </div>-->
       <div class="row" style="margin-top: 3.5rem;">
         <div class="col-5 d-flex flex-row-reverse">
           <img src="../../assets/portfolio/profile-pic-transparent.png" class="player-img" />
@@ -83,9 +85,9 @@
       </div>
     </div>
     <div class="col-12 col-lg-6 col-xl-6">
-      <div *ngIf="this.changeBackground">
+      <!--<div *ngIf="this.changeBackground">
         <app-background [first]="true" [numberOfScreen]="1"></app-background>
-      </div>
+      </div>-->
       <div class="row" style="margin-top: 3.5rem;">
         <div class="col-4 col-lg-2 col-xl-2">
           <img src="../../assets/portfolio/gopick-logo.jpeg" class="company-img" />

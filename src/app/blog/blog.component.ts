@@ -9,31 +9,41 @@ import { AuthService } from 'src/services/auth.service';
 })
 export class BlogComponent implements OnInit {
 
-  blogPostList : any[] = [];
-  userCookie : string;
-  userName : string;
+  blogPostList: any[] = [];
+  userCookie: string;
+  userName: string;
+  backgroundRight: { name: string, pos: string };
+  backgroundLeft: { name: string, pos: string };
 
-  constructor(private blogService : BlogService, public authService: AuthService) {
-    if(this.authService.isUserLoggedIn()){
+  constructor(private blogService: BlogService, public authService: AuthService) {
+    this.backgroundRight = {
+      name: 'quarter-hexagon',
+      pos: 'bottom-right'
+    }
+    this.backgroundLeft = {
+      name: 'quarter-hexagon',
+      pos: 'top-left'
+    }
+    if (this.authService.isUserLoggedIn()) {
       this.userCookie = this.authService.getCookie('token');
       this.userName = this.authService.getCookie('username');
-    } 
+    }
     this.blogService.getAllBlogs().forEach((req) => {
-      req.subscribe((res : any)=>{
+      req.subscribe((res: any) => {
         //console.log(res.data);
-        for(let i = 0; i<res.data.length; i++){
+        for (let i = 0; i < res.data.length; i++) {
           this.blogPostList.push(res.data[i]);
         }
-      },(error : any) => {console.log(error)});
+      }, (error: any) => { console.log(error) });
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  deletePost(category, id){
-    this.blogService.deleteBlog(category,id).subscribe((data)=>{
+  deletePost(category, id) {
+    this.blogService.deleteBlog(category, id).subscribe((data) => {
       console.log('SUCCESS');
-    },(error)=>{console.log(error);});
+    }, (error) => { console.log(error); });
   }
 
 }

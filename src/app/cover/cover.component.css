@@ -3,6 +3,7 @@
 #projects-page,
 #contact-page {
   height: 100vh;
+  background-color: var(--main-color);
   z-index: 2;
   scroll-snap-align: start;
 }
@@ -137,13 +138,6 @@
 
 .items-list.cdk-drop-list-dragging .item-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-#experience-page,
-#projects-page,
-#contact-page {
-  height: 100vh;
-  background-color: var(--main-color);
 }
 
 /* EXPERIENCE typography classes */
