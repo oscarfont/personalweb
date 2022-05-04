@@ -9,8 +9,19 @@ import { faFrown } from '@fortawesome/free-solid-svg-icons';
 export class NotfoundComponent implements OnInit {
 
   sadFaceIcon = faFrown;
+  backgroundRight: { name: string, pos: string };
+  backgroundLeft: { name: string, pos: string };
 
-  constructor() { }
+  constructor() {
+    this.backgroundRight = {
+      name: 'quarter-hexagon',
+      pos: 'bottom-right'
+    }
+    this.backgroundLeft = {
+      name: 'quarter-hexagon',
+      pos: 'top-left'
+    }
+  }
 
   ngOnInit(): void {
   }
