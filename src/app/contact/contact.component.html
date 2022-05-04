@@ -2,20 +2,37 @@
   <!--<div *ngIf="!this.changeBackground">
     <app-background [first]="false" [numberOfScreen]="0"></app-background>
   </div>-->
-  <div class="row flex-grow-1">
-    <div class="col-12 col-lg-6 col-xl-6">
+  <div class="row">
+    <div [ngClass]="'col-12 col-lg-6 col-xl-6 ' + columnClass">
       <!--<div *ngIf="this.changeBackground">
         <app-background [first]="false" [numberOfScreen]="0"></app-background>
       </div>-->
-      <div class="row d-flex flex-row justify-content-center under-navbar"
-        style="padding: 2rem; position: relative; z-index: 2;">
-        <span class="quote" style="text-align: center;">"One good conversation can shift the direction of change
-          forever"
-          - <span class="accent-1">Linda Lam</span></span>
-        <img id="contact-image" src="../../assets/contact/me-and-stormi.jpg" />
+      <div class="row d-flex flex-column under-navbar h-100" style="padding: 2rem; position: relative; z-index: 2;">
+        <div class="row">
+          <span class="quote" style="text-align: center;">"One good conversation can shift the direction of change
+            forever"
+            - <span class="accent-1">Linda Lam</span></span>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <img id="contact-image" src="../../assets/contact/me-and-stormi.jpg" />
+        </div>
+        <div *ngIf="isMobile" class="row flex flex-column flex-grow-1 align-items-center justify-content-center">
+          <div class="row" style="color: white; text-align: center;">
+            Follow my path on social media
+          </div>
+          <div class="row" style="color: white; text-align: center;">
+            LINKEDIN
+          </div>
+          <div class="row" style="color: white; text-align: center;">
+            GITHUB
+          </div>
+          <div class="row" style="color: white; text-align: center;">
+            TWITTER
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-12 col-lg-6 col-xl-6">
+    <div [ngClass]="'col-12 col-lg-6 col-xl-6 ' + columnClass">
       <!--<div *ngIf="this.changeBackground">
         <app-background [first]="true" [numberOfScreen]="1"></app-background>
       </div>-->
@@ -41,7 +58,10 @@
       </div>
     </div>
   </div>
-  <div class="row flex flex-row flex-grow-1 align-items-center justify-content-center">
+  <div *ngIf="!isMobile" class="row flex flex-row flex-grow-1 align-items-center justify-content-center">
+    <div class="col-12" style="color: white; text-align: center;">
+      ¡Or follow my path on Social Media!
+    </div>
     <div class="col" style="color: white; text-align: center;">
       LINKEDIN
     </div>

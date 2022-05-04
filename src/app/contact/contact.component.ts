@@ -9,18 +9,21 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ContactComponent implements OnInit {
 
-  changeBackground: boolean;
+  isMobile: boolean;
+  columnClass: string;
 
   constructor(private toastrService: ToastrService,
     private appStateService: AppStateService) { }
 
   ngOnInit(): void {
-    this.changeBackground = this.appStateService.getIsMobileResolution();
+    this.isMobile = this.appStateService.getIsMobileResolution();
+    this.columnClass = this.isMobile ? 'vh-100' : '';
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.changeBackground = this.appStateService.getIsMobileResolution();
+    this.isMobile = this.appStateService.getIsMobileResolution();
+    this.columnClass = this.isMobile ? 'vh-100' : '';
   }
 
   scroll(name: string) {
