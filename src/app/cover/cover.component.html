@@ -1,5 +1,6 @@
 <div class="container-fluid d-flex flex-column" id="cover-page">
-  <!--<app-background [first]="true" [numberOfScreen]="0"></app-background>-->
+  <app-background [leftHex]="coverBackground.leftHex" [leftHexPos]="coverBackground.leftHexPos"
+    [rightHex]="coverBackground.rightHex" [rightHexPos]="coverBackground.rightHexPos"></app-background>
   <div class="row flex-grow-1 body-row">
     <div class="col-6 d-flex flex-column align-items-center">
       <img src="../../assets/me-transparent-2.png" class="flex-grow-1" id="cover-pic">
@@ -17,14 +18,16 @@
       </div>
       <div class="card standard-card" id="game-card">
         <div class="card-body" id="game-card-body" style="padding: 2rem;">
-          <p class="game-instructions"><span class="accent-1">Order</span> as <span class="accent-2">fast</span> as you
+          <p class="game-instructions"><span class="accent-1">Order</span> as <span class="accent-2">fast</span> as
+            you
             can the following list from smaller to largest,
             left to right respectively, dragging the numbers!</p>
           <h6 class="timer">Timer: <span class="accent-2">{{this.timerString}}</span> s</h6>
           <div id="item-user-list" cdkDropList cdkDropListOrientation="horizontal" class="items-list"
             (cdkDropListDropped)="drop($event)">
             <div *ngFor="let number of this.numbersArray" [id]="'element_'+this.numbersArray.indexOf(number)"
-              class="item-box" cdkDrag [cdkDragDisabled]="this.startBool"><span class="sm-text">{{number}}</span></div>
+              class="item-box" cdkDrag [cdkDragDisabled]="this.startBool"><span class="sm-text">{{number}}</span>
+            </div>
           </div>
           <div class="d-flex flex-row align-items-end">
             <button type="button" class="btn btn-outline-primary" (click)="startGame()"
@@ -51,7 +54,8 @@
           <div id="item-sol-list" cdkDropList cdkDropListOrientation="horizontal" class="items-list"
             (cdkDropListDropped)="drop($event)" style="display:none;">
             <div *ngFor="let number of this.numbersArray" [id]="'element_'+this.numbersArray.indexOf(number)"
-              class="item-box" cdkDrag [cdkDragDisabled]="this.startBool"><span class="sm-text">{{number}}</span></div>
+              class="item-box" cdkDrag [cdkDragDisabled]="this.startBool"><span class="sm-text">{{number}}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -59,8 +63,7 @@
   </div>
 </div>
 <div class="container-fluid d-flex flex-column" id="experience-page">
-  <!--<app-background [first]="false" [numberOfScreen]="1"></app-background>-->
-
+  <app-background [leftHex]="projectsBackground.leftHex" [leftHexPos]="projectsBackground.leftHexPos"></app-background>
   <div class="row d-flex flex-grow-1 align-items-center justify-content-center">
     <div id="experienceCarousel" class="card standard-card carousel slide" data-ride="carousel" data-aos="zoom-in-up">
       <ol class="carousel-indicators">
@@ -137,7 +140,8 @@
   </div>
 </div>
 <div class="container-fluid d-flex flex-column" id="projects-page">
-  <!--<app-background [first]="true" [numberOfScreen]="2"></app-background>-->
+  <app-background [rightHex]="experienceBackground.rightHex" [rightHexPos]="experienceBackground.rightHexPos">
+  </app-background>
   <div class="row d-flex flex-grow-1 align-items-center justify-content-center">
     <div class="row">
       <div class="col-12 col-lg col-xl">
@@ -181,8 +185,8 @@
   </div>
 </div>
 <div class="container-fluid d-flex flex-column" id="contact-page">
-  <!--<app-background [first]="false" [numberOfScreen]="3"></app-background>-->
-
+  <app-background [leftHex]="testiomonialBackground.leftHex" [leftHexPos]="testiomonialBackground.leftHexPos">
+  </app-background>
   <div class="row d-flex flex-column flex-grow-1 align-items-center justify-content-center">
     <div class="subtitle-heading" style="margin-bottom: 4rem;">What colleagues say about me...
     </div>
