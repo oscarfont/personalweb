@@ -59,7 +59,7 @@ export class CoverComponent implements OnInit {
       rightHexPos: 'bottom-right'
     }
     this.testiomonialBackground = {
-      leftHex: 'quarter-hexagon',
+      leftHex: 'hexagon',
       leftHexPos: 'bottom-left'
     }
   }
