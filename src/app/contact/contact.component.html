@@ -1,12 +1,16 @@
 <div class="container-fluid d-flex flex-column" style="height:100vh;">
-  <!--<div *ngIf="!this.changeBackground">
-    <app-background [first]="false" [numberOfScreen]="0"></app-background>
-  </div>-->
+  <div *ngIf="!this.changeBackground">
+    <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
+      [rightHexPos]="backgroundRight.pos">
+    </app-background>
+  </div>
   <div class="row">
     <div [ngClass]="'col-12 col-lg-6 col-xl-6 ' + columnClass">
-      <!--<div *ngIf="this.changeBackground">
-        <app-background [first]="false" [numberOfScreen]="0"></app-background>
-      </div>-->
+      <div *ngIf="this.changeBackground">
+        <app-background [leftHex]="slide1Background.leftHex" [leftHexPos]="slide1Background.leftHexPos"
+          [rightHex]="slide1Background.rightHex" [rightHexPos]="slide1Background.rightHexPos">
+        </app-background>
+      </div>
       <div class="row d-flex flex-column under-navbar h-100" style="padding: 2rem; position: relative; z-index: 2;">
         <div class="row">
           <span class="quote" style="text-align: center;">"One good conversation can shift the direction of change
@@ -33,9 +37,10 @@
       </div>
     </div>
     <div [ngClass]="'col-12 col-lg-6 col-xl-6 ' + columnClass">
-      <!--<div *ngIf="this.changeBackground">
-        <app-background [first]="true" [numberOfScreen]="1"></app-background>
-      </div>-->
+      <div *ngIf="this.changeBackground">
+        <app-background [leftHex]="slide2Background.leftHex" [leftHexPos]="slide2Background.leftHexPos">
+        </app-background>
+      </div>
       <div class="row under-navbar" style="padding: 2rem">
         <span class="form-header" style="z-index:1">Shall we have a chat? Fill the form below then!</span>
         <form style="width:100%; z-index:1;">

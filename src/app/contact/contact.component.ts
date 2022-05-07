@@ -12,17 +12,51 @@ export class ContactComponent implements OnInit {
   isMobile: boolean;
   columnClass: string;
 
+  // desktop background config
+  changeBackground: boolean;
+  backgroundRight: { name: string, pos: string };
+  backgroundLeft: { name: string, pos: string };
+
+  // mobile background config
+  slide1Background: any;
+  slide2Background: any;
+
   constructor(private toastrService: ToastrService,
-    private appStateService: AppStateService) { }
+    private appStateService: AppStateService) {
+
+    // set background configs
+    this.backgroundRight = {
+      name: 'quarter-hexagon',
+      pos: 'bottom-right'
+    }
+    this.backgroundLeft = {
+      name: 'quarter-hexagon',
+      pos: 'top-left'
+    }
+
+    this.slide1Background = {
+      rightHex: 'hexagon',
+      rightHexPos: 'bottom-right',
+      leftHex: 'quarter-hexagon',
+      leftHexPos: 'top-left'
+    }
+    this.slide2Background = {
+      leftHex: 'quarter-hexagon',
+      leftHexPos: 'bottom-left'
+    }
+
+  }
 
   ngOnInit(): void {
     this.isMobile = this.appStateService.getIsMobileResolution();
+    this.changeBackground = this.isMobile ? true : false;
     this.columnClass = this.isMobile ? 'vh-100' : '';
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.isMobile = this.appStateService.getIsMobileResolution();
+    this.changeBackground = this.isMobile ? true : false;
     this.columnClass = this.isMobile ? 'vh-100' : '';
   }
 
