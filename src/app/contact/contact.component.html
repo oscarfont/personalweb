@@ -1,4 +1,4 @@
-<div class="container-fluid d-flex flex-column" style="height:100vh;">
+<div class="container-fluid d-flex flex-column">
   <div *ngIf="!this.changeBackground">
     <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
       [rightHexPos]="backgroundRight.pos">
@@ -11,7 +11,7 @@
           [rightHex]="slide1Background.rightHex" [rightHexPos]="slide1Background.rightHexPos">
         </app-background>
       </div>
-      <div class="row d-flex flex-column under-navbar h-100" style="padding: 2rem; position: relative; z-index: 2;">
+      <div class="row d-flex flex-column under-navbar h-100" style="padding: 1.5rem; position: relative; z-index: 2;">
         <div class="row">
           <span class="quote" style="text-align: center;">"One good conversation can shift the direction of change
             forever"

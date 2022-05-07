@@ -1,54 +1,72 @@
 /*NAVBAR STANDAR COLORS*/
-.navbar{
-    background-color: transparent;
-    padding: 0;
-    margin-top: 0;
-    height: 3.5rem;
+.navbar {
+  background-color: transparent;
+  padding: 0;
+  margin-top: 0;
+  height: 3.5rem;
 }
 
 /*NAVBAR STANDARD OPTION*/
-.nav-link{
-    font-family: "Montserrat";
-    font-size: large;
-    text-align: center;
-    color: var(--secondary-color);
-    padding: 0.5rem;
-    /*text-shadow: 2px 2px #f2f2f2;*/
+.nav-link {
+  font-family: "Montserrat";
+  font-size: large;
+  text-align: center;
+  color: var(--secondary-color);
+  /*text-shadow: 2px 2px #f2f2f2;*/
 }
 
 /*NAVBAR OPTION MOUSE HOVER*/
-.nav-link:hover, .nav-link:hover #home-icon, .nav-link:hover #portfolio-icon, .nav-link:hover #blog-icon, .nav-link:hover #contact-icon, .nav-link:hover #user-icon{
-    /*background-color: var(--main-color);*/
-    color: var(--accent-color-1);
-    /*border-radius: 0.25rem 1rem 0.25rem 1rem;*/
+.nav-link:hover,
+.nav-link:hover #home-icon,
+.nav-link:hover #portfolio-icon,
+.nav-link:hover #blog-icon,
+.nav-link:hover #contact-icon,
+.nav-link:hover #user-icon {
+  /*background-color: var(--main-color);*/
+  color: var(--accent-color-1);
+  /*border-radius: 0.25rem 1rem 0.25rem 1rem;*/
 }
 
 /*NAVBAR OPTION SELECTED*/
-.nav-link.active{
-    font-family: "Montserrat";
-    font-weight: bold;
-    color: /*#f2f2f2;*/var(--accent-color-1);
-    /*background-color: var(--main-color);
+.nav-link.active {
+  font-family: "Montserrat";
+  font-weight: bold;
+  color:
+    /*#f2f2f2;*/
+    var(--accent-color-1);
+  /*background-color: var(--main-color);
     border-radius: 0.25rem 1rem 0.25rem 1rem;*/
-    /*text-shadow: 2px 2px #557d48;*/
+  /*text-shadow: 2px 2px #557d48;*/
 }
 
-#home-tab, #portfolio-tab, #blog-tab, #contact-tab,#login-tab{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    cursor: pointer;
+#home-tab,
+#portfolio-tab,
+#blog-tab,
+#contact-tab,
+#login-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  cursor: pointer;
 }
 
-.nav-link #home-icon, .nav-link #portfolio-icon, .nav-link #blog-icon, .nav-link #contact-icon, .nav-link #user-icon{
-    margin-right: 1rem;
-    color: var(--secondary-color);
-    /*filter:drop-shadow(2px 2px #f2f2f2);*/
+.nav-link #home-icon,
+.nav-link #portfolio-icon,
+.nav-link #blog-icon,
+.nav-link #contact-icon,
+.nav-link #user-icon {
+  margin-right: 1rem;
+  color: var(--secondary-color);
+  /*filter:drop-shadow(2px 2px #f2f2f2);*/
 }
 
-.nav-link.active #home-icon, .nav-link.active #portfolio-icon, .nav-link.active #blog-icon, .nav-link.active #contact-icon, .nav-link.active #user-icon{
-    margin-right: 1rem;
-    color: var(--accent-color-1);
-    /*filter:drop-shadow(2px 2px #557d48);*/
+.nav-link.active #home-icon,
+.nav-link.active #portfolio-icon,
+.nav-link.active #blog-icon,
+.nav-link.active #contact-icon,
+.nav-link.active #user-icon {
+  margin-right: 1rem;
+  color: var(--accent-color-1);
+  /*filter:drop-shadow(2px 2px #557d48);*/
 }
