@@ -26,18 +26,36 @@ export class PortfolioComponent implements OnInit {
   initOpts: any;
   chartToolTip: Array<string>;
 
+  // desktop background config
   backgroundRight: { name: string, pos: string };
   backgroundLeft: { name: string, pos: string };
 
+  // mobile background config
+  slide1Background: any;
+  slide2Background: any;
+
   constructor(private appStateService: AppStateService) {
+    // set background configs
     this.backgroundRight = {
       name: 'quarter-hexagon',
-      pos: 'top-right'
+      pos: 'bottom-right'
     }
     this.backgroundLeft = {
       name: 'quarter-hexagon',
-      pos: 'bottom-left'
+      pos: 'top-left'
     }
+
+    this.slide1Background = {
+      rightHex: 'hexagon',
+      rightHexPos: 'bottom-right',
+      leftHex: 'quarter-hexagon',
+      leftHexPos: 'top-left'
+    }
+    this.slide2Background = {
+      leftHex: 'quarter-hexagon',
+      leftHexPos: 'bottom-left'
+    }
+
     this.chartToolTip = ["Frontend", "Backend", "Database", "DevOps", "Quality Assurance", "Object Oriented Programming", "Machine Learning"];
   }
 

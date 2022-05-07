@@ -86,14 +86,14 @@ export class CoverComponent implements OnInit {
     return true;
   }
 
-  swap(arr, xp, yp) {
+  swap(arr: Array<number>, xp: number, yp: number) {
     var temp = arr[xp];
     arr[xp] = arr[yp];
     arr[yp] = temp;
   }
 
   // An optimized version of Bubble Sort
-  bubbleSort(arr, n) {
+  bubbleSort(arr: Array<number>, n: number) {
     var i, j;
     for (i = 0; i < n; i++) {
       for (j = 0; j < n - 1; j++) {
@@ -201,49 +201,4 @@ export class CoverComponent implements OnInit {
       this.timerString = (Math.round((this.timer += 0.1) * 100) / 100).toFixed(1);
     }, 100);
   }
-
-  /*scrollTo(isUp){
-  if(isUp == true){
-    this.currentPageIndex -= 1;
-    this.currentPageIndex = this.currentPageIndex < 0 ? this.coverPagesId.length - 1 : this.currentPageIndex;
-  }else{
-    this.currentPageIndex += 1;
-    this.currentPageIndex = this.currentPageIndex > this.coverPagesId.length - 1 ? 0 : this.currentPageIndex;
-  }
-  console.log(this.currentPageIndex);
-  let elementName = this.coverPagesId[this.currentPageIndex];
-  console.log(elementName);
-  let elmnt = document.getElementById(elementName);
-  //elmnt.scrollIntoView({block: "end", behavior: "smooth"});
-  this.scrollTimeout = setTimeout(() => {
-    elmnt.scrollIntoView({block: "end", behavior: "smooth"});
-  },1000);
-}
-
-checkAutoScrollFinished(){
-  this.isAutoScrollOn = window.pageYOffset % window.innerHeight == 0 ? false : true;
-  if(this.isAutoScrollOn) clearTimeout(this.scrollTimeout);
-  console.log(this.isAutoScrollOn);
-}
-
-@HostListener('window:scroll', ['$event'])
-scrollListener(event:any) {
-  if(this.isAutoScrollOn == false){
-    //console.log("auto scroll is not on :)");
-    if (window.pageYOffset > this.lastScrollTop) {
-      this.scrollTo(false);
-      this.isAutoScrollOn = true;
-      this.lastScrollTop = window.pageYOffset + window.innerHeight;
-      console.log("scroll down");
-    } else if(window.pageYOffset < this.lastScrollTop){
-      this.scrollTo(true);
-      this.isAutoScrollOn = true;
-      this.lastScrollTop = window.pageYOffset - window.innerHeight
-      console.log("scroll up");
-    }
-  }else{
-    this.checkAutoScrollFinished();
-    this.lastScrollTop = window.pageYOffset;
-  }
-}*/
 }
