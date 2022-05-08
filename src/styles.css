@@ -106,7 +106,7 @@ body {
   :root {
     --body-size: 0.75rem;
     --micro-body-size: 0.5rem;
-    --portfolio-rows-margin: 0rem;
+    --portfolio-rows-margin: 1.5rem;
     --height-of-slide: 93vh;
   }
 }
@@ -116,7 +116,7 @@ body {
   :root {
     --body-size: 1rem;
     --micro-body-size: 0.85rem;
-    --portfolio-rows-margin: 0rem;
+    --portfolio-rows-margin: 1.5rem;
     --height-of-slide: 93vh;
   }
 }
