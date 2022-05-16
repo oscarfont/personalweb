@@ -1,4 +1,4 @@
-<div class="container-fluid d-flex flex-column">
+<div class="container-fluid">
   <div *ngIf="!this.changeBackground">
     <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
       [rightHexPos]="backgroundRight.pos">
@@ -11,16 +11,16 @@
           [rightHex]="slide1Background.rightHex" [rightHexPos]="slide1Background.rightHexPos">
         </app-background>
       </div>
-      <div class="row d-flex flex-column under-navbar h-100" style="padding: 1.5rem; position: relative; z-index: 2;">
-        <div class="row">
-          <span class="quote" style="text-align: center;">"One good conversation can shift the direction of change
+      <div class="row d-flex flex-column under-navbar h-100" style="position: relative; z-index: 2;">
+        <div style="padding: 1rem 0.25rem 1rem 0.25rem; text-align: center;">
+          <span class="quote">"One good conversation can shift the direction of change
             forever"
             - <span class="accent-1">Linda Lam</span></span>
         </div>
-        <div class="row d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
           <img id="contact-image" src="../../assets/contact/me-and-stormi.jpg" />
         </div>
-        <div *ngIf="isMobile" class="row flex flex-column flex-grow-1 align-items-center justify-content-center">
+        <div *ngIf="isMobile" class="d-flex flex-column flex-grow-1 align-items-center justify-content-center">
           <div class="row" style="color: white; text-align: center;">
             Follow my path on social media
           </div>
@@ -41,7 +41,7 @@
         <app-background [leftHex]="slide2Background.leftHex" [leftHexPos]="slide2Background.leftHexPos">
         </app-background>
       </div>
-      <div class="row under-navbar" style="padding: 2rem">
+      <div class="row under-navbar" style="padding: 1rem">
         <span class="form-header" style="z-index:1">Shall we have a chat? Fill the form below then!</span>
         <form style="width:100%; z-index:1;">
           <div class="form-group">
