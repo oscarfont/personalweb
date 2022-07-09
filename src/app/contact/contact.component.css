@@ -41,3 +41,16 @@
 .accent-1 {
   color: var(--accent-color-1);
 }
+
+.social-media-icon {
+  width: 100%;
+  max-width: 4rem;
+  min-width: 2rem;
+}
+
+.social-media-title,
+.social-media-title-mobile {
+  font-family: var(--subtitles-font);
+  font-size: var(--body-size);
+  color: var(--accent-color-1);
+}

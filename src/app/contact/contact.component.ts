@@ -62,8 +62,6 @@ export class ContactComponent implements OnInit {
 
   scroll(name: string) {
     let el = document.getElementById(name);
-    //console.log(name);
-    //console.log(el);
     setTimeout(() => {
       el.scrollIntoView({ behavior: "smooth" });
     }, 500);
