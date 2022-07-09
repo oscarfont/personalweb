@@ -60,14 +60,7 @@ export class ContactComponent implements OnInit {
     this.columnClass = this.isMobile ? 'vh-100' : '';
   }
 
-  scroll(name: string) {
-    let el = document.getElementById(name);
-    setTimeout(() => {
-      el.scrollIntoView({ behavior: "smooth" });
-    }, 500);
-  }
-
-  copyEmail(val: string, element: string) {
+  copyEmail(val: string) {
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
@@ -79,7 +72,6 @@ export class ContactComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
-    this.scroll(element);
     this.toastrService.success('Email copied successfully to clipboard!');
   }
 
