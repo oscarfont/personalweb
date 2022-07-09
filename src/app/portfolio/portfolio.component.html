@@ -1,12 +1,12 @@
-<div class="container-fluid d-flex flex-column" id="portfolio-page">
-  <div *ngIf="!this.changeBackground">
+<div class="container-fluid" id="portfolio-page">
+  <div *ngIf="!this.isMobile">
     <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
       [rightHexPos]="backgroundRight.pos">
     </app-background>
   </div>
-  <div class="row flex-grow-1 no-margin">
+  <div class="row">
     <div class="col-12 col-lg-6 col-xl-6">
-      <div *ngIf="this.changeBackground">
+      <div *ngIf="this.isMobile">
         <app-background [leftHex]="slide1Background.leftHex" [leftHexPos]="slide1Background.leftHexPos"
           [rightHex]="slide1Background.rightHex" [rightHexPos]="slide1Background.rightHexPos">
         </app-background>
@@ -22,10 +22,10 @@
         </div>
       </div>
       <div class="row flex-column" id="skills-row">
-        <div class="row player-personal-section">
+        <div class="player-personal-section">
           <div class="section-title">Software Engineering Skills</div>
         </div>
-        <div class="row" style="height:24.875rem; margin-left: 0.25rem">
+        <div style="height:24.875rem; margin-left: 0.25rem">
           <div echarts (chartInit)="onChartInit($event)" [options]="this.option" style="height:100%; width:100%;">
           </div>
         </div>
@@ -39,7 +39,7 @@
             <div class="col-10 d-flex flex-column">
               <span class="subtitle">Frontend Framework</span>
               <div class="d-flex flex-row space-between">
-                <img src="../../assets/portfolio/angular-logo.png" width="35rem" style="margin: 0 0.5rem 0.5rem 0;" />
+                <img src="../../assets/portfolio/angular-logo.png" width="35rem" style="padding: 0 0.5rem 0.5rem 0;" />
                 <span class="section-text">Angular</span>
               </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="col-10 d-flex flex-column">
               <span class="subtitle">Backend Framework</span>
               <div class="d-flex flex-row space-between">
-                <img src="../../assets/portfolio/nodejs.png" width="35rem" style="margin: 0 0.5rem 0.5rem 0;" />
+                <img src="../../assets/portfolio/nodejs.png" width="35rem" style="padding: 0 0.5rem 0.5rem 0;" />
                 <span class="section-text">Node JS</span>
               </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="col-10 d-flex flex-column">
               <span class="subtitle">Database Framework</span>
               <div class="d-flex flex-row space-between">
-                <img src="../../assets/portfolio/postgresql.png" width="35rem" style="margin: 0 0.5rem 0.5rem 0;" />
+                <img src="../../assets/portfolio/postgresql.png" width="35rem" style="padding: 0 0.5rem 0.5rem 0;" />
                 <span class="section-text">PostgreSQL</span>
               </div>
             </div>
@@ -75,7 +75,7 @@
             <div class="col-10 d-flex flex-column">
               <span class="subtitle">Vendor Host</span>
               <div class="d-flex flex-row space-between">
-                <img src="../../assets/portfolio/aws.png" width="40rem" style="margin: 0.5rem 0.5rem 0.5rem 0;" />
+                <img src="../../assets/portfolio/aws.png" width="40rem" style="padding: 0.5rem 0.5rem 0.5rem 0;" />
                 <span class="section-text">AWS</span>
               </div>
             </div>
@@ -87,7 +87,7 @@
       </div>
     </div>
     <div class="col-12 col-lg-6 col-xl-6">
-      <div *ngIf="this.changeBackground">
+      <div *ngIf="this.isMobile">
         <app-background [leftHex]="slide2Background.leftHex" [leftHexPos]="slide2Background.leftHexPos">
         </app-background>
       </div>
@@ -105,7 +105,7 @@
         <div class="row" style="margin-left: 0.25rem;">
           <div class="section-title">Last experiences</div>
         </div>
-        <div class="row flex-row less-bottom-margin" id="experience-row">
+        <div class="d-flex flex-row less-bottom-margin" id="experience-row">
           <div class="col-4 d-flex flex-column align-items-center" style="text-align: center;">
             <img src="../../assets/portfolio/redsys.png" class="experience-img thumbnail-background" />
             <div class="subtitle">Web Dev and BI</div>
@@ -127,7 +127,7 @@
         <div class="row" style="margin-left: 0.25rem">
           <div class="section-title">Education</div>
         </div>
-        <div class="row flex-row less-bottom-margin" id="education-row">
+        <div class="d-flex flex-row less-bottom-margin" id="education-row">
           <div class="col-4 d-flex flex-column align-items-center">
             <img src="../../assets/portfolio/upm.png" class="education-img thumbnail-background" />
             <div class="d-flex flex-column" style="text-align: center;">

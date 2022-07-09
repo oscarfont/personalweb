@@ -22,7 +22,6 @@ export class PortfolioComponent implements OnInit {
   pdfLink = "./assets/portfolio/cv.pdf";
   option: EChartsOption;
   skillsChart: EChartsType;
-  changeBackground: boolean;
   initOpts: any;
   chartToolTip: Array<string>;
 
@@ -33,6 +32,10 @@ export class PortfolioComponent implements OnInit {
   // mobile background config
   slide1Background: any;
   slide2Background: any;
+
+  // responsive variable
+  isMobile: boolean;
+  rowClass: string;
 
   constructor(private appStateService: AppStateService) {
     // set background configs
@@ -142,14 +145,14 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.changeBackground = this.appStateService.getIsMobileResolution();
+    this.isMobile = this.appStateService.getIsMobileResolution();
     this.setSkillsChartOption();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     var labelSize = getComputedStyle(document.body).getPropertyValue('--body-size');
-    this.changeBackground = this.appStateService.getIsMobileResolution();
+    this.isMobile = this.appStateService.getIsMobileResolution();
     var option = this.skillsChart.getOption();
     option.radar[0].axisName.fontSize = labelSize;
     this.skillsChart.setOption(option);
