@@ -315,3 +315,8 @@
     opacity: 1;
   }
 }
+
+.quote-box {
+  display: flex;
+  flex-direction: column;
+}
