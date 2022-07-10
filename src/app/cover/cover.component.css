@@ -261,7 +261,10 @@
   color: var(--accent-color-1);
 }
 
-.project-description {
+.project-body {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
   font-family: var(--body-font);
   font-size: var(--body-size);
   color: var(--secondary-color);
