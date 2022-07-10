@@ -159,7 +159,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg col-xl">
+      <div *ngIf="!this.isMobile" class="col-12 col-lg col-xl">
         <div class="card standard-card" data-aos="flip-down">
           <div>
             <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
@@ -182,7 +182,7 @@
                 class="accent-2">Professional Wrestling </span>Sentiment</h1>
           </div>
           <div class="project-body">
-            <video width="128" height="240" controls autoplay>
+            <video class="project-video" controls autoplay>
               <source src="../../assets/cover/pwsas.3gp" type="video/3gpp">
               Your browser does not support the video tag.
             </video>

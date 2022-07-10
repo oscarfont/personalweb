@@ -270,6 +270,12 @@
   color: var(--secondary-color);
 }
 
+.project-video {
+  width: 100%;
+  min-width: 32px;
+  max-width: 128px;
+}
+
 /* SLIDER CLASSES */
 .container {
   overflow: hidden;

@@ -3,6 +3,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
+import { AppStateService } from '../app-state.service';
 
 @Component({
   selector: 'app-cover',
@@ -31,8 +32,9 @@ export class CoverComponent implements OnInit {
   experienceBackground: any;
   projectsBackground: any;
   testiomonialBackground: any;
+  isMobile: boolean;
 
-  constructor(private toastrService: ToastrService, private routerService: Router) {
+  constructor(private toastrService: ToastrService, private routerService: Router, private appStateService: AppStateService) {
     this.numbersArray = [48, 35, 20, 2, 81, 50, 100, 63, 77, 13];
     this.solutionArray = [2, 13, 20, 35, 48, 50, 63, 77, 81, 100];
     this.timer = 0.0;
@@ -67,6 +69,7 @@ export class CoverComponent implements OnInit {
   ngOnInit(): void {
     //this.bubbleSort(this.numbersArray,this.numbersArray.length);
     //console.log(this.numbersArray);
+    this.isMobile = this.appStateService.getIsMobileResolution();
   }
 
   drop(event: CdkDragDrop<string[]>) {
