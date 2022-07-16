@@ -319,4 +319,34 @@
 .quote-box {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: justify;
+}
+
+.quote {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
+  font-style: italic;
+}
+
+.author {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
+}
+
+.author-company {
+  width: 100%;
+  max-width: 6rem;
+  min-width: 3rem;
+}
+
+.author-company-square {
+  width: 100%;
+  max-width: 4rem;
+  min-width: 2rem;
+  border-radius: 3.25rem;
 }
