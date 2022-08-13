@@ -14,38 +14,42 @@ export class BlogService {
     'Content-Type': 'application/json'
   });
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     //this.categories = ["IT Blog", "Restaurant Review"];
   }
 
-  getAllBlogs(){
+  getAllBlogs() {
     var httpReqs = [];
-    for (let i = 0;  i < this.categories.length; i++) {
+    for (let i = 0; i < this.categories.length; i++) {
       let params = new HttpParams({
         fromString: `category=${this.categories[i]}`
       });
       //params.append("category", this.categories[i]);
       //console.log(this.categories[i]);
-      httpReqs.push(this.http.get<any>(this.baseURL + 'blog/getBlogs', {headers: this.httpHeader, params: params}));
+      httpReqs.push(this.http.get<any>(this.baseURL + 'blog/getBlogs', { headers: this.httpHeader, params: params }));
     }
     return httpReqs;
   }
 
-  getBlogDetail(categoryName,blogId){
+  getBlogDetail(categoryName, blogId) {
     let params = new HttpParams({
       fromString: `category=${categoryName}&id=${blogId}`
     });
-    return this.http.get<any>(this.baseURL + 'blog/getBlogDetail', {headers: this.httpHeader, params: params});
+    return this.http.get<any>(this.baseURL + 'blog/getBlogDetail', { headers: this.httpHeader, params: params });
   }
 
-  publishBlog(title,category,summary,content){
-    const data = {'category': category, 'title': title, 'summary': summary, 'content': content};
+  publishBlog(title, category, summary, content) {
+    let params = new HttpParams({
+      fromString: `category=${category}`
+    });
 
-    return this.http.post<any>(this.baseURL + 'blog/postBlog', data, {headers: this.httpHeader});
+    const data = { 'title': title, 'summary': summary, 'content': content };
+
+    return this.http.post<any>(this.baseURL + 'blog/postBlog', data, { headers: this.httpHeader, params: params });
   }
 
-  deleteBlog(category,id){
-    const data = {'category': category, 'id': id};
+  deleteBlog(category, id) {
+    const data = { 'category': category, 'id': id };
 
     const options = {
       headers: this.httpHeader,
