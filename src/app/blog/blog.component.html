@@ -4,12 +4,36 @@
   </app-background>
   <div class="row flex-grow-1">
     <div class="col-12 d-flex flex-column align-items-center">
-      <div class="card standard-card" style="text-align:center; margin-top: 5rem;">
-        <div class="card-header">
-          <span class="blog-title">Blog</span>
+      <div *ngFor="let cat of this.categories">
+        <!-- HEADER TITLE CARD-->
+        <div class="card" style="width: 97%;">
+          <div class="card-header">
+            <h4>Blog</h4>
+            <h4>Welcome to the Blog!</h4>
+          </div>
+          <div id="message" class="card-body">
+            Part of the web under construction :(
+            Find whatever post you need most or read the ones you get an eye on! Dive in and have fun :)
+          </div>
         </div>
-        <div class="card-body">
-          <span class="blog-text">Part of the web under construction :(</span>
+
+        <div style="color:white">{{cat}}</div>
+
+        <!-- BLOG POST LIST-->
+        <div class="list-group">
+          <a *ngFor="let post of this.categoryPosts.get(cat)" [routerLink]="['/detail', cat, post.id]"
+            class="list-group-item list-group-item-action flex-column align-items-start blog-card">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{post.title}}</h5>
+              <small>3 days ago</small>
+            </div>
+            <div class="d-flex align-items-start">
+              <p class="mb-1">{{post.summary}}</p>
+            </div>
+            <div class="d-flex align-items-start">
+              <small>category: {{cat}}</small>
+            </div>
+          </a>
         </div>
       </div>
     </div>

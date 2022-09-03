@@ -8,37 +8,32 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 export class BlogService {
 
   baseURL: string = "http://localhost:3000/";
-  categories = ["IT Blog", "Restaurant Review"];
 
   httpHeader = new HttpHeaders({
     'Content-Type': 'application/json'
   });
 
-  constructor(private http: HttpClient) {
-    //this.categories = ["IT Blog", "Restaurant Review"];
+  constructor(private http: HttpClient) { }
+
+  getAllCategories() {
+    return this.http.get<any>(this.baseURL + 'blog/categories/get/all', { headers: this.httpHeader });
   }
 
-  getAllBlogs() {
-    var httpReqs = [];
-    for (let i = 0; i < this.categories.length; i++) {
-      let params = new HttpParams({
-        fromString: `category=${this.categories[i]}`
-      });
-      //params.append("category", this.categories[i]);
-      //console.log(this.categories[i]);
-      httpReqs.push(this.http.get<any>(this.baseURL + 'blog/getBlogs', { headers: this.httpHeader, params: params }));
-    }
-    return httpReqs;
+  getAllBlogsOf(category: string) {
+    let params = new HttpParams({
+      fromString: `category=${category}`
+    });
+    return this.http.get<any>(this.baseURL + 'blog/get/all', { headers: this.httpHeader, params: params });
   }
 
-  getBlogDetail(categoryName, blogId) {
+  getBlogDetail(categoryName: string, blogId: string) {
     let params = new HttpParams({
       fromString: `category=${categoryName}&id=${blogId}`
     });
     return this.http.get<any>(this.baseURL + 'blog/getBlogDetail', { headers: this.httpHeader, params: params });
   }
 
-  publishBlog(title, category, summary, content) {
+  publishBlog(title: string, category: string, summary: string, content: string) {
     let params = new HttpParams({
       fromString: `category=${category}`
     });
@@ -48,7 +43,7 @@ export class BlogService {
     return this.http.post<any>(this.baseURL + 'blog/postBlog', data, { headers: this.httpHeader, params: params });
   }
 
-  deleteBlog(category, id) {
+  deleteBlog(category: string, id: string) {
     const data = { 'category': category, 'id': id };
 
     const options = {

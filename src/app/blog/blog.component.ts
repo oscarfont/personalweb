@@ -9,7 +9,8 @@ import { AuthService } from 'src/services/auth.service';
 })
 export class BlogComponent implements OnInit {
 
-  blogPostList: any[] = [];
+  categories: string[] = [];
+  categoryPosts: Map<string, any[]>;
   userCookie: string;
   userName: string;
   backgroundRight: { name: string, pos: string };
@@ -28,19 +29,22 @@ export class BlogComponent implements OnInit {
       this.userCookie = this.authService.getCookie('token');
       this.userName = this.authService.getCookie('username');
     }
-    this.blogService.getAllBlogs().forEach((req) => {
-      req.subscribe((res: any) => {
-        //console.log(res.data);
-        for (let i = 0; i < res.data.length; i++) {
-          this.blogPostList.push(res.data[i]);
-        }
-      }, (error: any) => { console.log(error) });
+    this.categoryPosts = new Map<string, any[]>();
+    this.blogService.getAllCategories().subscribe(async (res) => {
+      this.categories = res.data;
+      for (let i = 0; i < this.categories.length; i++) {
+        const cat = this.categories[i];
+        this.blogService.getAllBlogsOf(cat).subscribe((res) => {
+          console.log(res.data);
+          this.categoryPosts.set(cat, res.data?.posts);
+        });
+      }
     });
   }
 
   ngOnInit(): void { }
 
-  deletePost(category, id) {
+  deletePost(category: string, id: string) {
     this.blogService.deleteBlog(category, id).subscribe((data) => {
       console.log('SUCCESS');
     }, (error) => { console.log(error); });

@@ -319,10 +319,11 @@
 .quote-box {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   word-wrap: break-word;
   white-space: normal;
   text-align: justify;
+  padding: 1rem;
 }
 
 .quote {
