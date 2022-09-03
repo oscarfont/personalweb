@@ -3,23 +3,18 @@
     [rightHexPos]="backgroundRight.pos">
   </app-background>
   <div class="row flex-grow-1">
-    <div class="col-12 d-flex flex-column align-items-center">
-      <div *ngFor="let cat of this.categories">
-        <!-- HEADER TITLE CARD-->
-        <div class="card" style="width: 97%;">
-          <div class="card-header">
-            <h4>Blog</h4>
-            <h4>Welcome to the Blog!</h4>
-          </div>
-          <div id="message" class="card-body">
-            Part of the web under construction :(
-            Find whatever post you need most or read the ones you get an eye on! Dive in and have fun :)
-          </div>
+    <div class="col-12 d-flex flex-column align-items-center" style="margin-top: 3.5rem;">
+      <!-- HEADER TITLE CARD-->
+      <div class="card" style="width: 80%;">
+        <div class="card-header">
+          <h4>Welcome to my Blog!</h4>
         </div>
-
-        <div style="color:white">{{cat}}</div>
-
-        <!-- BLOG POST LIST-->
+        <div id="message" class="card-body">
+          Find whatever post you need most or read the ones you get an eye on! Dive in and have fun :)
+        </div>
+      </div>
+      <!-- BLOG POST LIST-->
+      <div *ngFor="let cat of this.categories" style="width: 80%;">
         <div class="list-group">
           <a *ngFor="let post of this.categoryPosts.get(cat)" [routerLink]="['/detail', cat, post.id]"
             class="list-group-item list-group-item-action flex-column align-items-start blog-card">
