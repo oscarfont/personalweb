@@ -5,28 +5,29 @@
   <div class="row flex-grow-1">
     <div class="col-12 d-flex flex-column align-items-center" style="margin-top: 3.5rem;">
       <!-- HEADER TITLE CARD-->
-      <div class="card" style="width: 80%;">
+      <div class="card standard-card" style="width: 80%;">
         <div class="card-header">
-          <h4>Welcome to my Blog!</h4>
+          <h4 class="blog-title">Welcome to my Blog!</h4>
         </div>
         <div id="message" class="card-body">
-          Find whatever post you need most or read the ones you get an eye on! Dive in and have fun :)
+          <span class="blog-text">Find whatever post you need most or read the ones you get an eye on! Dive in and have
+            fun :)</span>
         </div>
       </div>
       <!-- BLOG POST LIST-->
       <div *ngFor="let cat of this.categories" style="width: 80%;">
         <div class="list-group">
           <a *ngFor="let post of this.categoryPosts.get(cat)" [routerLink]="['/detail', cat, post.id]"
-            class="list-group-item list-group-item-action flex-column align-items-start blog-card">
+            class="list-group-item list-group-item-action flex-column align-items-start blog-card standard-card">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">{{post.title}}</h5>
-              <small>3 days ago</small>
+              <h5 class="mb-1 blog-title">{{post.title}}</h5>
+              <small class="date-published">3 days ago</small>
             </div>
             <div class="d-flex align-items-start">
-              <p class="mb-1">{{post.summary}}</p>
+              <p class="mb-1 blog-text">{{post.summary}}</p>
             </div>
             <div class="d-flex align-items-start">
-              <small>category: {{cat}}</small>
+              <small class="category-label">category:</small><small class="category-value">{{cat}}</small>
             </div>
           </a>
         </div>
