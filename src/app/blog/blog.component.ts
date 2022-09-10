@@ -35,8 +35,7 @@ export class BlogComponent implements OnInit {
       for (let i = 0; i < this.categories.length; i++) {
         const cat = this.categories[i];
         this.blogService.getAllBlogsOf(cat).subscribe((res) => {
-          console.log(res.data);
-          this.categoryPosts.set(cat, res.data?.posts);
+          this.categoryPosts.set(cat, res.data);
         });
       }
     });
