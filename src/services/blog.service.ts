@@ -27,10 +27,8 @@ export class BlogService {
   }
 
   getBlogDetail(categoryName: string, blogId: string) {
-    let params = new HttpParams({
-      fromString: `category=${categoryName}&id=${blogId}`
-    });
-    return this.http.get<any>(this.baseURL + 'blog/getBlogDetail', { headers: this.httpHeader, params: params });
+    const body = { category: categoryName, id: blogId };
+    return this.http.post<any>(this.baseURL + 'blog/get/detail', body, { headers: this.httpHeader });
   }
 
   publishBlog(title: string, category: string, summary: string, content: string) {
