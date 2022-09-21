@@ -1,16 +1,26 @@
-.blog-card{
-    margin: 2rem 0rem 0rem 0rem;
-    border-top: 4px solid #044179;
-    text-align: justify;
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-#message{
-    font-family: "Hind";
-    color: #001E3E;
+.blog-title {
+  font-family: var(--titles-font);
+  font-size: var(--subtitles-size);
+  color: var(--accent-color-1);
+  font-weight: 600;
 }
 
-.header-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.blog-summary {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
+}
+
+.blog-card {
+  margin: 2rem 0rem 0rem 0rem;
+  border-top: 4px solid var(--accent-color-2);
+  text-align: justify;
+  font-family: var(--body-font);
+  color: var(--secondary-color);
 }
