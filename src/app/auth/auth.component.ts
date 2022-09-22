@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormControl} from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/services/auth.service';
 import { Router } from '@angular/router';
@@ -19,10 +19,10 @@ export class AuthComponent implements OnInit {
   formData: FormGroup;
   errorMessage: string;
 
-  constructor(public activeModal: NgbActiveModal, public authService: AuthService, 
-              public router: Router, private toastrService : ToastrService,) {}
+  constructor(public activeModal: NgbActiveModal, public authService: AuthService,
+    public router: Router, private toastrService: ToastrService,) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.formData = new FormGroup({
       userName: new FormControl(""),
       password: new FormControl(""),
@@ -37,31 +37,32 @@ export class AuthComponent implements OnInit {
     //console.log("Login page: " + this.password);
 
     this.authService.login(this.userName, this.password)
-       .subscribe( (data) => { 
+      .subscribe((res) => {
+        const data = res.data;
 
         this.errorMessage = "";
 
-        // set cookie with jwt token  
-        document.cookie = `token=${data.token}`;
-        document.cookie = `username=${data.username}`;
-        
+        // set cookie with jwt token
+        document.cookie = `token=${data.jwt}`;
+        document.cookie = `username=${data.name}`;
+
         // close modal
         //this.closeModal();
-        this.name = data.username
+        this.name = data.name
 
         // show login success message
-        this.toastrService.success('Welcome '+ this.name + '!');
-        
+        this.toastrService.success('Welcome ' + this.name + '!');
+
         // redirect to blog posts
-        if(data) this.router.navigate(['/blog']);
+        if (data) this.router.navigate(['/blog']);
 
       },
-      (response) => {
-        this.errorMessage = response.error.message;
-      });
+        (response) => {
+          this.errorMessage = response.error.message;
+        });
   }
 
-  onSignOut(){
+  onSignOut() {
     this.authService.logout();
     this.formData = new FormGroup({
       userName: new FormControl(""),
@@ -73,7 +74,7 @@ export class AuthComponent implements OnInit {
     this.activeModal.close();
   }
 
-  isUserLoggedIn(){
+  isUserLoggedIn() {
     return this.authService.isUserLoggedIn();
   }
 
