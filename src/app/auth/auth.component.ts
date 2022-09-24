@@ -23,6 +23,7 @@ export class AuthComponent implements OnInit {
     public router: Router, private toastrService: ToastrService,) { }
 
   ngOnInit() {
+    if (this.isUserLoggedIn()) this.name = this.authService.getCookie('username');
     this.formData = new FormGroup({
       userName: new FormControl(""),
       password: new FormControl(""),
