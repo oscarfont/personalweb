@@ -4,24 +4,25 @@
   <div class="row flex-grow-1">
     <div class="col-12 d-flex flex-column align-items-center" style="margin-top: 3.5rem;">
       <!-- HEADER TITLE CARD -->
-      <div class="card" style="width: 97%;">
+      <div class="card standard-card" style="width: 97%;">
         <div class="card-header header-container">
-          <h4>New Post</h4>
+          <h4 class="blog-title">New Post</h4>
         </div>
         <div id="message" class="card-body">
-          It's time to get creative, write whatever you feel like to!
+          <span class="blog-text">It's time to get creative, write whatever you feel like to!</span>
         </div>
       </div>
+      <!-- FORM OF NEW POST -->
       <div style="width: 97%; margin:2rem 0rem 0rem 0rem;">
         <form id="postForm" [formGroup]="formData" (ngSubmit)="this.onPublishBlog(formData.value)">
-          <input type="text" id="inputTitle" class="form-control" formControlName="title" placeholder="Post Title"
-            required autofocus>
-          <input type="category" id="inputCategory" class="form-control" formControlName="category"
+          <input type="text" id="inputTitle" class="form-control form-box" formControlName="title"
+            placeholder="Post Title" required autofocus>
+          <input type="category" id="inputCategory" class="form-control form-box" formControlName="category"
             placeholder="Category" required>
-          <input type="summary" id="inputSummary" class="form-control" formControlName="summary"
+          <input type="summary" id="inputSummary" class="form-control form-box" formControlName="summary"
             placeholder="Summary of the Blog" required>
           <angular-editor formControlName="htmlContent" [config]="editorConfig"></angular-editor>
-          <button class="btn btn-lg btn-primary" id="publishButton" type="submit">Publish!</button>
+          <button class="btn btn-lg btn-outline-primary" id="publishButton" type="submit">Publish</button>
         </form>
       </div>
     </div>

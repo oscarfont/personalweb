@@ -1,13 +1,35 @@
-#inputCategory, #inputTitle, #editor, #inputSummary{
-    margin: 0rem 0rem 1rem 0rem;
+#inputCategory,
+#inputTitle,
+#editor,
+#inputSummary {
+  margin: 0rem 0rem 1rem 0rem;
 }
 
-#publishButton{
-    margin: 1rem 0rem 0rem 0rem;
+#publishButton {
+  margin: 1rem 0rem 0rem 0rem;
 }
 
-.header-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-box {
+  background-color: rgb(47, 64, 102, 0.58);
+  border: 1px solid var(--main-color);
+  color: var(--secondary-color);
+}
+
+.blog-title {
+  font-family: var(--titles-font);
+  font-size: var(--subtitles-size);
+  color: var(--accent-color-1);
+  font-weight: 600;
+}
+
+.blog-text {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
 }
