@@ -25,10 +25,6 @@ export class BlogComponent implements OnInit {
       name: 'quarter-hexagon',
       pos: 'top-left'
     }
-    if (this.authService.isUserLoggedIn()) {
-      this.userCookie = this.authService.getCookie('token');
-      this.userName = this.authService.getCookie('username');
-    }
     this.categoryPosts = new Map<string, any[]>();
     this.blogService.getAllCategories().subscribe(async (res) => {
       this.categories = res.data;
@@ -41,7 +37,12 @@ export class BlogComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    if (this.authService.isUserLoggedIn()) {
+      this.userCookie = this.authService.getCookie('token');
+      this.userName = this.authService.getCookie('username');
+    }
+  }
 
   deletePost(category: string, id: string) {
     this.blogService.deleteBlog(category, id).subscribe((data) => {

@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-//import { AngularEditorComponent } from '@kolkov/angular-editor';
+import { FormGroup, FormControl } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { FormGroup, FormControl} from '@angular/forms';
 import { Location } from '@angular/common';
 import { BlogService } from '../../../services/blog.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-
-
 
 @Component({
   selector: 'app-new-post',
@@ -16,12 +13,22 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NewPostComponent implements OnInit {
 
-  htmlContent : any;
+  htmlContent: any;
+  formData: FormGroup;
   editorConfig: AngularEditorConfig;
-  formData : FormGroup; 
+  backgroundRight: { name: string, pos: string };
+  backgroundLeft: { name: string, pos: string };
 
-  constructor(private locationService: Location,private blogService: BlogService,
-              private router: Router,private toastrService : ToastrService,) { 
+  constructor(private locationService: Location, private blogService: BlogService,
+    private router: Router, private toastrService: ToastrService,) {
+    this.backgroundRight = {
+      name: 'quarter-hexagon',
+      pos: 'bottom-right'
+    }
+    this.backgroundLeft = {
+      name: 'quarter-hexagon',
+      pos: 'top-left'
+    }
     this.formData = new FormGroup({
       title: new FormControl(""),
       category: new FormControl(""),
@@ -33,27 +40,26 @@ export class NewPostComponent implements OnInit {
   ngOnInit(): void {
     this.editorConfig = {
       editable: true,
-        spellcheck: true,
-        height: 'auto',
-        minHeight: '20rem',
-        maxHeight: 'auto',
-        width: 'auto',
-        minWidth: '0',
-        translate: 'yes',
-        enableToolbar: true,
-        showToolbar: true,
-        placeholder: 'Enter text here...',
-        defaultParagraphSeparator: '',
-        defaultFontName: '',
-        defaultFontSize: '',
-        fonts: [
-          {class: 'arial', name: 'Arial'},
-          {class: 'times-new-roman', name: 'Times New Roman'},
-          {class: 'calibri', name: 'Calibri'},
-          {class: 'comic-sans-ms', name: 'Comic Sans MS'},
-          {class: 'roboto', name: 'Roboto'}
-        ],
-        customClasses: [
+      spellcheck: true,
+      height: 'auto',
+      minHeight: '0',
+      maxHeight: 'auto',
+      width: 'auto',
+      minWidth: '0',
+      translate: 'yes',
+      enableToolbar: true,
+      showToolbar: true,
+      placeholder: 'Enter text here...',
+      defaultParagraphSeparator: '',
+      defaultFontName: '',
+      defaultFontSize: '',
+      fonts: [
+        { class: 'arial', name: 'Arial' },
+        { class: 'times-new-roman', name: 'Times New Roman' },
+        { class: 'calibri', name: 'Calibri' },
+        { class: 'comic-sans-ms', name: 'Comic Sans MS' }
+      ],
+      customClasses: [
         {
           name: 'quote',
           class: 'quote',
@@ -69,23 +75,20 @@ export class NewPostComponent implements OnInit {
         },
       ],
       uploadUrl: 'v1/image',
-      toolbarPosition: 'top',
-      toolbarHiddenButtons: [
-        ['bold', 'italic'],
-        ['fontSize']
-      ]
-    };
+      sanitize: true,
+      toolbarPosition: 'top'
+    }
   }
 
-  onPublishBlog(values){
+  onPublishBlog(values) {
     console.log(values);
-    this.blogService.publishBlog(values.title,values.category,values.summary,values.htmlContent).subscribe((res)=>{
+    this.blogService.publishBlog(values.title, values.category, values.summary, values.htmlContent).subscribe((res) => {
       this.toastrService.success('Post published successfully!');
       this.router.navigateByUrl('/blog');
-    },(error)=>{console.log(error);});
+    }, (error) => { console.log(error); });
   }
 
-  goBack(){
+  goBack() {
     this.locationService.back();
   }
 

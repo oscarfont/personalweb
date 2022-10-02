@@ -11,18 +11,19 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService : AuthService, private router: Router, private toastrService : ToastrService){}
-  
+  constructor(private authService: AuthService, private router: Router, private toastrService: ToastrService) { }
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (this.authService.isUserLoggedIn()) {
-        return true;
-      } else {
-        this.router.navigateByUrl('/home');
-        this.toastrService.error("Access denied");
-        return false;
-      }
+    if (this.authService.isUserLoggedIn()) {
+      console.log(this.authService.isUserLoggedIn());
+      return true;
+    } else {
+      this.router.navigateByUrl('/home');
+      this.toastrService.error("Access denied");
+      return false;
+    }
   }
-  
+
 }

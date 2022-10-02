@@ -4,10 +4,21 @@
   </app-background>
   <div class="row flex-grow-1">
     <div class="col-12 d-flex flex-column align-items-center" style="margin-top: 3.5rem;">
-      <!-- HEADER TITLE CARD-->
-      <div class="card standard-card" style="width: 80%;">
+      <!-- HEADER TITLE CARD -->
+      <div *ngIf="!this.authService.isUserLoggedIn()" class="card standard-card" style="width: 80%;">
         <div class="card-header">
           <h4 class="blog-title">Welcome to my Blog!</h4>
+        </div>
+        <div id="message" class="card-body">
+          <span class="blog-text">Find whatever post you need most or read the ones you get an eye on! Dive in and have
+            fun :)</span>
+        </div>
+      </div>
+      <!-- LOGGED HEADER TITLE CARD -->
+      <div *ngIf="this.authService.isUserLoggedIn()" class="card standard-card" style="width: 80%;">
+        <div class="card-header">
+          <h4 class="blog-title">{{this.userName}} welcome to your blog :)</h4>
+          <a routerLink="/newpost">New Post</a>
         </div>
         <div id="message" class="card-body">
           <span class="blog-text">Find whatever post you need most or read the ones you get an eye on! Dive in and have

@@ -19,10 +19,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth-interceptor';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
 import { NewPostComponent } from './blog/new-post/new-post.component';
-import { AngularEditorModule } from '@kolkov/angular-editor';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BackgroundComponent } from './background/background.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     NgbModule,
