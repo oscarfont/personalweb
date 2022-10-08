@@ -22,7 +22,6 @@ import { NewPostComponent } from './blog/new-post/new-post.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BackgroundComponent } from './background/background.component';
 import { NgxEchartsModule } from 'ngx-echarts';
-import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -48,7 +47,6 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     ToastrModule.forRoot(),
     NgbModule,
     HttpClientModule,
-    AngularEditorModule,
     DragDropModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')

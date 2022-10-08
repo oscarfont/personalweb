@@ -38,7 +38,7 @@ export class BlogService {
 
     const data = { 'title': title, 'summary': summary, 'content': content };
 
-    return this.http.post<any>(this.baseURL + 'blog/postBlog', data, { headers: this.httpHeader, params: params });
+    return this.http.post<any>(this.baseURL + 'blog/publish', data, { headers: this.httpHeader, params: params });
   }
 
   deleteBlog(category: string, id: string) {
