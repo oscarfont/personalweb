@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { Location } from '@angular/common';
 import { BlogService } from '../../../services/blog.service';
 import { Router } from '@angular/router';
@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class NewPostComponent implements OnInit {
 
   htmlContent: any;
-  formData: FormGroup;
+  formData: UntypedFormGroup;
   backgroundRight: { name: string, pos: string };
   backgroundLeft: { name: string, pos: string };
 
@@ -27,11 +27,11 @@ export class NewPostComponent implements OnInit {
       name: 'quarter-hexagon',
       pos: 'top-left'
     }
-    this.formData = new FormGroup({
-      title: new FormControl(""),
-      category: new FormControl(""),
-      summary: new FormControl(""),
-      htmlContent: new FormControl("")
+    this.formData = new UntypedFormGroup({
+      title: new UntypedFormControl(""),
+      category: new UntypedFormControl(""),
+      summary: new UntypedFormControl(""),
+      htmlContent: new UntypedFormControl("")
     });
   }
 
