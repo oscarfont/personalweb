@@ -20,7 +20,6 @@
     "@angular/platform-browser": "^11.2.14",
     "@angular/platform-browser-dynamic": "^11.2.14",
     "@angular/router": "^11.2.14",
-    "@fortawesome/angular-fontawesome": "^0.7.0",
     "@fortawesome/fontawesome-common-types": "^0.2.36",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -40,7 +39,6 @@
   },
   "devDependencies": {
     "@angular/cli": "^11.2.19",
-    "@angular/compiler-cli": "^11.2.14",
     "@types/echarts": "^4.9.10",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "^2.0.10",
