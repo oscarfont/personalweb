@@ -15,7 +15,7 @@ import * as AOS from 'aos';
 export class AppComponent {
   title = 'personalweb';
 
-  ngOnInit(){
+  ngOnInit() {
     AOS.init();
   }
 
