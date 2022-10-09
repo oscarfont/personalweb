@@ -15,13 +15,13 @@
       <!-- FORM OF NEW POST -->
       <div style="width: 97%; margin:2rem 0rem 0rem 0rem;">
         <form id="postForm" [formGroup]="formData" (ngSubmit)="this.onPublishBlog(formData.value)">
-          <input type="text" id="inputTitle" class="form-control form-box" formControlName="title"
-            placeholder="Enter a title..." required autofocus>
-          <input type="category" id="inputCategory" class="form-control form-box" formControlName="category"
+          <input id="inputTitle" class="form-control form-box" formControlName="title" placeholder="Enter a title..."
+            required autofocus>
+          <input id="inputCategory" class="form-control form-box" formControlName="category"
             placeholder="Enter the category..." required>
-          <input type="summary" id="inputSummary" class="form-control form-box" formControlName="summary"
+          <input id="inputSummary" class="form-control form-box" formControlName="summary"
             placeholder="Enter a summary..." required>
-          <button class="btn btn-lg btn-outline-primary" id="publishButton" type="submit">Publish</button>
+          <button class="btn btn-lg btn-outline-primary" id="publishButton">Publish</button>
         </form>
       </div>
     </div>
