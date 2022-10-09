@@ -44,9 +44,10 @@ export class NavbarComponent implements OnInit {
   }
 
   initializeOptionMap(currRoute: String) {
+    const routesNotInNavBar = ['notfound-tab'];
     let routeId = currRoute.replace('/', '');
     routeId = routeId.concat("-tab");
-    if (document.getElementById(routeId).className == "nav-link active") {
+    if (!routesNotInNavBar.includes(routeId) && document.getElementById(routeId).className == "nav-link active") {
       this.optionsMap.set(currRoute, 1);
     } else {
       this.optionsMap.set(currRoute, 0);

@@ -29,8 +29,9 @@
         </a>
       </div>
       <div [ngClass]="authClass" style="padding: 0;">
-        <a id="login-tab" (click)="openAuthModal()" class="nav-link">
+        <a id="user-tab" (click)="openAuthModal()" class="nav-link">
           <fa-icon id="user-icon" [icon]="userIcon"></fa-icon>
+          <span id="user-title"></span>
         </a>
       </div>
     </div>
