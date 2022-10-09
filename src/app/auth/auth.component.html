@@ -19,7 +19,6 @@
   <div *ngIf="this.isUserLoggedIn()" class="logged-message">Hope you are having fun in the web {{this.name}}</div>
 </div>
 <div class="modal-footer text-center">
-  <!--<button class="btn btn-outline-dark" (click)="closeModal()">Close</button>-->
   <button *ngIf="!this.isUserLoggedIn()" class="btn btn-outline-primary" form="authForm">Sign in</button>
   <button *ngIf="this.isUserLoggedIn()" class="btn btn-outline-primary" (click)="this.onSignOut()">Sign out</button>
 </div>
