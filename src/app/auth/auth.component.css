@@ -37,6 +37,10 @@
 }
 
 .close-button {
+  background-color: transparent;
+  font-family: var(--subtitles-font);
+  border: none;
+  font-weight: 600;
   color: var(--secondary-color);
 }
 

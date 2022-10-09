@@ -1,8 +1,8 @@
 <div class="modal-header">
   <h4 *ngIf="!this.isUserLoggedIn()" class="modal-title">Who are you? 🧐</h4>
   <h4 *ngIf="this.isUserLoggedIn()" class="modal-title">Welcome!</h4>
-  <button class="close close-button" aria-label="Close" (click)="closeModal()">
-    <span aria-hidden="true">&times;</span>
+  <button type="button" class="close close-button" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">X</span>
   </button>
 </div>
 <div class="modal-body">
@@ -12,7 +12,8 @@
     <input id="username" class="form-control form-box" formControlName="userName" placeholder="Username" required
       autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input id="inputPassword" class="form-control form-box" formControlName="password" placeholder="Password" required>
+    <input id="inputPassword" type="password" class="form-control form-box" formControlName="password"
+      placeholder="Password" required>
   </form>
   <div *ngIf="this.errorMessage" class="error-box">ERROR: {{this.errorMessage}}</div>
   <div *ngIf="this.isUserLoggedIn()" class="logged-message">Hope you are having fun in the web {{this.name}}</div>
