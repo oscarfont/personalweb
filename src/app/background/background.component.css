@@ -11,8 +11,8 @@
   min-width: 8rem;
   max-height: 18.2rem;
   min-height: 8.7rem;
-  z-index: -1;
   position: absolute;
+  z-index: -1;
   top: 0.025rem;
   left: 0;
   transform: scaleX(-1) scaleY(-1);
@@ -25,8 +25,8 @@
   min-width: 8rem;
   max-height: 18.2rem;
   min-height: 8.7rem;
-  z-index: -1;
   position: absolute;
+  z-index: -1;
   top: 0;
   right: 0;
   filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
@@ -39,8 +39,8 @@
   min-width: 8rem;
   max-height: 36.4rem;
   min-height: 17.4rem;
-  z-index: -1;
   position: absolute;
+  z-index: -1;
   bottom: 0;
   right: 0;
   transform: translateY(50%);
@@ -53,8 +53,8 @@
   min-width: 8rem;
   max-height: 18.2rem;
   min-height: 8.7rem;
-  z-index: -1;
   position: absolute;
+  z-index: -1;
   bottom: 0;
   right: 0;
   filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
@@ -66,8 +66,8 @@
   min-width: 8rem;
   max-height: 36.4rem;
   min-height: 17.4rem;
-  z-index: -1;
   position: absolute;
+  z-index: -1;
   bottom: 0.025rem;
   left: 0;
   filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
@@ -80,8 +80,8 @@
   min-width: 8rem;
   max-height: 18.2rem;
   min-height: 8.7rem;
-  z-index: -1;
   position: absolute;
+  z-index: -1;
   bottom: 0.025rem;
   left: 0;
   filter: drop-shadow(-0.35rem -0.35rem 0.2rem #000e34);
