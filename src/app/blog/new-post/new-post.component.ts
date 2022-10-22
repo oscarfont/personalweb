@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { BlogService } from '../../../services/blog.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-new-post',
@@ -12,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class NewPostComponent implements OnInit {
 
   htmlContent: any;
-  formData: any;
+  formData: FormGroup;
   backgroundRight: { name: string, pos: string };
   backgroundLeft: { name: string, pos: string };
 
@@ -26,12 +27,12 @@ export class NewPostComponent implements OnInit {
       name: 'quarter-hexagon',
       pos: 'top-left'
     }
-    this.formData = {
-      title: "",
-      category: "",
-      summary: "",
-      htmlContent: ""
-    };
+    this.formData = new FormGroup({
+      title: new FormControl(''),
+      category: new FormControl(''),
+      summary: new FormControl(''),
+      htmlContent: new FormControl('')
+    });
   }
 
   ngOnInit(): void { }
