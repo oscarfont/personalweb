@@ -6,7 +6,7 @@
   </button>
 </div>
 <div class="modal-body">
-  <form *ngIf="!this.isUserLoggedIn()" id="authForm" [formGroup]="formData" (ngSubmit)="onSignIn(formData)"
+  <form *ngIf="!this.isUserLoggedIn()" id="authForm" [formGroup]="formData" (ngSubmit)="onSignIn(formData.value)"
     class="form-signin">
     <label for="inputEmail" class="sr-only">Email address</label>
     <input id="username" class="form-control form-box" formControlName="userName" placeholder="Username" required>

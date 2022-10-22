@@ -3,6 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/services/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
@@ -14,7 +15,7 @@ export class AuthComponent implements OnInit {
   userName: string;
   password: string;
   name: string;
-  formData: any;
+  formData: FormGroup;
   errorMessage: string;
 
   constructor(public activeModal: NgbActiveModal, public authService: AuthService,
@@ -22,10 +23,10 @@ export class AuthComponent implements OnInit {
 
   ngOnInit() {
     if (this.isUserLoggedIn()) this.name = this.authService.getCookie('username');
-    this.formData = {
-      userName: "",
-      password: ""
-    };
+    this.formData = new FormGroup({
+      userName: new FormControl(''),
+      password: new FormControl('')
+    });
   }
 
   onSignIn(data: any) {
@@ -46,7 +47,7 @@ export class AuthComponent implements OnInit {
         document.cookie = `username=${data.name}`;
 
         // close modal
-        //this.closeModal();
+        this.closeModal();
         this.name = data.name
 
         // show login success message
@@ -63,10 +64,10 @@ export class AuthComponent implements OnInit {
 
   onSignOut() {
     this.authService.logout();
-    this.formData = {
-      userName: "",
-      password: ""
-    };
+    this.formData = new FormGroup({
+      userName: new FormControl(''),
+      password: new FormControl('')
+    });
   }
 
   closeModal() {
