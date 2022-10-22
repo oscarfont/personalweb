@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/services/auth.service';
 import { Router } from '@angular/router';
@@ -16,7 +14,7 @@ export class AuthComponent implements OnInit {
   userName: string;
   password: string;
   name: string;
-  formData: UntypedFormGroup;
+  formData: any;
   errorMessage: string;
 
   constructor(public activeModal: NgbActiveModal, public authService: AuthService,
@@ -24,10 +22,10 @@ export class AuthComponent implements OnInit {
 
   ngOnInit() {
     if (this.isUserLoggedIn()) this.name = this.authService.getCookie('username');
-    this.formData = new UntypedFormGroup({
-      userName: new UntypedFormControl(""),
-      password: new UntypedFormControl(""),
-    });
+    this.formData = {
+      userName: "",
+      password: ""
+    };
   }
 
   onSignIn(data: any) {
@@ -65,10 +63,10 @@ export class AuthComponent implements OnInit {
 
   onSignOut() {
     this.authService.logout();
-    this.formData = new UntypedFormGroup({
-      userName: new UntypedFormControl(""),
-      password: new UntypedFormControl(""),
-    });
+    this.formData = {
+      userName: "",
+      password: ""
+    };
   }
 
   closeModal() {

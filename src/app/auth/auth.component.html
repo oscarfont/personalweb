@@ -6,11 +6,10 @@
   </button>
 </div>
 <div class="modal-body">
-  <form *ngIf="!this.isUserLoggedIn()" id="authForm" [formGroup]="formData" (ngSubmit)="onSignIn(formData.value)"
+  <form *ngIf="!this.isUserLoggedIn()" id="authForm" [formGroup]="formData" (ngSubmit)="onSignIn(formData)"
     class="form-signin">
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input id="username" class="form-control form-box" formControlName="userName" placeholder="Username" required
-      autofocus>
+    <input id="username" class="form-control form-box" formControlName="userName" placeholder="Username" required>
     <label for="inputPassword" class="sr-only">Password</label>
     <input id="inputPassword" type="password" class="form-control form-box" formControlName="password"
       placeholder="Password" required>

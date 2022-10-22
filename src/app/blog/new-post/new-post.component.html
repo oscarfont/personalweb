@@ -16,7 +16,7 @@
       <div style="width: 97%; margin:2rem 0rem 0rem 0rem;">
         <form id="postForm" [formGroup]="formData" (ngSubmit)="this.onPublishBlog(formData.value)">
           <input id="inputTitle" class="form-control form-box" formControlName="title" placeholder="Enter a title..."
-            required autofocus>
+            required>
           <input id="inputCategory" class="form-control form-box" formControlName="category"
             placeholder="Enter the category..." required>
           <input id="inputSummary" class="form-control form-box" formControlName="summary"

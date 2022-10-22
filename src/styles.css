@@ -156,3 +156,8 @@ body {
     --portfolio-rows-margin: -1.5rem;
   }
 }
+
+/* bootstrap modal fix */
+ngb-modal-backdrop {
+  z-index: 1050 !important;
+}
