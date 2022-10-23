@@ -36,12 +36,15 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/animate.css/animate.css",
-              "node_modules/aos/dist/aos.css"
+              "node_modules/aos/dist/aos.css",
+              "node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "node_modules/froala-editor/css/froala_style.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/aos/dist/aos.js"
+              "node_modules/aos/dist/aos.js",
+              "node_modules/froala-editor/js/froala_editor.pkgd.min.js"
             ],
             "allowedCommonJsDependencies": [
               "aos"

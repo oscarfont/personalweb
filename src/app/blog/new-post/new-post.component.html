@@ -21,6 +21,7 @@
             placeholder="Enter the category..." required>
           <input id="inputSummary" class="form-control form-box" formControlName="summary"
             placeholder="Enter a summary..." required>
+          <textarea [froalaEditor]="this.options" formControlName="htmlContent"></textarea>
           <button class="btn btn-lg btn-outline-primary" id="publishButton">Publish</button>
         </form>
       </div>

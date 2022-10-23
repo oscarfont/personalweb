@@ -161,3 +161,24 @@ body {
 ngb-modal-backdrop {
   z-index: 1050 !important;
 }
+
+/* agnular editor */
+.fr-toolbar,
+.fr-wrapper,
+.fr-second-toolbar {
+  background-color: rgb(47, 64, 102, 0.58) !important;
+  border: 1px solid var(--main-color) !important;
+  color: var(--secondary-color) !important;
+}
+
+.fr-more-toolbar {
+  background-color: rgb(47, 64, 102, 0.58) !important;
+}
+
+.fr-btn {
+  background-color: var(--secondary-color) !important;
+}
+
+.fr-element.fr-view {
+  color: var(--secondary-color) !important;
+}

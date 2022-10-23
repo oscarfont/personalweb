@@ -16,6 +16,7 @@ export class NewPostComponent implements OnInit {
   formData: FormGroup;
   backgroundRight: { name: string, pos: string };
   backgroundLeft: { name: string, pos: string };
+  options: Object;
 
   constructor(private locationService: Location, private blogService: BlogService,
     private router: Router, private toastrService: ToastrService,) {
@@ -26,6 +27,9 @@ export class NewPostComponent implements OnInit {
     this.backgroundLeft = {
       name: 'quarter-hexagon',
       pos: 'top-left'
+    }
+    this.options = {
+      placeholderText: 'Add your post content here...'
     }
     this.formData = new FormGroup({
       title: new FormControl(''),
