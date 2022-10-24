@@ -29,7 +29,12 @@ export class NewPostComponent implements OnInit {
       pos: 'top-left'
     }
     this.options = {
-      placeholderText: 'Add your post content here...'
+      placeholderText: 'Add your post content here...',
+      fontFamily: {
+        "Domine": "Titles Font",
+        "Montserrat": "Subtitles Font",
+        "Katamaran": "Body Font"
+      }
     }
     this.formData = new FormGroup({
       title: new FormControl(''),

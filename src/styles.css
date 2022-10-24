@@ -168,7 +168,6 @@ ngb-modal-backdrop {
 .fr-second-toolbar {
   background-color: rgb(47, 64, 102, 0.58) !important;
   border: 1px solid var(--main-color) !important;
-  color: var(--secondary-color) !important;
 }
 
 .fr-more-toolbar {
