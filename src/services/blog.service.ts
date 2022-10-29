@@ -41,14 +41,11 @@ export class BlogService {
     return this.http.post<any>(this.baseURL + 'blog/publish', data, { headers: this.httpHeader, params: params });
   }
 
-  deleteBlog(category: string, id: string) {
-    const data = { 'category': category, 'id': id };
-
+  deleteBlog(id: string) {
     const options = {
-      headers: this.httpHeader,
-      body: data,
+      headers: this.httpHeader
     };
 
-    return this.http.delete<any>(this.baseURL + 'blog/deleteBlog', options);
+    return this.http.delete<any>(this.baseURL + 'blog/remove/' + id, options);
   }
 }

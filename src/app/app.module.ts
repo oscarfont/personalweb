@@ -30,7 +30,6 @@ import "froala-editor/js/plugins/table.min.js";
 import "froala-editor/js/plugins/link.min.js";
 import "froala-editor/js/plugins/lists.min.js";
 import "froala-editor/js/plugins/quote.min.js";
-import "froala-editor/js/third_party/spell_checker.min.js";
 
 @NgModule({
   declarations: [

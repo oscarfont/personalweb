@@ -18,11 +18,11 @@
       <div *ngIf="this.authService.isUserLoggedIn()" class="card standard-card" style="width: 80%;">
         <div class="card-header">
           <h4 class="blog-title">{{this.userName}} welcome to your blog :)</h4>
-          <a routerLink="/newpost">New Post</a>
         </div>
-        <div id="message" class="card-body">
+        <div id="message" class="d-flex card-body justify-content-between">
           <span class="blog-text">Find whatever post you need most or read the ones you get an eye on! Dive in and have
             fun :)</span>
+          <a routerLink="/newpost"><button class="btn btn-outline-primary">New Post</button></a>
         </div>
       </div>
       <!-- BLOG POST LIST-->
@@ -32,7 +32,11 @@
             class="list-group-item list-group-item-action flex-column align-items-start blog-card standard-card">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1 blog-title">{{post.title}}</h5>
-              <small class="date-published">3 days ago</small>
+              <div *ngIf="this.authService.isUserLoggedIn()">
+                <button class="btn btn-outline-primary" (click)="deletePost($event, post.id)">
+                  <fa-icon [icon]="trashCanIcon"></fa-icon>
+                </button>
+              </div>
             </div>
             <div class="d-flex align-items-start">
               <p class="mb-1 blog-text">{{post.summary}}</p>

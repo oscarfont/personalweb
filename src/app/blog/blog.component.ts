@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../services/blog.service';
 import { AuthService } from 'src/services/auth.service';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-blog',
@@ -15,8 +17,10 @@ export class BlogComponent implements OnInit {
   userName: string;
   backgroundRight: { name: string, pos: string };
   backgroundLeft: { name: string, pos: string };
+  trashCanIcon = faTrashCan;
 
-  constructor(private blogService: BlogService, public authService: AuthService) {
+  constructor(private blogService: BlogService, public authService: AuthService,
+    private toastrService: ToastrService) {
     this.backgroundRight = {
       name: 'quarter-hexagon',
       pos: 'bottom-right'
@@ -44,10 +48,13 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  deletePost(category: string, id: string) {
-    this.blogService.deleteBlog(category, id).subscribe((data) => {
-      console.log('SUCCESS');
-    }, (error) => { console.log(error); });
+  deletePost(event: any, id: string) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.blogService.deleteBlog(id).subscribe((data) => {
+      this.toastrService.success('Post deleted sucessfully');
+      window.location.reload();
+    }, (error) => { this.toastrService.error('There was an error deleting the post'); });
   }
 
 }
