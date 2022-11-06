@@ -255,6 +255,10 @@
 }
 
 /* PORFOLIO typography classes */
+.project-card {
+  max-width: 95%;
+}
+
 .project-title {
   font-family: var(--titles-font);
   font-size: var(--subtitles-size);
@@ -264,7 +268,7 @@
 .project-body {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  padding-left: 1rem;
   font-family: var(--body-font);
   font-size: var(--body-size);
   color: var(--secondary-color);
@@ -274,6 +278,18 @@
   width: 100%;
   min-width: 32px;
   max-width: 128px;
+}
+
+.project-image {
+  max-width: 8rem;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .project-image {
+    max-width: 4rem;
+    width: 100%;
+  }
 }
 
 /* SLIDER CLASSES */

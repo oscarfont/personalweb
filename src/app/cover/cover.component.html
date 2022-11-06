@@ -64,8 +64,9 @@
 </div>
 <div class="container-fluid d-flex flex-column" id="experience-page">
   <app-background [leftHex]="projectsBackground.leftHex" [leftHexPos]="projectsBackground.leftHexPos"></app-background>
-  <div class="row d-flex align-items-center justify-content-center" style="height:100%">
-    <div id="experienceCarousel" class="card standard-card carousel slide" data-ride="carousel" data-aos="zoom-in-up">
+  <div class="row d-flex align-items-center justify-content-center" style="height:100%;">
+    <div id="experienceCarousel" class="card standard-card carousel slide" data-ride="carousel" data-aos="zoom-in-up"
+      style=" max-width: 95%;">
       <ol class="carousel-indicators">
         <li data-target="#experienceCarousel" data-slide-to="0" class="active">
           <div class="d-flex flex-column">
@@ -142,66 +143,82 @@
 <div class="container-fluid d-flex flex-column" id="projects-page">
   <app-background [rightHex]="experienceBackground.rightHex" [rightHexPos]="experienceBackground.rightHexPos">
   </app-background>
-  <div class="row d-flex align-items-center justify-content-center" style="height:100%">
-    <div class="row">
-      <div class="col-12 col-lg col-xl">
-        <div class="card standard-card" data-aos="flip-down">
+  <div class="row d-flex align-items-center justify-content-center" style="height:100vh">
+    <div class="row" style="margin: 0">
+      <div class="col-12 col-lg col-xl d-flex justify-content-center">
+        <div class="card standard-card project-card" data-aos="flip-down">
           <div>
             <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span class="accent-2">
                 DailyWordBot</span> contribution</h1>
           </div>
-          <div class="project-body">
-            <video class="project-video" controls autoplay>
-              <source src="../../assets/cover/dailyWordBot.3gp">
-              Your browser does not support the video tag.
-            </video>
-            <div>BODY</div>
+          <div class="row project-body">
+            <div class="col-6">
+              <img src="../../assets/cover/dailyWordBot.png" class="project-image" />
+            </div>
+            <div class="col-6">
+              BODY
+            </div>
+            <div class="col-12">
+              Image gallery, tech icons
+            </div>
           </div>
         </div>
       </div>
-      <div *ngIf="!this.isMobile" class="col-12 col-lg col-xl">
-        <div class="card standard-card" data-aos="flip-down">
+      <div *ngIf="!this.isMobile" class="col-12 col-lg col-xl d-flex justify-content-center">
+        <div class="card standard-card project-card" data-aos="flip-down">
           <div>
             <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
                 class="accent-2">Personalweb </span>and Blog</h1>
           </div>
-          <div class="project-body">
-            <video class="project-video" controls autoplay>
-              <source src="">
-              Your browser does not support the video tag.
-            </video>
-            <div>BODY</div>
+          <div class="row project-body">
+            <div class="col-6">
+              <img src="../../assets/cover/personalweb.png" class="project-image" />
+            </div>
+            <div class="col-6">
+              BODY
+            </div>
+            <div class="col-12">
+              Image gallery, tech icons
+            </div>
           </div>
         </div>
       </div>
       <div class="w-100"></div>
-      <div class="col-12 col-lg col-xl">
-        <div class="card standard-card" data-aos="flip-down">
-          <div>
+      <div class="col-12 col-lg col-xl d-flex justify-content-center">
+        <div class="card standard-card project-card" data-aos="flip-down">
+          <div style="display: inline-block">
             <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
-                class="accent-2">Professional Wrestling </span>Sentiment</h1>
+                class="accent-2">Pro Wrestling</span> Sentiment</h1>
           </div>
-          <div class="project-body">
-            <video class="project-video" controls autoplay>
-              <source src="../../assets/cover/pwsas.3gp">
-              Your browser does not support the video tag.
-            </video>
-            <div>BODY</div>
+          <div class="row project-body">
+            <div class="col-6">
+              <img src="../../assets/cover/pwsas.png" class="project-image" />
+            </div>
+            <div class="col-6">
+              BODY
+            </div>
+            <div class="col-12">
+              Image gallery, tech icons
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg col-xl">
-        <div class="card standard-card" data-aos="flip-down">
+      <div class="col-12 col-lg col-xl d-flex justify-content-center">
+        <div class="card standard-card project-card" data-aos="flip-down">
           <div>
             <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
                 class="accent-2">Dixie </span>Virtual Assistant</h1>
           </div>
-          <div class="project-body">
-            <video class="project-video" controls autoplay>
-              <source src="">
-              Your browser does not support the video tag.
-            </video>
-            <div>BODY</div>
+          <div class="row project-body">
+            <div class="col-6">
+              <img src="../../assets/cover/dixie.png" class="project-image" />
+            </div>
+            <div class="col-6">
+              BODY
+            </div>
+            <div class="col-12">
+              Image gallery, tech icons
+            </div>
           </div>
         </div>
       </div>
