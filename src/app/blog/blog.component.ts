@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../services/blog.service';
 import { AuthService } from 'src/services/auth.service';
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan, faPenNib } from '@fortawesome/free-solid-svg-icons'
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -18,6 +18,7 @@ export class BlogComponent implements OnInit {
   backgroundRight: { name: string, pos: string };
   backgroundLeft: { name: string, pos: string };
   trashCanIcon = faTrashCan;
+  penIcon = faPenNib;
 
   constructor(private blogService: BlogService, public authService: AuthService,
     private toastrService: ToastrService) {

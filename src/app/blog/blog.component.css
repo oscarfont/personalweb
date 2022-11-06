@@ -4,15 +4,33 @@
 }
 
 .list-group {
-  max-height: 67.5rem;
-  margin: 1rem 0rem 1rem 0rem;
+  margin: 1rem 0rem 0rem 0rem;
   overflow: auto;
 }
 
-@media(max-width: 500px) {
+/* MICRO DEVICES */
+@media (max-width: 280px) {
   .list-group {
-    max-height: 25rem;
-    margin: 1rem 0rem 1rem 0rem;
+    max-height: 20rem;
+    margin: 1rem 0rem 0rem 0rem;
+    overflow: auto;
+  }
+}
+
+/* SMALL DEVICES */
+@media (min-width:281px) and (max-width:375px) {
+  .list-group {
+    max-height: 23rem;
+    margin: 1rem 0rem 0rem 0rem;
+    overflow: auto;
+  }
+}
+
+/* BIG PHONES */
+@media (min-width:376px) and (max-width:576px) {
+  .list-group {
+    max-height: 35rem;
+    margin: 1rem 0rem 0rem 0rem;
     overflow: auto;
   }
 }

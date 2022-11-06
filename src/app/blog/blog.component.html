@@ -3,9 +3,10 @@
     [rightHexPos]="backgroundRight.pos">
   </app-background>
   <div class="row flex-grow-1">
-    <div class="col-12 d-flex flex-column align-items-center" style="margin-top: 3.5rem;">
+    <div class="col-12 d-flex flex-column align-items-center"
+      style="margin-top: 3.5rem; margin-left: auto; margin-right: auto;">
       <!-- HEADER TITLE CARD -->
-      <div *ngIf="!this.authService.isUserLoggedIn()" class="card standard-card" style="width: 80%;">
+      <div *ngIf="!this.authService.isUserLoggedIn()" class="card standard-card">
         <div class="card-header">
           <h4 class="blog-title">Welcome to my Blog!</h4>
         </div>
@@ -15,19 +16,23 @@
         </div>
       </div>
       <!-- LOGGED HEADER TITLE CARD -->
-      <div *ngIf="this.authService.isUserLoggedIn()" class="card standard-card" style="width: 80%;">
+      <div *ngIf="this.authService.isUserLoggedIn()" class="card standard-card">
         <div class="card-header">
           <h4 class="blog-title">{{this.userName}} welcome to your blog :)</h4>
         </div>
         <div id="message" class="d-flex card-body justify-content-between">
           <span class="blog-text">Find whatever post you need most or read the ones you get an eye on! Dive in and have
             fun :)</span>
-          <a routerLink="/newpost"><button class="btn btn-outline-primary">New Post</button></a>
+          <a routerLink="/newpost">
+            <button class="btn btn-outline-primary">
+              <fa-icon [icon]="penIcon"></fa-icon>
+            </button>
+          </a>
         </div>
       </div>
       <!-- BLOG POST LIST-->
-      <div *ngFor="let cat of this.categories" style="width: 80%;">
-        <div class="list-group">
+      <div class="list-group" style="width: 100%">
+        <div *ngFor="let cat of this.categories">
           <a *ngFor="let post of this.categoryPosts.get(cat)" [routerLink]="['/detail', cat, post.id]"
             class="list-group-item list-group-item-action flex-column align-items-start blog-card standard-card">
             <div class="d-flex w-100 justify-content-between">
