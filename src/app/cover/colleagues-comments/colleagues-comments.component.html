@@ -3,7 +3,9 @@
   <app-background *ngIf="this.background" [leftHex]="this.background.leftHex" [leftHexPos]="this.background.leftHexPos">
   </app-background>
   <div class="row d-flex flex-column align-items-center justify-content-center" style="height:100%">
-    <div class="subtitle-heading" style="margin-bottom: 4rem;">What colleagues say about me...</div>
+    <div class="subtitle-heading" style="margin-bottom: 4rem;">What <span class="accent-2">colleagues</span>
+      <span class="accent-1"> say</span> about <span class="accent-2">me</span>...
+    </div>
     <div *ngIf="!this.isMobile">
       <div class="card standard-card container">
         <div class="slider">
@@ -72,12 +74,12 @@
       </div>
     </div>
     <div *ngIf="this.isMobile" style="width:100%">
-      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <div id="colleaguesCommentsCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+          <li data-target="#colleaguesCommentsCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#colleaguesCommentsCarousel" data-slide-to="1"></li>
+          <li data-target="#colleaguesCommentsCarousel" data-slide-to="2"></li>
+          <li data-target="#colleaguesCommentsCarousel" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -122,11 +124,11 @@
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#colleaguesCommentsCarousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#colleaguesCommentsCarousel" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
