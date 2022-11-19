@@ -3,39 +3,11 @@
   <app-background *ngIf="this.background" [leftHex]="this.background.leftHex" [leftHexPos]="this.background.leftHexPos">
   </app-background>
   <div class="row d-flex flex-column align-items-center justify-content-center" style="height:100%">
-    <div class="subtitle-heading" style="margin-bottom: 4rem;">What colleagues say about me...
-    </div>
-    <div class="card standard-card container">
-      <div class="slider">
-        <div class="logos">
-          <div class="d-flex flex-row justify-content-around" style="gap: 1rem">
-            <div class="col quote-box">
-              <p class="quote">
-                "Very good developer. Always solving problems the best way possible
-                and in a sensiteve
-                way"</p>
-              <p class="author">Someone at <img src="../../assets/portfolio/redsys.png" class="author-company" /></p>
-            </div>
-            <div class="col quote-box">
-              <p class="quote">"Great engineer and better coalleague."</p>
-              <p class="author">Someone at <img src="../../assets/portfolio/fourthhub.png" class="author-company" /></p>
-            </div>
-            <div class="col quote-box">
-              <p class="quote">"Fast learnear and a passionate engineer. Very good team mate. Long live to the Backend
-                Team!"</p>
-              <p class="author">Someone at <img src="../../assets/portfolio/gopick-logo.jpeg"
-                  class="author-company-square" />
-              </p>
-            </div>
-            <div class="col quote-box">
-              <p class="quote">"A problem solver by nature. Technically proficient and great team mate."</p>
-              <p class="author">Someone at <img src="../../assets/portfolio/upm.png" class="author-company-square" />
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="logos">
-          <span class="second">
+    <div class="subtitle-heading" style="margin-bottom: 4rem;">What colleagues say about me...</div>
+    <div *ngIf="!this.isMobile">
+      <div class="card standard-card container">
+        <div class="slider">
+          <div class="logos">
             <div class="d-flex flex-row justify-content-around" style="gap: 1rem">
               <div class="col quote-box">
                 <p class="quote">
@@ -62,8 +34,102 @@
                 </p>
               </div>
             </div>
-          </span>
+          </div>
+          <div class="logos">
+            <span class="second">
+              <div class="d-flex flex-row justify-content-around" style="gap: 1rem">
+                <div class="col quote-box">
+                  <p class="quote">
+                    "Very good developer. Always solving problems the best way possible
+                    and in a sensiteve
+                    way"</p>
+                  <p class="author">Someone at <img src="../../assets/portfolio/redsys.png" class="author-company" />
+                  </p>
+                </div>
+                <div class="col quote-box">
+                  <p class="quote">"Great engineer and better coalleague."</p>
+                  <p class="author">Someone at <img src="../../assets/portfolio/fourthhub.png" class="author-company" />
+                  </p>
+                </div>
+                <div class="col quote-box">
+                  <p class="quote">"Fast learnear and a passionate engineer. Very good team mate. Long live to the
+                    Backend
+                    Team!"</p>
+                  <p class="author">Someone at <img src="../../assets/portfolio/gopick-logo.jpeg"
+                      class="author-company-square" />
+                  </p>
+                </div>
+                <div class="col quote-box">
+                  <p class="quote">"A problem solver by nature. Technically proficient and great team mate."</p>
+                  <p class="author">Someone at <img src="../../assets/portfolio/upm.png"
+                      class="author-company-square" />
+                  </p>
+                </div>
+              </div>
+            </span>
+          </div>
         </div>
+      </div>
+    </div>
+    <div *ngIf="this.isMobile" style="width:100%">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card standard-card quote-slide">
+              <div class="col quote-box">
+                <p class="quote">
+                  "Very good developer. Always solving problems the best way possible
+                  and in a sensiteve
+                  way"</p>
+                <p class="author">Someone at <img src="../../assets/portfolio/redsys.png" class="author-company" /></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card standard-card quote-slide">
+              <div class="col quote-box">
+                <p class="quote">"Great engineer and better coalleague."</p>
+                <p class="author">Someone at <img src="../../assets/portfolio/fourthhub.png" class="author-company" />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card standard-card quote-slide">
+              <div class="col quote-box">
+                <p class="quote">"Fast learnear and a passionate engineer. Very good team mate. Long live to the
+                  Backend
+                  Team!"</p>
+                <p class="author">Someone at <img src="../../assets/portfolio/gopick-logo.jpeg"
+                    class="author-company-square" />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card standard-card quote-slide">
+              <div class="col quote-box">
+                <p class="quote">"A problem solver by nature. Technically proficient and great team mate."</p>
+                <p class="author">Someone at <img src="../../assets/portfolio/upm.png" class="author-company-square" />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
   </div>
