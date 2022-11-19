@@ -1,0 +1,89 @@
+#contact-page {
+  height: 100vh;
+  background-color: var(--main-color);
+  z-index: 2;
+  scroll-snap-align: end;
+}
+
+.subtitle-heading {
+  font-family: var(--subtitles-font);
+  font-size: var(--subtitles-size);
+  color: var(--secondary-color);
+  margin-top: 0.5rem;
+}
+
+/* SLIDER CLASSES */
+.container {
+  overflow: hidden;
+}
+
+.slider {
+  animation: slidein 30s linear infinite;
+  white-space: nowrap;
+}
+
+.slider .logos {
+  width: 100%;
+  display: inline-block;
+}
+
+.slider .logos span.second {
+  width: calc(100% / 5);
+  animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+}
+
+@keyframes slidein {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.quote-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: justify;
+  padding: 1rem;
+}
+
+.quote {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
+  font-style: italic;
+}
+
+.author {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
+}
+
+.author-company {
+  width: 100%;
+  max-width: 6rem;
+  min-width: 3rem;
+}
+
+.author-company-square {
+  width: 100%;
+  max-width: 4rem;
+  min-width: 2rem;
+  border-radius: 3.25rem;
+}

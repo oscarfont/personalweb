@@ -1,7 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Router } from '@angular/router';
-
 import { ToastrService } from 'ngx-toastr';
 import { AppStateService } from '../app-state.service';
 
@@ -31,7 +30,7 @@ export class CoverComponent implements OnInit {
   coverBackground: any;
   experienceBackground: any;
   projectsBackground: any;
-  testiomonialBackground: any;
+  testimonialBackground: any;
   isMobile: boolean;
 
   constructor(private toastrService: ToastrService, private routerService: Router, private appStateService: AppStateService) {
@@ -60,7 +59,7 @@ export class CoverComponent implements OnInit {
       rightHex: 'hexagon',
       rightHexPos: 'bottom-right'
     }
-    this.testiomonialBackground = {
+    this.testimonialBackground = {
       leftHex: 'hexagon',
       leftHexPos: 'bottom-left'
     }
