@@ -47,7 +47,7 @@ export class NewPostComponent implements OnInit {
   ngOnInit(): void { }
 
   onPublishBlog(values: any) {
-    console.log(values);
+    //console.log(values);
     this.blogService.publishBlog(values.title, values.category, values.summary, values.htmlContent).subscribe((res) => {
       this.toastrService.success('Post published successfully!');
       this.router.navigateByUrl('/blog');

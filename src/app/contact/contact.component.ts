@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { AppStateService } from '../app-state.service';
 import { ToastrService } from 'ngx-toastr';
+import { UtilsService } from 'src/services/utils.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -21,8 +23,11 @@ export class ContactComponent implements OnInit {
   slide1Background: any;
   slide2Background: any;
 
+  // form data object
+  formData: FormGroup;
+
   constructor(private toastrService: ToastrService,
-    private appStateService: AppStateService) {
+    private appStateService: AppStateService, private utilsService: UtilsService) {
 
     // set background configs
     this.backgroundRight = {
@@ -44,6 +49,12 @@ export class ContactComponent implements OnInit {
       leftHex: 'quarter-hexagon',
       leftHexPos: 'bottom-left'
     }
+
+    this.formData = new FormGroup({
+      email: new FormControl(''),
+      subject: new FormControl(''),
+      comment: new FormControl('')
+    });
 
   }
 
@@ -73,6 +84,19 @@ export class ContactComponent implements OnInit {
     document.execCommand('copy');
     document.body.removeChild(selBox);
     this.toastrService.success('Email copied successfully to clipboard!');
+  }
+
+  onSubmit(data: any) {
+    console.log(data);
+    this.utilsService.sendEmail(data.email, data.subject, data.comment).subscribe((res) => {
+      //console.log(res);
+      this.toastrService.success(res.data);
+      this.formData = new FormGroup({
+        email: new FormControl(''),
+        subject: new FormControl(''),
+        comment: new FormControl('')
+      });
+    }, (error: any) => { console.log(error); });
   }
 
 }
