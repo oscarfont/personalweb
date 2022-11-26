@@ -180,7 +180,7 @@
   width: 100%;
   max-width: 16rem;
   min-width: 5rem;
-  height: 2rem;
+  height: 2.5rem;
   background-color: transparent;
   color: #969fb2;
   border-bottom: 2px solid #969fb2;
@@ -193,7 +193,7 @@
   width: 100%;
   max-width: 16rem;
   min-width: 5rem;
-  height: 2rem;
+  height: 2.5rem;
   background-color: transparent;
   color: var(--accent-color-1);
   font-weight: bold;
@@ -201,11 +201,13 @@
   margin: 0rem 0rem 0.5rem 0rem;
 }
 
-.carousel-indicators>li.active>div>span.subtitle-text {
+.carousel-indicators>li.active>div>span.indicator-text {
+  font-size: var(--micro-body-size);
   color: var(--accent-color-1);
 }
 
-.carousel-indicators>li>div>span.subtitle-text {
+.carousel-indicators>li>div>span.indicator-text {
+  font-size: var(--micro-body-size);
   color: #969fb2;
 }
 
@@ -217,7 +219,7 @@
   border-radius: 25px;
   border: 1px solid #ddd;
   background-color: var(--accent-color-1);
-  margin-top: 1.65rem;
+  margin-top: 2.25rem;
   align-self: center;
 }
 
@@ -229,7 +231,7 @@
   border-radius: 25px;
   border: 1px solid #ddd;
   background-color: #fff;
-  margin-top: 1.65rem;
+  margin-top: 2.25rem;
   align-self: center;
 }
 
