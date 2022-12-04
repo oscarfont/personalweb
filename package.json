@@ -36,6 +36,7 @@
     "install": "^0.13.0",
     "jquery": "^3.6.1",
     "karma": "^6.4.1",
+    "ngx-device-detector": "3.0",
     "ngx-echarts": "^7.0.2",
     "ngx-toastr": "^13.2.1",
     "rxjs": "^6.6.7",

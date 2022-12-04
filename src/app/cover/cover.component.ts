@@ -3,6 +3,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AppStateService } from '../app-state.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-cover',
@@ -13,8 +14,8 @@ export class CoverComponent implements OnInit {
 
   coverPagesId: string[];
   currentPageIndex: number;
-  numbersArray: number[];
-  solutionArray: number[];
+  numbersArray: number[] = [];
+  solutionArray: number[] = [];
   timer: number;
   timerString: string;
   userFinishTime: string;
@@ -33,11 +34,15 @@ export class CoverComponent implements OnInit {
   testimonialBackground: any;
   isMobile: boolean;
 
-  constructor(private toastrService: ToastrService, private routerService: Router, private appStateService: AppStateService) {
-    this.numbersArray = [48, 35, 20, 2, 81, 50, 100, 63, 77, 13];
-    this.solutionArray = [2, 13, 20, 35, 48, 50, 63, 77, 81, 100];
-    this.timer = 0.0;
-    this.timerString = "0.0";
+  constructor(private toastrService: ToastrService, private routerService: Router,
+    private appStateService: AppStateService, private deviceService: DeviceDetectorService) {
+    //this.numbersArray = [48, 35, 20, 2, 81, 50, 100, 63, 77, 13];
+    //this.numbersArray = [];
+    //this.solutionArray = [2, 13, 20, 35, 48, 50, 63, 77, 81, 100];
+    //this.solutionArray = [];
+    this.generateGameArrays();
+    this.timer = 0.00;
+    this.timerString = "0.00";
     this.arrayIndex = -1;
     this.startBool = true;
     this.coverPagesId = ["cover-page", "experience-page", "projects-page", "contact-page"];
@@ -69,6 +74,29 @@ export class CoverComponent implements OnInit {
     //this.bubbleSort(this.numbersArray,this.numbersArray.length);
     //console.log(this.numbersArray);
     this.isMobile = this.appStateService.getIsMobileResolution();
+  }
+
+  generateGameArrays() {
+    const maxNumber = 99;
+    const arraysLength = 10;
+    const tmpArray = []
+    for (let i = 0; i < arraysLength; i++) {
+      tmpArray.push(Math.floor(Math.random() * maxNumber) + 1);
+    }
+    this.numbersArray = tmpArray.concat();
+    this.solutionArray = tmpArray.sort((a, b) => a - b);
+    //console.log(this.solutionArray);
+  }
+
+  getDeviceInfoString(): string {
+    let outString = '';
+    const deviceInfo = this.deviceService.getDeviceInfo();
+    if (this.deviceService.isDesktop()) {
+      outString = `${deviceInfo.browser} on your ${deviceInfo.os} ${deviceInfo.deviceType}`;
+    } else {
+      outString = `your ${deviceInfo.device}`;
+    }
+    return outString;
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -103,7 +131,7 @@ export class CoverComponent implements OnInit {
           this.swap(arr, j, j + 1);
           setTimeout(() => {
             moveItemInArray(this.numbersArray, j, j + 1);
-          }, 10);
+          }, 1);
         }
       }
     }
@@ -134,9 +162,9 @@ export class CoverComponent implements OnInit {
 
         let transitionInterval = setInterval(() => {
           // restart game settings
-          this.timer = 0.0;
-          this.timerString = "0.0";
-          this.numbersArray = [48, 35, 20, 2, 81, 50, 100, 63, 77, 13];
+          this.timer = 0.00;
+          this.timerString = "0.00";
+          this.generateGameArrays();
 
           document.getElementById('game-card-body').style.setProperty('display', 'none');
           document.getElementById('solution-card-body').style.setProperty('display', 'block');
@@ -174,7 +202,7 @@ export class CoverComponent implements OnInit {
         clearInterval(this.cronoInterval);
         this.cronoInterval = undefined;
         this.computerFinishTime = this.timerString;
-      }, 100);
+      }, 10);
       this.displayFinalExplanation();
     }, 2300);
   }
@@ -200,7 +228,7 @@ export class CoverComponent implements OnInit {
 
   startTimer() {
     this.cronoInterval = setInterval(() => {
-      this.timerString = (Math.round((this.timer += 0.1) * 100) / 100).toFixed(1);
-    }, 100);
+      this.timerString = (Math.round((this.timer += 0.01) * 1000) / 1000).toFixed(2);
+    }, 10);
   }
 }

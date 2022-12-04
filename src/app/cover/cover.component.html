@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="d-flex flex-row align-items-end">
-            <button class="btn btn-outline-primary" (click)="startGame()"
+            <button class="btn btn-outline-primary" (click)="startGame()" [disabled]="!this.startBool"
               style="margin: 1rem 0rem 0rem auto;">Start</button>
           </div>
         </div>
@@ -41,7 +41,8 @@
             computer to do stuff like that for us efficiently. Don't believe me? Watch!</p>
           <p class="game-instructions" style="display:none;" id="final-demo-text"><span class="accent-1">Your time:
               {{this.userFinishTime}}s</span> vs <span class="accent-1">Computer Time:
-              {{this.computerFinishTime}}s</span><br> Solving tasks
+              {{this.computerFinishTime}}s <span class="accent-2">at {{this.getDeviceInfoString()}}</span></span><br>
+            Solving tasks
             like this lets us build webpages, games and mobile apps. <br>That is what I try my best at
             doing!<br><span class="accent-1">Enjoy the rest of my site!</span></p>
           <div class="d-flex flex-column align-items-center justify-content-center">
