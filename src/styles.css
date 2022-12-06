@@ -181,3 +181,8 @@ ngb-modal-backdrop {
 .fr-element.fr-view {
   color: var(--secondary-color) !important;
 }
+
+.post-style {
+  width: 100%;
+  max-width: 512px;
+}

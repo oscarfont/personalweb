@@ -19,4 +19,9 @@ export class UtilsService {
     return this.http.post<any>(this.baseURL + 'utils/sendMail', body, { headers: this.httpHeader });
   }
 
+  deleteImage(imageId: string) {
+    const body = { src: imageId }
+    return this.http.post<any>(this.baseURL + 'utils/deleteImage/', body);
+  }
+
 }

@@ -4,6 +4,7 @@ import { BlogService } from '../../../services/blog.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormControl, FormGroup } from '@angular/forms';
+import { UtilsService } from 'src/services/utils.service';
 
 @Component({
   selector: 'app-new-post',
@@ -14,12 +15,14 @@ export class NewPostComponent implements OnInit {
 
   htmlContent: any;
   formData: FormGroup;
+  postMedia: Array<string>;
   backgroundRight: { name: string, pos: string };
   backgroundLeft: { name: string, pos: string };
   options: Object;
 
   constructor(private locationService: Location, private blogService: BlogService,
-    private router: Router, private toastrService: ToastrService,) {
+    private router: Router, private toastrService: ToastrService, private utilsService: UtilsService) {
+    this.postMedia = new Array<string>();
     this.backgroundRight = {
       name: 'quarter-hexagon',
       pos: 'bottom-right'
@@ -56,7 +59,20 @@ export class NewPostComponent implements OnInit {
           this.image.insert(imageUrl, false, null, this.image.get(), { link: imageUrl });
           return false;
         },
-      }
+        'image.removed': function (img: any) {
+          const fileName = img[0].src.split('/')[3];
+          utilsService.deleteImage(fileName).subscribe((res) => {
+            toastrService.success('Image deleted successfully!');
+          });
+        }
+      },
+
+      imageStyles: {
+        'post-style': 'imageStyle'
+      },
+
+      imageEditButtons: ['imageReplace', 'imageAlign', 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '-', 'imageDisplay', 'imageStyle', 'imageAlt', 'imageSize']
+
     };
     this.formData = new FormGroup({
       title: new FormControl(''),
