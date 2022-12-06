@@ -38,7 +38,7 @@ export class NewPostComponent implements OnInit {
       },
 
       // Set the image upload URL.
-      imageUploadURL: 'http://localhost:3000/utils/uploadImage',
+      imageUploadURL: 'http://localhost:3000/utils/uploadImage', // TODO change base path
 
       // Set request type.
       imageUploadMethod: 'POST',
