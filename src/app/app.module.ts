@@ -30,6 +30,7 @@ import "froala-editor/js/plugins/table.min.js";
 import "froala-editor/js/plugins/link.min.js";
 import "froala-editor/js/plugins/lists.min.js";
 import "froala-editor/js/plugins/quote.min.js";
+import "froala-editor/js/plugins/image.min.js";
 import { ColleaguesCommentsComponent } from './cover/colleagues-comments/colleagues-comments.component';
 
 @NgModule({

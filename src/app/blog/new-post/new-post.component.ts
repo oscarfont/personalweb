@@ -30,12 +30,34 @@ export class NewPostComponent implements OnInit {
     }
     this.options = {
       placeholderText: 'Add your post content here...',
+
       fontFamily: {
         "Domine": "Titles Font",
         "Montserrat": "Subtitles Font",
         "Katamaran": "Body Font"
+      },
+
+      // Set the image upload URL.
+      imageUploadURL: 'http://localhost:3000/utils/uploadImage',
+
+      // Set request type.
+      imageUploadMethod: 'POST',
+
+      // Set max image size to 10MB.
+      imageMaxSize: 10 * 1024 * 1024,
+
+      // Allow to upload PNG and JPG.
+      imageAllowedTypes: ['jpeg', 'jpg', 'png'],
+
+      events: {
+        'image.uploaded': function (res: string) {
+          const resObj = JSON.parse(res);
+          const imageUrl = `http://localhost:3000/${resObj.data}`; // TODO change this
+          this.image.insert(imageUrl, false, null, this.image.get(), { link: imageUrl });
+          return false;
+        },
       }
-    }
+    };
     this.formData = new FormGroup({
       title: new FormControl(''),
       category: new FormControl(''),
