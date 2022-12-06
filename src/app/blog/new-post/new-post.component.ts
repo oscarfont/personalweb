@@ -15,14 +15,12 @@ export class NewPostComponent implements OnInit {
 
   htmlContent: any;
   formData: FormGroup;
-  postMedia: Array<string>;
   backgroundRight: { name: string, pos: string };
   backgroundLeft: { name: string, pos: string };
   options: Object;
 
   constructor(private locationService: Location, private blogService: BlogService,
     private router: Router, private toastrService: ToastrService, private utilsService: UtilsService) {
-    this.postMedia = new Array<string>();
     this.backgroundRight = {
       name: 'quarter-hexagon',
       pos: 'bottom-right'
@@ -57,6 +55,7 @@ export class NewPostComponent implements OnInit {
           const resObj = JSON.parse(res);
           const imageUrl = `http://localhost:3000/${resObj.data}`; // TODO change this
           this.image.insert(imageUrl, false, null, this.image.get(), { link: imageUrl });
+          blogService.addPostMedia(resObj.data);
           return false;
         },
         'image.removed': function (img: any) {
@@ -64,6 +63,7 @@ export class NewPostComponent implements OnInit {
           utilsService.deleteImage(fileName).subscribe((res) => {
             toastrService.success('Image deleted successfully!');
           });
+          blogService.removePostMedia(fileName);
         }
       },
 
@@ -86,7 +86,7 @@ export class NewPostComponent implements OnInit {
 
   onPublishBlog(values: any) {
     //console.log(values);
-    this.blogService.publishBlog(values.title, values.category, values.summary, values.htmlContent).subscribe((res) => {
+    this.blogService.publishBlog(values.title, values.category, values.summary, values.htmlContent, this.blogService.getPostMedia()).subscribe((res) => {
       this.toastrService.success('Post published successfully!');
       this.router.navigateByUrl('/blog');
     }, (error: any) => { console.log(error); });

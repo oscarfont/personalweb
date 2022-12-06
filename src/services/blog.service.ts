@@ -8,12 +8,15 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 export class BlogService {
 
   baseURL: string = "http://localhost:3000/";
+  postMedia: Array<string>;
 
   httpHeader = new HttpHeaders({
     'Content-Type': 'application/json'
   });
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.postMedia = new Array<string>();
+  }
 
   getAllCategories() {
     return this.http.get<any>(this.baseURL + 'blog/categories/get/all', { headers: this.httpHeader });
@@ -31,12 +34,12 @@ export class BlogService {
     return this.http.post<any>(this.baseURL + 'blog/get/detail', body, { headers: this.httpHeader });
   }
 
-  publishBlog(title: string, category: string, summary: string, content: string) {
+  publishBlog(title: string, category: string, summary: string, content: string, media: Array<string>) {
     let params = new HttpParams({
       fromString: `category=${category}`
     });
 
-    const data = { 'title': title, 'summary': summary, 'content': content };
+    const data = { 'title': title, 'summary': summary, 'content': content, 'media': media };
 
     return this.http.post<any>(this.baseURL + 'blog/publish', data, { headers: this.httpHeader, params: params });
   }
@@ -48,4 +51,14 @@ export class BlogService {
 
     return this.http.delete<any>(this.baseURL + 'blog/remove/' + id, options);
   }
+
+  addPostMedia(itemName: string) {
+    this.postMedia.push(itemName);
+  }
+
+  removePostMedia(itemName: string) {
+    this.postMedia.filter((value) => { return itemName !== value });
+  }
+
+  getPostMedia() { return this.postMedia; }
 }
