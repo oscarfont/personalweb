@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule, HammerGestureConfig } from '@angular/platform-browser';
+import { Injectable, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +32,15 @@ import "froala-editor/js/plugins/lists.min.js";
 import "froala-editor/js/plugins/quote.min.js";
 import "froala-editor/js/plugins/image.min.js";
 import { ColleaguesCommentsComponent } from './cover/colleagues-comments/colleagues-comments.component';
+import Hammer from 'hammerjs';
+import { HammerModule } from "../../node_modules/@angular/platform-browser";
+
+@Injectable()
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = <any>{
+    swipe: { direction: Hammer.DIRECTION_ALL },
+  };
+}
 
 @NgModule({
   declarations: [
@@ -54,6 +63,7 @@ import { ColleaguesCommentsComponent } from './cover/colleagues-comments/colleag
     FontAwesomeModule,
     BrowserAnimationsModule,
     FormsModule,
+    HammerModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     NgbModule,

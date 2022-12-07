@@ -17,6 +17,8 @@ export class AppComponent {
 
   ngOnInit() {
     AOS.init();
+    const navbar = document.getElementById('user-tab');
+    console.log(navbar);
   }
 
   prepareRoute(outlet: RouterOutlet) {
