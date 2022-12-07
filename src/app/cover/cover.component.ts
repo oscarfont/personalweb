@@ -1,6 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AppStateService } from '../app-state.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
@@ -34,12 +33,8 @@ export class CoverComponent implements OnInit {
   testimonialBackground: any;
   isMobile: boolean;
 
-  constructor(private toastrService: ToastrService, private routerService: Router,
-    private appStateService: AppStateService, private deviceService: DeviceDetectorService) {
-    //this.numbersArray = [48, 35, 20, 2, 81, 50, 100, 63, 77, 13];
-    //this.numbersArray = [];
-    //this.solutionArray = [2, 13, 20, 35, 48, 50, 63, 77, 81, 100];
-    //this.solutionArray = [];
+  constructor(private toastrService: ToastrService, private appStateService: AppStateService,
+    private deviceService: DeviceDetectorService) {
     this.generateGameArrays();
     this.timer = 0.00;
     this.timerString = "0.00";
