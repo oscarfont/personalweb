@@ -32,6 +32,10 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  getCurrentRoute(): string {
+    return this.router.url;
+  }
+
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     /*console.log(this.appStateService.getIsMobileResolution());*/
@@ -56,7 +60,6 @@ export class NavbarComponent implements OnInit {
   changeNavBarMobile() { //column
     const fakeOption = document.getElementById("fake-option");
     fakeOption.style.display = 'none';
-    this.changeOptionResponsive("home", "column");
     this.changeOptionResponsive("portfolio", "column");
     this.changeOptionResponsive("blog", "column");
     this.changeOptionResponsive("contact", "column");
@@ -67,7 +70,6 @@ export class NavbarComponent implements OnInit {
   changeNavBarToDesktop() { //row
     const fakeOption = document.getElementById("fake-option");
     fakeOption.style.display = 'block';
-    this.changeOptionResponsive("home", "row", "Home");
     this.changeOptionResponsive("portfolio", "row", "Portflio");
     this.changeOptionResponsive("blog", "row", "Blog");
     this.changeOptionResponsive("contact", "row", "Contact");

@@ -72,3 +72,9 @@
   color: var(--accent-color-1);
   /*filter:drop-shadow(2px 2px #557d48);*/
 }
+
+.ofg-logo {
+  width: 100%;
+  max-width: 3.5rem;
+  min-width: 2rem;
+}
