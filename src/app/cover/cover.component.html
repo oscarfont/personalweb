@@ -1,7 +1,7 @@
 <div class="container-fluid d-flex flex-column mobile-scroll" id="cover-page" (swipe)="onSwipe($event)">
   <app-background [leftHex]="coverBackground.leftHex" [leftHexPos]="coverBackground.leftHexPos"
     [rightHex]="coverBackground.rightHex" [rightHexPos]="coverBackground.rightHexPos"></app-background>
-  <div class="row flex-grow-1 body-row">
+  <div class="row flex-grow-1">
     <div class="col-6 d-flex flex-column align-items-center">
       <img src="../../assets/cover/me-transparent-2.png" class="flex-grow-1" id="cover-pic">
       <div id="title-container">
@@ -10,6 +10,13 @@
         <h2 class="subtitle-heading"><span class="accent-1">Software Engineering</span> and <span class="accent-1">AI
             enthusiast</span> expermienting with the world wide web</h2>
       </div>
+    </div>
+    <div *ngIf="this.isMobile" class="d-flex col-6 flex-column align-items-center">
+      <div id="question-container-mobile">
+        <h4 class="heading-question-mobile" id="question">Wanna' see what I do as a <span class="accent-1">Software
+          </span><span class="accent-2">Engineer</span> ?</h4>
+      </div>
+      <fa-icon id="scroll-icon" [icon]="scrollDownIcon"></fa-icon>
     </div>
     <div class="d-none d-md-flex d-lg-flex d-xl-flex col-6 flex-column align-items-center" style="padding-top: 4rem;">
       <div id="question-container">

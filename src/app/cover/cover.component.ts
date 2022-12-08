@@ -5,6 +5,7 @@ import { AppStateService } from '../app-state.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { DIRECTION, SwipeRouteService } from 'src/services/swiperoute.service';
 import { Router } from '@angular/router';
+import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cover',
@@ -34,6 +35,7 @@ export class CoverComponent implements OnInit {
   projectsBackground: any;
   testimonialBackground: any;
   isMobile: boolean;
+  scrollDownIcon = faAnglesDown;
 
   constructor(private toastrService: ToastrService, private appStateService: AppStateService,
     private deviceService: DeviceDetectorService, private swipeRoute: SwipeRouteService,
