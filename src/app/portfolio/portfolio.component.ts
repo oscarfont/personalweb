@@ -44,22 +44,22 @@ export class PortfolioComponent implements OnInit {
     // set background configs
     this.backgroundRight = {
       name: 'quarter-hexagon',
-      pos: 'bottom-right'
+      pos: 'top-right'
     }
     this.backgroundLeft = {
       name: 'quarter-hexagon',
-      pos: 'top-left'
+      pos: 'bottom-left'
     }
 
     this.slide1Background = {
-      rightHex: 'hexagon',
-      rightHexPos: 'bottom-right',
-      leftHex: 'quarter-hexagon',
-      leftHexPos: 'top-left'
+      rightHex: 'quarter-hexagon',
+      rightHexPos: 'top-right',
+      leftHex: 'hexagon',
+      leftHexPos: 'bottom-left'
     }
     this.slide2Background = {
-      leftHex: 'quarter-hexagon',
-      leftHexPos: 'bottom-left'
+      rightHex: 'quarter-hexagon',
+      rightHexPos: 'bottom-right'
     }
 
     this.chartToolTip = ["Frontend", "Backend", "Database", "DevOps", "Quality Assurance", "Object Oriented Programming", "Machine Learning"];
