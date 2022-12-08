@@ -3,6 +3,8 @@ import { AppStateService } from '../app-state.service';
 import { ToastrService } from 'ngx-toastr';
 import { UtilsService } from 'src/services/utils.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DIRECTION, SwipeRouteService } from 'src/services/swiperoute.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -27,7 +29,8 @@ export class ContactComponent implements OnInit {
   formData: FormGroup;
 
   constructor(private toastrService: ToastrService,
-    private appStateService: AppStateService, private utilsService: UtilsService) {
+    private appStateService: AppStateService, private utilsService: UtilsService,
+    private swipeRoute: SwipeRouteService, private router: Router) {
 
     // set background configs
     this.backgroundRight = {
@@ -62,6 +65,7 @@ export class ContactComponent implements OnInit {
     this.isMobile = this.appStateService.getIsMobileResolution();
     this.changeBackground = this.isMobile ? true : false;
     this.columnClass = this.isMobile ? 'vh-100' : '';
+    //this.navBarSync.sync();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -97,6 +101,12 @@ export class ContactComponent implements OnInit {
         comment: new FormControl('')
       });
     }, (error: any) => { console.log(error); });
+  }
+
+  onSwipe(event: any) {
+    const dir = Math.abs(event?.deltaX) > 40 ? (event?.deltaX > 0 ? DIRECTION.right : DIRECTION.left) : DIRECTION.right;
+    const newRoute = this.swipeRoute.getNextSwipeRoute('/contact', dir);
+    this.router.navigateByUrl(newRoute);
   }
 
 }

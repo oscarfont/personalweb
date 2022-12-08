@@ -3,6 +3,8 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { ToastrService } from 'ngx-toastr';
 import { AppStateService } from '../app-state.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { DIRECTION, SwipeRouteService } from 'src/services/swiperoute.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cover',
@@ -34,7 +36,8 @@ export class CoverComponent implements OnInit {
   isMobile: boolean;
 
   constructor(private toastrService: ToastrService, private appStateService: AppStateService,
-    private deviceService: DeviceDetectorService) {
+    private deviceService: DeviceDetectorService, private swipeRoute: SwipeRouteService,
+    private router: Router) {
     this.generateGameArrays();
     this.timer = 0.00;
     this.timerString = "0.00";
@@ -225,5 +228,11 @@ export class CoverComponent implements OnInit {
     this.cronoInterval = setInterval(() => {
       this.timerString = (Math.round((this.timer += 0.01) * 1000) / 1000).toFixed(2);
     }, 10);
+  }
+
+  onSwipe(event: any) {
+    const dir = Math.abs(event?.deltaX) > 40 ? (event?.deltaX > 0 ? DIRECTION.right : DIRECTION.left) : DIRECTION.right;
+    const newRoute = this.swipeRoute.getNextSwipeRoute('/home', dir);
+    this.router.navigateByUrl(newRoute);
   }
 }

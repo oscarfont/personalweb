@@ -3,6 +3,8 @@ import { BlogService } from '../../services/blog.service';
 import { AuthService } from 'src/services/auth.service';
 import { faTrashCan, faPenNib } from '@fortawesome/free-solid-svg-icons'
 import { ToastrService } from 'ngx-toastr';
+import { DIRECTION, SwipeRouteService } from 'src/services/swiperoute.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -21,7 +23,7 @@ export class BlogComponent implements OnInit {
   penIcon = faPenNib;
 
   constructor(private blogService: BlogService, public authService: AuthService,
-    private toastrService: ToastrService) {
+    private toastrService: ToastrService, private swipeRoute: SwipeRouteService, private router: Router) {
     this.backgroundRight = {
       name: 'quarter-hexagon',
       pos: 'bottom-right'
@@ -47,6 +49,7 @@ export class BlogComponent implements OnInit {
       this.userCookie = this.authService.getCookie('token');
       this.userName = this.authService.getCookie('username');
     }
+    //this.navBarSync.sync();
   }
 
   deletePost(event: any, id: string) {
@@ -56,6 +59,12 @@ export class BlogComponent implements OnInit {
       this.toastrService.success('Post deleted sucessfully');
       window.location.reload();
     }, (error) => { this.toastrService.error('There was an error deleting the post'); });
+  }
+
+  onSwipe(event: any) {
+    const dir = Math.abs(event?.deltaX) > 40 ? (event?.deltaX > 0 ? DIRECTION.right : DIRECTION.left) : DIRECTION.right;
+    const newRoute = this.swipeRoute.getNextSwipeRoute('/blog', dir);
+    this.router.navigateByUrl(newRoute);
   }
 
 }

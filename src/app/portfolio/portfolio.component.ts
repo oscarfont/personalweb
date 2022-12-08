@@ -2,6 +2,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { AppStateService } from '../app-state.service';
 import { faCloud, faCode, faBrain, faLayerGroup, faSyncAlt, faDesktop, faMobileAlt, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { EChartsOption, EChartsType } from 'echarts';
+import { DIRECTION, SwipeRouteService } from 'src/services/swiperoute.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-portfolio',
@@ -37,7 +39,8 @@ export class PortfolioComponent implements OnInit {
   isMobile: boolean;
   rowClass: string;
 
-  constructor(private appStateService: AppStateService) {
+  constructor(private appStateService: AppStateService, private swipeRoute: SwipeRouteService,
+    private router: Router) {
     // set background configs
     this.backgroundRight = {
       name: 'quarter-hexagon',
@@ -147,6 +150,7 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     this.isMobile = this.appStateService.getIsMobileResolution();
     this.setSkillsChartOption();
+    //this.navBarSync.sync();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -161,6 +165,12 @@ export class PortfolioComponent implements OnInit {
 
   openPdf() {
     window.open(this.pdfLink);
+  }
+
+  onSwipe(event: any) {
+    const dir = Math.abs(event?.deltaX) > 40 ? (event?.deltaX > 0 ? DIRECTION.right : DIRECTION.left) : DIRECTION.right;
+    const newRoute = this.swipeRoute.getNextSwipeRoute('/portfolio', dir);
+    this.router.navigateByUrl(newRoute);
   }
 
 }
