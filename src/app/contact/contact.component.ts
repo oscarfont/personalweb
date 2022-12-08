@@ -65,7 +65,6 @@ export class ContactComponent implements OnInit {
     this.isMobile = this.appStateService.getIsMobileResolution();
     this.changeBackground = this.isMobile ? true : false;
     this.columnClass = this.isMobile ? 'vh-100' : '';
-    //this.navBarSync.sync();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -93,7 +92,6 @@ export class ContactComponent implements OnInit {
   onSubmit(data: any) {
     console.log(data);
     this.utilsService.sendEmail(data.email, data.subject, data.comment).subscribe((res) => {
-      //console.log(res);
       this.toastrService.success(res.data);
       this.formData = new FormGroup({
         email: new FormControl(''),
@@ -104,9 +102,11 @@ export class ContactComponent implements OnInit {
   }
 
   onSwipe(event: any) {
-    const dir = Math.abs(event?.deltaX) > 40 ? (event?.deltaX > 0 ? DIRECTION.right : DIRECTION.left) : DIRECTION.right;
-    const newRoute = this.swipeRoute.getNextSwipeRoute('/contact', dir);
-    this.router.navigateByUrl(newRoute);
+    if (this.isMobile) {
+      const dir = Math.abs(event?.deltaX) > 40 ? (event?.deltaX > 0 ? DIRECTION.right : DIRECTION.left) : DIRECTION.right;
+      const newRoute = this.swipeRoute.getNextSwipeRoute('/contact', dir);
+      this.router.navigateByUrl(newRoute);
+    }
   }
 
 }

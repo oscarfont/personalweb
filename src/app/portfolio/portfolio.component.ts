@@ -168,9 +168,11 @@ export class PortfolioComponent implements OnInit {
   }
 
   onSwipe(event: any) {
-    const dir = Math.abs(event?.deltaX) > 40 ? (event?.deltaX > 0 ? DIRECTION.right : DIRECTION.left) : DIRECTION.right;
-    const newRoute = this.swipeRoute.getNextSwipeRoute('/portfolio', dir);
-    this.router.navigateByUrl(newRoute);
+    if (this.isMobile) {
+      const dir = Math.abs(event?.deltaX) > 40 ? (event?.deltaX > 0 ? DIRECTION.right : DIRECTION.left) : DIRECTION.right;
+      const newRoute = this.swipeRoute.getNextSwipeRoute('/portfolio', dir);
+      this.router.navigateByUrl(newRoute);
+    }
   }
 
 }

@@ -5,6 +5,7 @@ import { faTrashCan, faPenNib } from '@fortawesome/free-solid-svg-icons'
 import { ToastrService } from 'ngx-toastr';
 import { DIRECTION, SwipeRouteService } from 'src/services/swiperoute.service';
 import { Router } from '@angular/router';
+import { AppStateService } from '../app-state.service';
 
 @Component({
   selector: 'app-blog',
@@ -21,9 +22,11 @@ export class BlogComponent implements OnInit {
   backgroundLeft: { name: string, pos: string };
   trashCanIcon = faTrashCan;
   penIcon = faPenNib;
+  isMobile = false;
 
   constructor(private blogService: BlogService, public authService: AuthService,
-    private toastrService: ToastrService, private swipeRoute: SwipeRouteService, private router: Router) {
+    private toastrService: ToastrService, private swipeRoute: SwipeRouteService,
+    private router: Router, private appStateService: AppStateService) {
     this.backgroundRight = {
       name: 'quarter-hexagon',
       pos: 'bottom-right'
@@ -45,11 +48,11 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isMobile = this.appStateService.getIsMobileResolution();
     if (this.authService.isUserLoggedIn()) {
       this.userCookie = this.authService.getCookie('token');
       this.userName = this.authService.getCookie('username');
     }
-    //this.navBarSync.sync();
   }
 
   deletePost(event: any, id: string) {
@@ -62,9 +65,11 @@ export class BlogComponent implements OnInit {
   }
 
   onSwipe(event: any) {
-    const dir = Math.abs(event?.deltaX) > 40 ? (event?.deltaX > 0 ? DIRECTION.right : DIRECTION.left) : DIRECTION.right;
-    const newRoute = this.swipeRoute.getNextSwipeRoute('/blog', dir);
-    this.router.navigateByUrl(newRoute);
+    if (this.isMobile) {
+      const dir = Math.abs(event?.deltaX) > 40 ? (event?.deltaX > 0 ? DIRECTION.right : DIRECTION.left) : DIRECTION.right;
+      const newRoute = this.swipeRoute.getNextSwipeRoute('/blog', dir);
+      this.router.navigateByUrl(newRoute);
+    }
   }
 
 }
