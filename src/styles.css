@@ -186,3 +186,7 @@ ngb-modal-backdrop {
   width: 100%;
   max-width: 512px;
 }
+
+.mobile-scroll {
+  touch-action: pan-y !important;
+}

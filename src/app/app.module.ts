@@ -1,4 +1,4 @@
-import { BrowserModule, HammerGestureConfig } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { Injectable, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,7 +38,7 @@ import { HammerModule } from "../../node_modules/@angular/platform-browser";
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any>{
-    swipe: { direction: Hammer.DIRECTION_ALL },
+    swipe: { direction: Hammer.DIRECTION_HORIZONTAL },
   };
 }
 
@@ -75,7 +75,17 @@ export class MyHammerConfig extends HammerGestureConfig {
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot()
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

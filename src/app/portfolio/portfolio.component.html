@@ -1,4 +1,4 @@
-<div class="container-fluid" id="portfolio-page" (swipe)="onSwipe($event)">
+<div class="container-fluid mobile-scroll" id="portfolio-page" (swipe)="onSwipe($event)">
   <div *ngIf="!this.isMobile">
     <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
       [rightHexPos]="backgroundRight.pos">
