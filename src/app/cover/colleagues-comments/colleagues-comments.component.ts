@@ -13,10 +13,9 @@ export class ColleaguesCommentsComponent implements OnInit {
 
   constructor(private appStateService: AppStateService) {
     //console.log(this.background)
-  }
-
-  ngOnInit(): void {
     this.isMobile = this.appStateService.getIsMobileResolution();
   }
+
+  ngOnInit(): void { }
 
 }
