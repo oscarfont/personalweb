@@ -4,7 +4,6 @@ import { faHome, faFolderOpen, faBlog, faInbox, faUserCircle } from '@fortawesom
 import { Router, Route } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthComponent } from '../auth/auth.component';
-import { NavbarsyncService } from 'src/services/navbarsync.service';
 
 @Component({
   selector: 'app-navbar',
@@ -21,8 +20,7 @@ export class NavbarComponent implements OnInit {
   navbarClass: string;
   authClass: string;
 
-  constructor(private appStateService: AppStateService, private router: Router,
-    private modalService: NgbModal, private navBarSyncService: NavbarsyncService) { }
+  constructor(private appStateService: AppStateService, private router: Router, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     // adjust navbar
@@ -32,8 +30,6 @@ export class NavbarComponent implements OnInit {
     } else {
       this.changeNavBarToDesktop();
     }
-    this.navBarSyncService.initNavBar();
-    this.navBarSyncService.sync();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -45,13 +41,6 @@ export class NavbarComponent implements OnInit {
     } else {
       this.changeNavBarToDesktop();
     }
-  }
-
-  onClick(element) {
-    let lastOption = document.getElementById("navbar-div").querySelector('[class="nav-link active"]');
-    lastOption.className = "nav-link";
-    let option = document.getElementById(element);
-    option.className = "nav-link active";
   }
 
   changeOptionResponsive(iconName: string, dir: string, name?: string) {

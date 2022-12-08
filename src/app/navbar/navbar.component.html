@@ -5,25 +5,25 @@
         <!--<a id="login-tab" (click)="openAuthModal()" class="nav-link"> <fa-icon id="user-icon" [icon]="userIcon"></fa-icon></a>-->
       </div>
       <div class="col" style="padding: 0;">
-        <a id="home-tab" (click)="onClick('home-tab')" class="nav-link active" routerLink="/home">
+        <a id="home-tab" class="nav-link" routerLink="/home" routerLinkActive="active">
           <fa-icon id="home-icon" [icon]="homeIcon"></fa-icon>
           <span id="home-title">Home</span>
         </a>
       </div>
       <div class="col" style="padding: 0;">
-        <a id="portfolio-tab" (click)="onClick('portfolio-tab')" class="nav-link" routerLink="/portfolio">
+        <a id="portfolio-tab" class="nav-link" routerLink="/portfolio" routerLinkActive="active">
           <fa-icon id="portfolio-icon" [icon]="folderIcon"></fa-icon>
           <span id="portfolio-title">Portoflio</span>
         </a>
       </div>
       <div class="col" style="padding: 0;">
-        <a id="blog-tab" (click)="onClick('blog-tab')" class="nav-link" routerLink="/blog">
+        <a id="blog-tab" class="nav-link" routerLink="/blog" routerLinkActive="active">
           <fa-icon id="blog-icon" [icon]="blogIcon"></fa-icon>
           <span id="blog-title">Blog</span>
         </a>
       </div>
       <div class="col" style="padding: 0;">
-        <a id="contact-tab" (click)="onClick('contact-tab')" class="nav-link" routerLink="/contact">
+        <a id="contact-tab" class="nav-link" routerLink="/contact" routerLinkActive="active">
           <fa-icon id="contact-icon" [icon]="inboxIcon"></fa-icon>
           <span id="contact-title">Contact</span>
         </a>
