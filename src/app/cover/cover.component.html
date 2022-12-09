@@ -1,7 +1,7 @@
 <div class="container-fluid d-flex flex-column mobile-scroll" id="cover-page" (swipe)="onSwipe($event)">
   <app-background [leftHex]="coverBackground.leftHex" [leftHexPos]="coverBackground.leftHexPos"
     [rightHex]="coverBackground.rightHex" [rightHexPos]="coverBackground.rightHexPos"></app-background>
-  <div class="row flex-grow-1">
+  <div class="row flex-grow-1" style="margin: 0">
     <div class="col-6 d-flex flex-column align-items-center">
       <img src="../../assets/cover/me-transparent-2.png" class="flex-grow-1" id="cover-pic">
       <div id="title-container">
@@ -72,7 +72,7 @@
 </div>
 <div class="container-fluid d-flex flex-column" id="experience-page">
   <app-background [leftHex]="projectsBackground.leftHex" [leftHexPos]="projectsBackground.leftHexPos"></app-background>
-  <div class="row d-flex align-items-center justify-content-center" style="height:100%;">
+  <div class="row d-flex align-items-center justify-content-center" style="height: 100%; margin: 0;">
     <div id="experienceCarousel" class="card standard-card carousel slide" data-ride="carousel" data-aos="zoom-in-up"
       style=" max-width: 95%;">
       <ol class="carousel-indicators">
@@ -98,7 +98,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row no-gutters">
-            <div class="col-sm-5">
+            <div class="col-sm-5 d-flex justify-content-center">
               <img src="../../assets/cover/personio-hr.png" class="image-card">
             </div>
             <div class="col-sm-7">
@@ -114,7 +114,7 @@
         </div>
         <div class="carousel-item">
           <div class="row no-gutters">
-            <div class="col-sm-5">
+            <div class="col-sm-5 d-flex justify-content-center">
               <img src="../../assets/cover/me-gopick.png" class="image-card">
             </div>
             <div class="col-sm-7">
@@ -130,7 +130,7 @@
         </div>
         <div class="carousel-item">
           <div class="row no-gutters">
-            <div class="col-sm-5">
+            <div class="col-sm-5 d-flex justify-content-center">
               <img src="../../assets/cover/redsys-intern.png" class="image-card">
             </div>
             <div class="col-sm-7">
@@ -151,9 +151,9 @@
 <div class="container-fluid d-flex flex-column" id="projects-page">
   <app-background [rightHex]="experienceBackground.rightHex" [rightHexPos]="experienceBackground.rightHexPos">
   </app-background>
-  <div class="row d-flex align-items-center justify-content-center" style="height:100vh">
+  <div class="row d-flex align-items-center justify-content-center" style="height:100%">
     <div class="row" style="margin: 0">
-      <div class="col-12 col-lg col-xl d-flex justify-content-center">
+      <div class="col-12 col-lg col-xl d-flex align-items-center justify-content-center">
         <div class="card standard-card project-card" data-aos="flip-down">
           <div>
             <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span class="accent-2">

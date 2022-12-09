@@ -63,6 +63,7 @@ html {
 
 body {
   background-color: var(--main-color) !important;
+  overflow-x: hidden !important;
 }
 
 #app-content {
