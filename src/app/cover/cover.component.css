@@ -322,7 +322,7 @@
   max-width: 2.5rem;
   background-color: var(--main-color);
   padding: 0.25rem;
-  border-top: 3px solid var(--accent-color-2);
+  border-left: 3px solid var(--accent-color-1);
 }
 
 @media (max-width: 500px) {
