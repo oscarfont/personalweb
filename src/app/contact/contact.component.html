@@ -20,23 +20,17 @@
         <div class="d-flex justify-content-center">
           <img id="contact-image" src="../../assets/contact/me-on-pc.png" />
         </div>
-        <div *ngIf="isMobile" class="d-flex flex-column flex-grow-1 align-items-center justify-content-around">
+        <div *ngIf="isMobile" class="d-flex flex-column flex-grow-1 align-items-center justify-content-center"
+          style="gap: 1rem">
           <div class="row" style="text-align: center;">
             <span class="social-media-title-mobile">¡Follow my path on Social Media!</span>
           </div>
-          <div class="row" style="text-align: center;">
+          <div class="row d-flex" style="text-align: center; gap: 1rem;">
             <button class="btn btn-outline-primary" onclick="window.open('https://www.linkedin.com/in/ofont99')">
               <img src="../../assets/contact/linkedin-image.png" class="social-media-icon" />
             </button>
-          </div>
-          <div class="row" style="text-align: center;">
             <button class="btn btn-outline-primary" onclick="window.open('https://github.com/oscarfont')">
               <img src="../../assets/contact/github-image.png" class="social-media-icon" />
-            </button>
-          </div>
-          <div class="row" style="text-align: center;">
-            <button class="btn btn-outline-primary" (click)="copyEmail('oscar.font99@gmail.com')">
-              <img src="../../assets/contact/email-image.png" class="social-media-icon" />
             </button>
           </div>
         </div>
@@ -74,19 +68,14 @@
     <div class="col-12" style="text-align: center; margin-bottom: 1rem;">
       <span class="social-media-title">¡Or follow my path on Social Media!</span>
     </div>
-    <div class="col" style="text-align: center;">
+    <div class="col" style="text-align: right;">
       <button class="btn btn-outline-primary" onclick="window.open('https://www.linkedin.com/in/ofont99')">
         <img src="../../assets/contact/linkedin-image.png" class="social-media-icon" />
       </button>
     </div>
-    <div class="col" style="color: white; text-align: center;">
+    <div class="col" style="color: white; text-align: left;">
       <button class="btn btn-outline-primary" onclick="window.open('https://github.com/oscarfont')">
         <img src="../../assets/contact/github-image.png" class="social-media-icon" />
-      </button>
-    </div>
-    <div class="col" style="color: white; text-align: center;">
-      <button class="btn btn-outline-primary" (click)="copyEmail('oscar.font99@gmail.com')">
-        <img src="../../assets/contact/email-image.png" class="social-media-icon" />
       </button>
     </div>
   </div>
