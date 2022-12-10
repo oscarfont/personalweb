@@ -42,7 +42,7 @@ html {
   --body-font: "Catamaran";
 
   --titles-size: clamp(1rem, 4vw + 1rem, 5rem);
-  --subtitles-size: max(1.5vw, 1.5rem);
+  --subtitles-size: 2rem;
   --body-size: 1.25rem;
   --micro-body-size: 1rem;
 
@@ -104,6 +104,7 @@ body {
 /* MICRO DEVICES */
 @media (max-width: 280px) {
   :root {
+    --subtitles-size: 1rem;
     --body-size: 0.75rem;
     --micro-body-size: 0.5rem;
     --portfolio-rows-margin: 1.5rem;
@@ -114,6 +115,7 @@ body {
 /* SMALL DEVICES */
 @media (min-width:281px) and (max-width:576px) {
   :root {
+    --subtitles-size: 1.35rem;
     --body-size: 1rem;
     --micro-body-size: 0.85rem;
     --portfolio-rows-margin: 1.5rem;

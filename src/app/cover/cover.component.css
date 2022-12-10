@@ -162,6 +162,7 @@
 
 /* EXPERIENCE typography classes */
 .carousel-title {
+  width: max-content;
   font-family: var(--titles-font);
   font-size: var(--subtitles-size);
   color: var(--accent-color-1);
@@ -332,6 +333,6 @@
   }
 
   .tech-logo {
-    max-width: 1.5rem;
+    max-width: 1.75rem;
   }
 }
