@@ -1,0 +1,85 @@
+<div class="container-fluid d-flex flex-column" id="experience-page">
+    <app-background *ngIf="this.background" [leftHex]="this.background.leftHex"
+        [leftHexPos]="this.background.leftHexPos"></app-background>
+    <div class="row d-flex align-items-center justify-content-center" style="height: 100%; margin: 0;">
+        <div id="experienceCarousel" class="card standard-card carousel slide" data-ride="carousel"
+            data-aos="zoom-in-up">
+            <ol class="carousel-indicators">
+                <li data-target="#experienceCarousel" data-slide-to="0" class="active">
+                    <div class="d-flex flex-column">
+                        <span class="indicator-text">Oct 2022 - Nowadays</span>
+                        <span class="point"></span>
+                    </div>
+                </li>
+                <li data-target="#experienceCarousel" data-slide-to="1">
+                    <div class="d-flex flex-column">
+                        <span class="indicator-text">Sept 2021 - Oct 2022</span>
+                        <span class="point"></span>
+                    </div>
+                </li>
+                <li data-target="#experienceCarousel" data-slide-to="2">
+                    <div class="d-flex flex-column">
+                        <span class="indicator-text">Feb 2021 - Aug 2021</span>
+                        <span class="point"></span>
+                    </div>
+                </li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row no-gutters">
+                        <div class="col-sm-5 d-flex justify-content-center">
+                            <img src="../../assets/cover/personio-hr.png" class="image-card">
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="experience-card-body">
+                                <div class="carousel-title">
+                                    <span class="accent-2">Personio</span> - Backend Engineer
+                                </div>
+                                <div class="carousel-body-text align-items-center justify-content-center">
+                                    <p>Personio has a really ambitious objective, which is to become the main
+                                        HR Software in Europe. To conquer that goal, I joined the Attendance Management
+                                        Team
+                                        to accelerate the products' Backend replatforming to a microservice
+                                        architecture.
+                                    </p>
+                                    <p>Regarding tech, we are using Kotlin for the microservices code, PostgreSQL
+                                        for the services databases and Docker with Kubernetes to deploy everyhting.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row no-gutters">
+                        <div class="col-sm-5 d-flex justify-content-center">
+                            <img src="../../assets/cover/me-gopick.png" class="image-card">
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="card-body justify-content-center">
+                                <div class="carousel-title">
+                                    <span class="accent-2">GoPick</span> - Backend Engineer
+                                </div>
+                                <div class="carousel-body-text">BODY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row no-gutters">
+                        <div class="col-sm-5 d-flex justify-content-center">
+                            <img src="../../assets/cover/redsys-intern.png" class="image-card">
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="card-body justify-content-center">
+                                <div class="carousel-title">
+                                    <span class="accent-2">Redsys</span> - Web Developer
+                                </div>
+                                <div class="carousel-body-text">BODY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

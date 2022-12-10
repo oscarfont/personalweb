@@ -57,12 +57,12 @@ export class CoverComponent implements OnInit {
       leftHexPos: 'top-left'
     }
     this.projectsBackground = {
-      leftHex: 'hexagon',
-      leftHexPos: 'bottom-left'
-    }
-    this.experienceBackground = {
       rightHex: 'hexagon',
       rightHexPos: 'bottom-right'
+    }
+    this.experienceBackground = {
+      leftHex: 'hexagon',
+      leftHexPos: 'bottom-left'
     }
     this.testimonialBackground = {
       leftHex: 'hexagon',
