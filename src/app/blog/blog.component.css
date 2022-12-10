@@ -39,9 +39,9 @@
   margin-top: 0.5rem;
 }
 
-.blog-card {
+/*.blog-card {
   border-top: 4px solid var(--accent-color-2);
-}
+}*/
 
 .blog-card:hover {
   background-color: #4a598d94 !important;
@@ -78,14 +78,11 @@
   color: var(--secondary-color);
 }
 
-.category-label {
+.tag-box {
+  background-color: var(--main-color);
+  padding: 0.25rem;
+  border-left: 3px solid var(--accent-color-1);
   font-family: var(--body-font);
   font-size: var(--micro-body-size);
   color: var(--accent-color-2);
-}
-
-.category-value {
-  font-family: var(--body-font);
-  font-size: var(--micro-body-size);
-  color: var(--accent-color-1);
 }
