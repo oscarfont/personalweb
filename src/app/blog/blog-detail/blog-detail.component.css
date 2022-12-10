@@ -19,7 +19,6 @@
 
 .blog-card {
   margin: 2rem 0rem 0rem 0rem;
-  border-top: 4px solid var(--accent-color-2);
   text-align: justify;
   font-family: var(--body-font);
   color: var(--secondary-color);
