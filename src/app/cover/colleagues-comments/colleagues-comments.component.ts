@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { AppStateService } from 'src/app/app-state.service';
 
 @Component({
@@ -17,5 +17,10 @@ export class ColleaguesCommentsComponent implements OnInit {
   }
 
   ngOnInit(): void { }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.isMobile = this.appStateService.getIsMobileResolution();
+  }
 
 }

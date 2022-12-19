@@ -239,4 +239,9 @@ export class CoverComponent implements OnInit {
       this.router.navigateByUrl(newRoute);
     }
   }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.isMobile = this.appStateService.getIsMobileResolution();
+  }
 }
