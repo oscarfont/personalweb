@@ -1,0 +1,65 @@
+#projects-page {
+  height: 100vh;
+  background-color: var(--main-color);
+  z-index: 2;
+  scroll-snap-align: start;
+}
+
+.project-card {
+  max-width: 95%;
+}
+
+.project-title {
+  font-family: var(--titles-font);
+  font-size: var(--subtitles-size);
+  color: var(--accent-color-1);
+}
+
+.project-body {
+  display: flex;
+  flex-direction: row;
+  padding-left: 1rem;
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
+}
+
+.project-video {
+  width: 100%;
+  min-width: 32px;
+  max-width: 128px;
+}
+
+.project-image {
+  max-width: 8rem;
+  width: 100%;
+}
+
+.project-footer {
+  padding: 0.75rem 2rem 1rem 2rem;
+  gap: 10px;
+}
+
+.tech-text {
+  font-size: var(--micro-body-size);
+  font-family: var(--body-font);
+  color: var(--accent-color-1);
+}
+
+.tech-logo {
+  max-width: 2.5rem;
+  background-color: var(--main-color);
+  padding: 0.25rem;
+  border-left: 3px solid var(--accent-color-1);
+}
+
+@media (max-width: 500px) {
+  .project-image {
+    max-width: 4rem;
+    width: 100%;
+  }
+
+  .tech-logo {
+    max-width: 1.75rem;
+  }
+}

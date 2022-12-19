@@ -35,6 +35,7 @@ import { ColleaguesCommentsComponent } from './cover/colleagues-comments/colleag
 import Hammer from 'hammerjs';
 import { HammerModule } from "../../node_modules/@angular/platform-browser";
 import { ExperienceCarrouselComponent } from './cover/experience-carrousel/experience-carrousel.component';
+import { HighlightProjectsComponent } from './cover/highlight-projects/highlight-projects.component';
 
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
@@ -57,7 +58,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     NewPostComponent,
     BackgroundComponent,
     ColleaguesCommentsComponent,
-    ExperienceCarrouselComponent
+    ExperienceCarrouselComponent,
+    HighlightProjectsComponent
   ],
   imports: [
     BrowserModule,
