@@ -24,6 +24,10 @@
   color: var(--secondary-color);
 }
 
+.bold {
+  font-weight: 600;
+}
+
 .project-video {
   width: 100%;
   min-width: 32px;

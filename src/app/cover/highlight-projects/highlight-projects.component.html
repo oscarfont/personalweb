@@ -1,104 +1,163 @@
 <div class="container-fluid d-flex flex-column" id="projects-page">
-  <app-background [rightHex]="background.rightHex" [rightHexPos]="background.rightHexPos">
-  </app-background>
-  <div class="row d-flex align-items-center justify-content-center" style="height:100%">
-    <div class="row" style="margin: 0">
-      <div class="col-12 col-lg col-xl d-flex align-items-center justify-content-center">
-        <div class="card standard-card project-card" data-aos="flip-down">
-          <div>
-            <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span class="accent-2">
-                DailyWord</span>Bot</h1>
-          </div>
-          <div class="row project-body">
-            <div class="col-3">
-              <img src="../../assets/cover/dailyWordBot.png" class="project-image" />
+    <app-background [rightHex]="background.rightHex" [rightHexPos]="background.rightHexPos">
+    </app-background>
+    <div class="row d-flex align-items-center justify-content-center" style="height:100%">
+        <div class="row" style="margin: 0">
+            <div class="col-12 col-lg col-xl d-flex align-items-center justify-content-center">
+                <div class="card standard-card project-card" data-aos="flip-down">
+                    <div>
+                        <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
+                                class="accent-2">
+                                DailyWord</span>Bot</h1>
+                    </div>
+                    <div class="row project-body">
+                        <div class="col-3">
+                            <img src="../../assets/cover/dailyWordBot.png" class="project-image" />
+                        </div>
+                        <div class="col-9">
+                            <p>
+                                An open source <span class="accent-2 bold">Telegram chatbot</span> to help you learn
+                                Spanish and German
+                                vocabulary.
+                                The bot sends three words a day with an example.
+                            </p>
+                            <p>
+                                My Contribution to the project was to add the <span class="accent-1 bold">feature</span>
+                                that lets the
+                                user decide
+                                the <span class="accent-2 bold">level of the words</span> that wishes <span
+                                    class="accent-1 bold">to
+                                    receive</span>. Words are labeled with the levels:
+                                beginner, intermediate and advanced. Check the <a
+                                    href="https://github.com/rooom13/dailyWord-bot/pull/14" target="_blank">code</a>.
+                            </p>
+                        </div>
+                        <div class="d-flex flex-row-reverse align-items-center col-12 project-footer">
+                            <img src="../../assets/cover/github-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/python-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/telegram-logo.png" class="tech-logo" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-9">
-              BODY
+            <div class="col-12 col-lg col-xl d-flex justify-content-center">
+                <div class="card standard-card project-card" data-aos="flip-down">
+                    <div>
+                        <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
+                                class="accent-2">Social Media</span> Sentiment API</h1>
+                    </div>
+                    <div class="row project-body">
+                        <div class="col-3">
+                            <img src="../../assets/cover/api-logo.png" class="project-image" />
+                        </div>
+                        <div class="col-9">
+                            <p>
+                                Microservice backend used to look for social media posts and tweets
+                                and return them with its related sentiment (positive or negative).
+                            </p>
+                            <p>
+                                <span class="accent-2 bold">This microservice backend</span> consists in a Nodejs Api
+                                gateway that
+                                exposes to the
+                                Internet two internal microservices, one in Java, that <span
+                                    class="accent-1 bold">crawls social
+                                    media</span>, and
+                                another one in Python that conducts the <span class="accent-2 bold">sentiment
+                                    analysis</span> of the
+                                posts.
+                                This was part of my <span class="accent-1 bold">Master thesis</span>. <a
+                                    href="https://oa.upm.es/71906/1/TFM_OSCAR_FONT_GARCIA.pdf" target="_blank">More
+                                    details</a>.
+                            </p>
+                        </div>
+                        <div class="d-flex flex-row-reverse align-items-center col-12 project-footer">
+                            <img src="../../assets/cover/gcp-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/compose-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/docker-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/github-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/nodejs-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/python-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/java-logo.png" class="tech-logo" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="d-flex flex-row-reverse align-items-center col-12 project-footer">
-              <img src="../../assets/cover/github-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/python-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/telegram-logo.png" class="tech-logo" />
+            <div class="w-100"></div>
+            <div class="col-12 col-lg col-xl d-flex justify-content-center">
+                <div class="card standard-card project-card" data-aos="flip-down">
+                    <div style="display: inline-block">
+                        <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
+                                class="accent-2">Pro Wrestling</span> Sentiment</h1>
+                    </div>
+                    <div class="row project-body">
+                        <div class="col-3">
+                            <img src="../../assets/cover/pwsas.png" class="project-image" />
+                        </div>
+                        <div class="col-9">
+                            <p>
+                                <span class="accent-2 bold">Web application</span> that uses the
+                                Social Media Sentiment API.
+                                Analysed 70k tweets and 30k Instagram posts related to WWE superstars.
+                                This was also part of my <span class="accent-1 bold">Master thesis</span>
+                            </p>
+                            <p>
+                                The frontend is a dashboard that represents the most interesting stats of
+                                the analyzed posts and has a ranking of shows or wrestlers. The serverless
+                                backend deployed at AWS stores in DynamoDB the most popular post and the mentioned
+                                stats.<a href="https://oa.upm.es/71906/1/TFM_OSCAR_FONT_GARCIA.pdf" target="_blank">
+                                    More
+                                    details</a>.
+                            </p>
+                        </div>
+                        <div class="d-flex flex-row-reverse align-items-center col-12 project-footer">
+                            <img src="../../assets/cover/typescript-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/nodejs-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/nextjs-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/react-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/github-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/dynamodb-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/aws-logo.png" class="tech-logo" />
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div *ngIf="!this.isMobile" class="col-12 col-lg col-xl d-flex justify-content-center">
+                <div class="card standard-card project-card" data-aos="flip-down">
+                    <div>
+                        <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
+                                class="accent-2">Dixie Virtual</span> Assistant</h1>
+                    </div>
+                    <div class="row project-body">
+                        <div class="col-3">
+                            <img src="../../assets/cover/dixie.png" class="project-image" />
+                        </div>
+                        <div class="col-9">
+                            <p>
+                                <span class="accent-2 bold">Android application</span> developed with Java, as part of
+                                my <span class="accent-1 bold">Bachelor final thesis</span> to learn how Virtual
+                                Assistants work.
+                            </p>
+                            <p>
+                                Dixie lets you publish tweets and schedule posts for Instagram by voice.
+                                The application uses Google Speech to text service for the voice commands
+                                transcription. It uses wit.ai to extract the intent of the commands and
+                                stores the chat messages locally in an SQLite database.
+                                <a href="./assets/cover/dixie-thesis.pdf" target="_blank">
+                                    More
+                                    details</a>
+                            </p>
+                        </div>
+                        <div class="d-flex flex-row-reverse align-items-center col-12 project-footer">
+                            <img src="../../assets/cover/witai-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/speechtotext-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/github-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/sqlite-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/android-logo.png" class="tech-logo" />
+                            <img src="../../assets/cover/java-logo.png" class="tech-logo" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-12 col-lg col-xl d-flex justify-content-center">
-        <div class="card standard-card project-card" data-aos="flip-down">
-          <div>
-            <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
-                class="accent-2">Social Media</span> Sentiment API</h1>
-          </div>
-          <div class="row project-body">
-            <div class="col-3">
-              <img src="../../assets/cover/api-logo.png" class="project-image" />
-            </div>
-            <div class="col-9">
-              BODY
-            </div>
-            <div class="d-flex flex-row-reverse align-items-center col-12 project-footer">
-              <img src="../../assets/cover/gcp-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/compose-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/docker-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/github-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/nodejs-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/python-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/java-logo.png" class="tech-logo" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-12 col-lg col-xl d-flex justify-content-center">
-        <div class="card standard-card project-card" data-aos="flip-down">
-          <div style="display: inline-block">
-            <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
-                class="accent-2">Pro Wrestling</span> Sentiment</h1>
-          </div>
-          <div class="row project-body">
-            <div class="col-3">
-              <img src="../../assets/cover/pwsas.png" class="project-image" />
-            </div>
-            <div class="col-9">
-              BODY
-            </div>
-            <div class="d-flex flex-row-reverse align-items-center col-12 project-footer">
-              <img src="../../assets/cover/typescript-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/nodejs-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/nextjs-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/react-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/github-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/dynamodb-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/aws-logo.png" class="tech-logo" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div *ngIf="!this.isMobile" class="col-12 col-lg col-xl d-flex justify-content-center">
-        <div class="card standard-card project-card" data-aos="flip-down">
-          <div>
-            <h1 class="project-title" style="white-space: nowrap; margin: 2rem 0rem 1rem 1rem;"><span
-                class="accent-2">Dixie Virtual</span> Assistant</h1>
-          </div>
-          <div class="row project-body">
-            <div class="col-3">
-              <img src="../../assets/cover/dixie.png" class="project-image" />
-            </div>
-            <div class="col-9">
-              BODY
-            </div>
-            <div class="d-flex flex-row-reverse align-items-center col-12 project-footer">
-              <img src="../../assets/cover/witai-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/speechtotext-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/github-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/sqlite-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/android-logo.png" class="tech-logo" />
-              <img src="../../assets/cover/java-logo.png" class="tech-logo" />
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </div>

@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AppStateService {
   private isMobileResolution: boolean;
+  private isSmallDesktop: boolean;
 
   constructor() {
   }
@@ -16,5 +17,14 @@ export class AppStateService {
       this.isMobileResolution = false;
     }
     return this.isMobileResolution;
+  }
+
+  public getIsSmallDesktopResolution(): boolean {
+    if (window.innerWidth < 768) {
+      this.isSmallDesktop = true;
+    } else {
+      this.isSmallDesktop = false;
+    }
+    return this.isSmallDesktop;
   }
 }
