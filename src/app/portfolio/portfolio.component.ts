@@ -36,6 +36,7 @@ export class PortfolioComponent implements OnInit {
   slide2Background: any;
 
   // responsive variable
+  isSmallDesktop: boolean;
   isMobile: boolean;
   rowClass: string;
 
@@ -148,6 +149,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
     this.isMobile = this.appStateService.getIsMobileResolution();
     this.setSkillsChartOption();
     //this.navBarSync.sync();
@@ -156,6 +158,7 @@ export class PortfolioComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     var labelSize = getComputedStyle(document.body).getPropertyValue('--body-size');
+    this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
     this.isMobile = this.appStateService.getIsMobileResolution();
     var option = this.skillsChart.getOption();
     option.radar[0].axisName.fontSize = labelSize;
