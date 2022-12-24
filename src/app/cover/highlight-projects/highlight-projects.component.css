@@ -48,7 +48,6 @@
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     gap: 10px;
     justify-items: center;
   }
@@ -90,5 +89,21 @@
   .project-image {
     max-width: 4rem;
     width: 100%;
+  }
+
+  .tech-logo {
+    max-width: 1.8rem;
+    background-color: var(--main-color);
+    padding: 0.25rem;
+    border-left: 3px solid var(--accent-color-1);
+  }
+
+  .project-body {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1rem;
+    font-family: var(--body-font);
+    font-size: var(--micro-body-size);
+    color: var(--secondary-color);
   }
 }

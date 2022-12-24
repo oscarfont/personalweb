@@ -12,7 +12,7 @@
                     <div class="col-3">
                         <img src="../../assets/cover/dailyWordBot.png" class="project-image" />
                     </div>
-                    <div class="col-9">
+                    <div *ngIf="!this.isSmallDesktop" class="col-9">
                         <p>
                             An open source <span class="accent-2 bold">Telegram chatbot</span> to help you learn
                             Spanish and German
@@ -28,6 +28,17 @@
                                 receive</span>. Words are labeled with the levels:
                             beginner, intermediate and advanced. Check the <a
                                 href="https://github.com/rooom13/dailyWord-bot/pull/14" target="_blank">code</a>.
+                        </p>
+                    </div>
+                    <div *ngIf="this.isSmallDesktop" class="col-9">
+                        <p>
+                            An open source <span class="accent-2 bold">Telegram chatbot</span> to help you learn
+                            Spanish and German vocabulary. My Contribution to the project was to add the <span
+                                class="accent-1 bold">feature</span>
+                            that lets the user decide the <span class="accent-2 bold">level of the words</span> that
+                            wishes <span class="accent-1 bold">to
+                                receive.</span> Check the <a href="https://github.com/rooom13/dailyWord-bot/pull/14"
+                                target="_blank">code</a>.
                         </p>
                     </div>
                     <div class="d-flex flex-row-reverse align-items-center col-12 project-footer">
@@ -46,7 +57,7 @@
                     <div class="col-3">
                         <img src="../../assets/cover/pwsas.png" class="project-image" />
                     </div>
-                    <div class="col-9">
+                    <div *ngIf="!this.isSmallDesktop" class="col-9">
                         <p>
                             <span class="accent-2 bold">Web application</span> that uses the
                             Social Media Sentiment API.
@@ -58,6 +69,17 @@
                             the analyzed posts and has a ranking of shows or wrestlers. The serverless
                             backend deployed at AWS stores in DynamoDB the most popular post and the mentioned
                             stats.<a href="https://oa.upm.es/71906/1/TFM_OSCAR_FONT_GARCIA.pdf" target="_blank">
+                                More
+                                details</a>.
+                        </p>
+                    </div>
+                    <div *ngIf="this.isSmallDesktop" class="col-9">
+                        <p>
+                            <span class="accent-2 bold">Web application</span> that uses the
+                            Social Media Sentiment API.
+                            Analysed 70k tweets and 30k Instagram posts related to WWE superstars.
+                            This was also part of my <span class="accent-1 bold">Master thesis.</span>
+                            <a href="https://oa.upm.es/71906/1/TFM_OSCAR_FONT_GARCIA.pdf" target="_blank">
                                 More
                                 details</a>.
                         </p>
@@ -81,9 +103,9 @@
                     <div class="col-3">
                         <img src="../../assets/cover/api-logo.png" class="project-image" />
                     </div>
-                    <div class="col-9">
+                    <div *ngIf="!this.isSmallDesktop" class="col-9">
                         <p>
-                            Microservice backend used to look for social media posts and tweets
+                            Microservice API used to look for social media posts and tweets
                             and return them with its related sentiment (positive or negative).
                         </p>
                         <p>
@@ -101,6 +123,16 @@
                                 details</a>.
                         </p>
                     </div>
+                    <div *ngIf="this.isSmallDesktop" class="col-9">
+                        <p>
+                            <span class="accent-2 bold">Microservice API</span> used to look for social media posts and
+                            tweets
+                            and return them with its related sentiment (positive or negative).
+                            <a href="https://oa.upm.es/71906/1/TFM_OSCAR_FONT_GARCIA.pdf" target="_blank">
+                                More details
+                            </a>
+                        </p>
+                    </div>
                     <div class="d-flex flex-row-reverse align-items-center col-12 project-footer">
                         <img src="../../assets/cover/gcp-logo.png" class="tech-logo" />
                         <img src="../../assets/cover/compose-logo.png" class="tech-logo" />
@@ -112,7 +144,7 @@
                     </div>
                 </div>
             </div>
-            <div *ngIf="!this.isMobile" class="card standard-card project-card" data-aos="flip-down">
+            <div *ngIf="!this.isMediumDesktop" class="card standard-card project-card" data-aos="flip-down">
                 <div>
                     <h1 class="project-title"><span class="accent-2">Dixie
                             Virtual</span> Assistant</h1>

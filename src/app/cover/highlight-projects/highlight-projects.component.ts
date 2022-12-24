@@ -9,10 +9,12 @@ import { AppStateService } from 'src/app/app-state.service';
 export class HighlightProjectsComponent implements OnInit {
 
   @Input() background: any;
-  isMobile: boolean;
+  isMediumDesktop: boolean;
+  isSmallDesktop: boolean;
 
   constructor(private appStateService: AppStateService) {
-    this.isMobile = this.appStateService.getIsMediumDesktopResolution();
+    this.isMediumDesktop = this.appStateService.getIsMediumDesktopResolution();
+    this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
   }
 
   ngOnInit(): void {
@@ -20,7 +22,8 @@ export class HighlightProjectsComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.isMobile = this.appStateService.getIsMediumDesktopResolution();
+    this.isMediumDesktop = this.appStateService.getIsMediumDesktopResolution();
+    this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
   }
 
 }
