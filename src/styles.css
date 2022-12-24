@@ -126,6 +126,7 @@ body {
 /* MEDIUM DEVICES */
 @media (min-width:576px) and (max-width:768px) {
   :root {
+    --subtitles-size: 1.5rem;
     --body-size: 1rem;
     --micro-body-size: 0.85rem;
     --portfolio-rows-margin: -1.5rem;
@@ -135,6 +136,7 @@ body {
 /* STANDARD VERSION DEVICES */
 @media (min-width:768px) and (max-width:992px) {
   :root {
+    --subtitles-size: 1.5rem;
     --body-size: 1rem;
     --micro-body-size: 1rem;
     --portfolio-rows-margin: -1.5rem;
@@ -144,7 +146,8 @@ body {
 /* LARGE DESKTOP DEVICES */
 @media (min-width: 992px) and (max-width:1200px) {
   :root {
-    --body-size: 1.25rem;
+    --subtitles-size: 1.5rem;
+    --body-size: 1rem;
     --micro-body-size: 1rem;
     --portfolio-rows-margin: -1.5rem;
   }
@@ -153,7 +156,8 @@ body {
 /* EXTRALARGE DESKTOP DEVICES */
 @media (min-width: 1200px) {
   :root {
-    --body-size: 1.25rem;
+    --subtitles-size: 1.75rem;
+    --body-size: 1.15rem;
     --micro-body-size: 1rem;
     --portfolio-rows-margin: -1.5rem;
   }

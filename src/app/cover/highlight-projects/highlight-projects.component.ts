@@ -12,7 +12,7 @@ export class HighlightProjectsComponent implements OnInit {
   isMobile: boolean;
 
   constructor(private appStateService: AppStateService) {
-    this.isMobile = this.appStateService.getIsMobileResolution();
+    this.isMobile = this.appStateService.getIsMediumDesktopResolution();
   }
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class HighlightProjectsComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.isMobile = this.appStateService.getIsMobileResolution();
+    this.isMobile = this.appStateService.getIsMediumDesktopResolution();
   }
 
 }
