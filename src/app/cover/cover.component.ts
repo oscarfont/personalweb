@@ -36,6 +36,7 @@ export class CoverComponent implements OnInit {
   testimonialBackground: any;
   isMobile: boolean;
   scrollDownIcon = faAnglesDown;
+  isDemoDone = false;
 
   constructor(private toastrService: ToastrService, private appStateService: AppStateService,
     private deviceService: DeviceDetectorService, private swipeRoute: SwipeRouteService,
@@ -189,6 +190,7 @@ export class CoverComponent implements OnInit {
     setTimeout(() => {
       document.getElementById('intro-demo-text').style.setProperty('display', 'none');
       document.getElementById('final-demo-text').style.setProperty('display', 'block');
+      this.isDemoDone = true;
     }, 2000);
   }
 

@@ -1,74 +1,84 @@
 <div class="container-fluid d-flex flex-column mobile-scroll" id="cover-page" (swipe)="onSwipe($event)">
-  <app-background [leftHex]="coverBackground.leftHex" [leftHexPos]="coverBackground.leftHexPos"
-    [rightHex]="coverBackground.rightHex" [rightHexPos]="coverBackground.rightHexPos"></app-background>
-  <div class="row flex-grow-1" style="margin: 0">
-    <div class="col-6 d-flex flex-column align-items-center">
-      <img src="../../assets/cover/me-transparent-2.png" class="flex-grow-1" id="cover-pic">
-      <div id="title-container">
-        <h1 class="main-heading" style="white-space: nowrap; margin-bottom: 1.5rem;">&lt;h1&gt;ÓSCAR <span
-            class="accent-2">FONT&lt;/h1&gt;</span></h1>
-        <h2 class="subtitle-heading"><span class="accent-1">Software Engineering</span> and <span class="accent-1">AI
-            enthusiast</span> expermienting with the world wide web</h2>
-      </div>
-    </div>
-    <div *ngIf="this.isMobile" class="d-flex col-6 flex-column align-items-center">
-      <div id="question-container-mobile">
-        <h4 class="heading-question-mobile" id="question">Wanna' see what I do as a <span class="accent-1">Software
-          </span><span class="accent-2">Engineer</span> ?</h4>
-      </div>
-      <fa-icon id="scroll-icon" [icon]="scrollDownIcon"></fa-icon>
-    </div>
-    <div class="d-none d-md-flex d-lg-flex d-xl-flex col-6 flex-column align-items-center" style="padding-top: 4rem;">
-      <div id="question-container">
-        <h2 class="heading-question" id="question">Wanna' see what I do as a <span class="accent-1">Software
-          </span><span class="accent-2">Engineer</span> ?</h2>
-      </div>
-      <div class="card standard-card" id="game-card">
-        <div class="card-body" id="game-card-body" style="padding: 2rem;">
-          <p class="game-instructions"><span class="accent-1">Order</span> as <span class="accent-2">fast</span> as
-            you
-            can the following list from smaller to largest,
-            left to right respectively, dragging the numbers!</p>
-          <h6 class="timer">Timer: <span class="accent-2">{{this.timerString}}</span> s</h6>
-          <div id="item-user-list" cdkDropList cdkDropListOrientation="horizontal" class="items-list"
-            (cdkDropListDropped)="drop($event)">
-            <div *ngFor="let number of this.numbersArray" [id]="'element_'+this.numbersArray.indexOf(number)"
-              class="item-box" cdkDrag [cdkDragDisabled]="this.startBool"><span class="sm-text">{{number}}</span>
+    <app-background [leftHex]="coverBackground.leftHex" [leftHexPos]="coverBackground.leftHexPos"
+        [rightHex]="coverBackground.rightHex" [rightHexPos]="coverBackground.rightHexPos"></app-background>
+    <div class="row flex-grow-1" style="margin: 0">
+        <div class="col-6 d-flex flex-column align-items-center">
+            <img src="../../assets/cover/me-transparent-2.png" class="flex-grow-1" id="cover-pic">
+            <div id="title-container">
+                <h1 class="main-heading" style="white-space: nowrap; margin-bottom: 1.5rem;">&lt;h1&gt;ÓSCAR <span
+                        class="accent-2">FONT&lt;/h1&gt;</span></h1>
+                <h2 class="subtitle-heading"><span class="accent-1">Software Engineering</span> and <span
+                        class="accent-1">AI
+                        enthusiast</span> expermienting with the world wide web</h2>
             </div>
-          </div>
-          <div class="d-flex flex-row align-items-end">
-            <button class="btn btn-outline-primary" (click)="startGame()" [disabled]="!this.startBool"
-              style="margin: 1rem 0rem 0rem auto;">Start</button>
-          </div>
         </div>
-        <div class="card-body" id="solution-card-body" style="display:none; padding: 2rem;">
-          <p class="game-instructions" id="intro-demo-text">Well, what took you <span
-              class="accent-1">{{this.userFinishTime}}s</span> can take a computer <span class="accent-1">literally
-              nothing.</span> One of my day to day tasks is telling a
-            computer to do stuff like that for us efficiently. Don't believe me? Watch!</p>
-          <p class="game-instructions" style="display:none;" id="final-demo-text"><span class="accent-1">Your time:
-              {{this.userFinishTime}}s</span> vs <span class="accent-1">Computer Time:
-              {{this.computerFinishTime}}s <span class="accent-2">at {{this.getDeviceInfoString()}}</span></span><br>
-            Solving tasks
-            like this lets us build webpages, games and mobile apps. <br>That is what I try my best at
-            doing!<br><span class="accent-1">Enjoy the rest of my site!</span></p>
-          <div class="d-flex flex-column align-items-center justify-content-center">
-            <button class="btn btn-outline-primary" (click)="startDemo()" style="margin: 1rem 0rem 0rem auto;"
-              id="demo-button">Start Demo!</button>
-          </div>
-          <h6 class="timer" style="display:none;" id="demo-timer">Timer: <span
-              class="accent-2">{{this.timerString}}</span> s
-          </h6>
-          <div id="item-sol-list" cdkDropList cdkDropListOrientation="horizontal" class="items-list"
-            (cdkDropListDropped)="drop($event)" style="display:none;">
-            <div *ngFor="let number of this.numbersArray" [id]="'element_'+this.numbersArray.indexOf(number)"
-              class="item-box" cdkDrag [cdkDragDisabled]="this.startBool"><span class="sm-text">{{number}}</span>
+        <div *ngIf="this.isMobile" class="d-flex col-6 flex-column align-items-center">
+            <div id="question-container-mobile">
+                <h4 class="heading-question-mobile" id="question">Wanna' see what I do as a <span
+                        class="accent-1">Software
+                    </span><span class="accent-2">Engineer</span> ?</h4>
             </div>
-          </div>
+            <fa-icon id="scroll-icon" [icon]="scrollDownIcon"></fa-icon>
         </div>
-      </div>
+        <div class="d-none d-md-flex d-lg-flex d-xl-flex col-6 flex-column align-items-center"
+            style="padding-top: 4rem;">
+            <div id="question-container">
+                <h2 class="heading-question" id="question">Wanna' see what I do as a <span class="accent-1">Software
+                    </span><span class="accent-2">Engineer</span> ?</h2>
+            </div>
+            <div class="card standard-card" id="game-card">
+                <div class="card-body" id="game-card-body" style="padding: 2rem;">
+                    <p class="game-instructions"><span class="accent-1">Order</span> as <span
+                            class="accent-2">fast</span> as
+                        you
+                        can the following list from smaller to largest,
+                        left to right respectively, dragging the numbers!</p>
+                    <h6 class="timer">Timer: <span class="accent-2">{{this.timerString}}</span> s</h6>
+                    <div id="item-user-list" cdkDropList cdkDropListOrientation="horizontal" class="items-list"
+                        (cdkDropListDropped)="drop($event)">
+                        <div *ngFor="let number of this.numbersArray"
+                            [id]="'element_'+this.numbersArray.indexOf(number)" class="item-box" cdkDrag
+                            [cdkDragDisabled]="this.startBool"><span class="sm-text">{{number}}</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-end">
+                        <button class="btn btn-outline-primary" (click)="startGame()" [disabled]="!this.startBool"
+                            style="margin: 1rem 0rem 0rem auto;">Start</button>
+                    </div>
+                </div>
+                <div class="card-body" id="solution-card-body" style="display:none; padding: 2rem;">
+                    <p class="game-instructions" id="intro-demo-text">Well, what took you <span
+                            class="accent-1">{{this.userFinishTime}}s</span> can take a computer <span
+                            class="accent-1">literally
+                            nothing.</span> One of my day to day tasks is telling a
+                        computer to do stuff like that for us efficiently. Don't believe me? Watch!</p>
+                    <p class="game-instructions" style="display:none;" id="final-demo-text"><span class="accent-1">Your
+                            time:
+                            {{this.userFinishTime}}s</span> vs <span class="accent-1">Computer Time:
+                            {{this.computerFinishTime}}s <span class="accent-2">at
+                                {{this.getDeviceInfoString()}}</span></span><br>
+                        Solving tasks
+                        like this lets us build webpages, games and mobile apps. <br>That is what I try my best at
+                        doing!<br><span class="accent-1">Enjoy the rest of my site!</span></p>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <button class="btn btn-outline-primary" (click)="startDemo()"
+                            style="margin: 1rem 0rem 0rem auto;" id="demo-button">Start Demo!</button>
+                    </div>
+                    <h6 class="timer" style="display:none;" id="demo-timer">Timer: <span
+                            class="accent-2">{{this.timerString}}</span> s
+                    </h6>
+                    <div id="item-sol-list" cdkDropList cdkDropListOrientation="horizontal" class="items-list"
+                        (cdkDropListDropped)="drop($event)" style="display:none;">
+                        <div *ngFor="let number of this.numbersArray"
+                            [id]="'element_'+this.numbersArray.indexOf(number)" class="item-box" cdkDrag
+                            [cdkDragDisabled]="this.startBool"><span class="sm-text">{{number}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <fa-icon *ngIf="this.isDemoDone" id="scroll-icon" [icon]="scrollDownIcon"></fa-icon>
+        </div>
     </div>
-  </div>
 </div>
 <app-experience-carrousel [background]="this.experienceBackground"></app-experience-carrousel>
 <app-highlight-projects [background]="this.projectsBackground"></app-highlight-projects>
