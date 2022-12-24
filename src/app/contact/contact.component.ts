@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class ContactComponent implements OnInit {
 
   isMobile: boolean;
+  isSmallDesktop: boolean;
   columnClass: string;
 
   // desktop background config
@@ -63,14 +64,16 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.isMobile = this.appStateService.getIsMobileResolution();
-    this.changeBackground = this.isMobile ? true : false;
+    this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
+    this.changeBackground = this.isSmallDesktop ? true : false;
     this.columnClass = this.isMobile ? 'vh-100' : '';
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.isMobile = this.appStateService.getIsMobileResolution();
-    this.changeBackground = this.isMobile ? true : false;
+    this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
+    this.changeBackground = this.isSmallDesktop ? true : false;
     this.columnClass = this.isMobile ? 'vh-100' : '';
   }
 
