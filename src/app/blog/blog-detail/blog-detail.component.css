@@ -4,6 +4,14 @@
   justify-content: space-between;
 }
 
+.blog-detail-body {
+  max-height: 100vh;
+  text-align: center;
+  margin-top: 3.5rem;
+  padding: 1rem;
+  overflow-y: scroll;
+}
+
 .blog-title {
   font-family: var(--titles-font);
   font-size: var(--subtitles-size);
