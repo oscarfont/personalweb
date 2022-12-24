@@ -77,21 +77,6 @@ export class ContactComponent implements OnInit {
     this.columnClass = this.isMobile ? 'vh-100' : '';
   }
 
-  copyEmail(val: string) {
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    selBox.value = val;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
-    document.execCommand('copy');
-    document.body.removeChild(selBox);
-    this.toastrService.success('Email copied successfully to clipboard!');
-  }
-
   onSubmit(data: any) {
     console.log(data);
     this.utilsService.sendEmail(data.email, data.subject, data.comment).subscribe((res) => {
