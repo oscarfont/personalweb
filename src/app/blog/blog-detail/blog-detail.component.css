@@ -35,3 +35,18 @@
   font-family: var(--body-font);
   color: var(--secondary-color);
 }
+
+.tag-box {
+  background-color: var(--main-color);
+  padding: 0.25rem;
+  border-left: 3px solid var(--accent-color-1);
+  font-family: var(--body-font);
+  font-size: var(--micro-body-size);
+  color: var(--accent-color-2);
+}
+
+.date-text {
+  font-family: var(--body-font);
+  font-size: var(--micro-body-size);
+  color: var(--accent-color-1);
+}

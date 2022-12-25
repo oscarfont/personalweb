@@ -28,8 +28,7 @@ export class UtilsService {
     // compute number of days between date and today
     const today = new Date().getTime();
     const diff = today - date;
-    const numDays = (diff / (60 * 60 * 24 * 1000000));
-    console.log(numDays);
+    const numDays = (diff / (60 * 60 * 24 * 1000));
 
     // compute output string
     let outString = '';
@@ -47,6 +46,12 @@ export class UtilsService {
     }
 
     return outString;
+  }
+
+  dateString(date: number) {
+    const dateObj = new Date();
+    dateObj.setTime(date);
+    return dateObj.toLocaleString('default', { day: 'numeric', month: 'short', year: 'numeric' });
   }
 
 }
