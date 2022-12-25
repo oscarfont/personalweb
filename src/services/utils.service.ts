@@ -34,15 +34,15 @@ export class UtilsService {
     let outString = '';
     if (numDays < 1) {
       outString = 'today'
-    } else if (numDays > 1 && numDays < 30) {
-      outString = `${Math.round(numDays)} days ago`;
+    } else if (numDays >= 1 && numDays < 30) {
+      outString = `${Math.round(numDays)} day${numDays > 1 ? 's' : ''} ago`;
     }
     else if (numDays < 365) {
       const numMonths = Math.round(numDays / 30);
-      outString = `${numMonths} months ago`;
+      outString = `${numMonths} month${numMonths > 1 ? 's' : ''} ago`;
     } else {
       const numYears = Math.round(numDays / 365);
-      outString = `${numYears} years ago`;
+      outString = `${numYears} year${numYears > 1 ? 's' : ''} ago`;
     }
 
     return outString;
