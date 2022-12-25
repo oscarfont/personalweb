@@ -86,3 +86,9 @@
   font-size: var(--micro-body-size);
   color: var(--accent-color-2);
 }
+
+.days-ago {
+  font-family: var(--body-font);
+  font-size: var(--micro-body-size);
+  color: var(--accent-color-1);
+}

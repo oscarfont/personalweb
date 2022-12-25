@@ -24,4 +24,29 @@ export class UtilsService {
     return this.http.post<any>(this.baseURL + 'utils/deleteImage/', body);
   }
 
+  computeNumberOfDaysString(date: number) {
+    // compute number of days between date and today
+    const today = new Date().getTime();
+    const diff = today - date;
+    const numDays = (diff / (60 * 60 * 24 * 1000000));
+    console.log(numDays);
+
+    // compute output string
+    let outString = '';
+    if (numDays < 1) {
+      outString = 'today'
+    } else if (numDays > 1 && numDays < 30) {
+      outString = `${Math.round(numDays)} days ago`;
+    }
+    else if (numDays < 365) {
+      const numMonths = Math.round(numDays / 30);
+      outString = `${numMonths} months ago`;
+    } else {
+      const numYears = Math.round(numDays / 365);
+      outString = `${numYears} years ago`;
+    }
+
+    return outString;
+  }
+
 }
