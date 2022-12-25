@@ -1,3 +1,8 @@
+#blog-detail-page {
+  height: 100vh;
+  overflow-y: auto;
+}
+
 .header-container {
   display: flex;
   flex-direction: row;
@@ -9,7 +14,6 @@
   text-align: center;
   margin-top: 3.5rem;
   padding: 1rem;
-  overflow-y: scroll;
 }
 
 .blog-title {

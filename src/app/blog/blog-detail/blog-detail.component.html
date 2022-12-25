@@ -1,23 +1,23 @@
-<div class="container-fluid d-flex flex-column" style="height:100vh;">
-    <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
-        [rightHexPos]="backgroundRight.pos">
-    </app-background>
-    <div class="justify-content-center blog-detail-body">
-        <!-- HEADER TITLE CARD-->
-        <div class="card standard-card" style="width: 97%;">
-            <div class="card-header header-container">
-                <div style="width:2rem;"></div>
-                <h4 class="blog-title">{{this.blogTitle}}</h4>
-                <div style="width:2rem;"></div>
-            </div>
-            <div class="blog-summary" style="padding: 1rem;">
-                {{this.blogSummary}}
-            </div>
-        </div>
-
-        <!-- BLOG POST CONTENT-->
-        <div class="card standard-card blog-card" style="width: 97%;">
-            <div class="card-body" [innerHTML]="this.blogContent"></div>
-        </div>
+<div class="container-fluid d-flex flex-column" id="blog-detail-page">
+  <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
+    [rightHexPos]="backgroundRight.pos">
+  </app-background>
+  <div class="justify-content-center blog-detail-body">
+    <!-- HEADER TITLE CARD-->
+    <div class="card standard-card">
+      <div class="card-header header-container">
+        <div style="width:2rem;"></div>
+        <h4 class="blog-title">{{this.blogTitle}}</h4>
+        <div style="width:2rem;"></div>
+      </div>
+      <div class="blog-summary" style="padding: 1rem;">
+        {{this.blogSummary}}
+      </div>
     </div>
+
+    <!-- BLOG POST CONTENT-->
+    <div class="card standard-card blog-card">
+      <div class="card-body" [innerHTML]="this.blogContent"></div>
+    </div>
+  </div>
 </div>
