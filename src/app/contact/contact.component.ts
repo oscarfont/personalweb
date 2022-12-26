@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { AppStateService } from '../app-state.service';
 import { ToastrService } from 'ngx-toastr';
 import { UtilsService } from 'src/services/utils.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, AsyncValidator, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { DIRECTION, SwipeRouteService } from 'src/services/swiperoute.service';
 import { Router } from '@angular/router';
 
@@ -55,12 +55,24 @@ export class ContactComponent implements OnInit {
     }
 
     this.formData = new FormGroup({
-      email: new FormControl(''),
-      subject: new FormControl(''),
-      comment: new FormControl('')
+      email: new FormControl('', [Validators.required, this.emailValidator(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]),
+      subject: new FormControl('', [Validators.required]),
+      comment: new FormControl('', [Validators.required])
     });
 
   }
+
+  get email() { return this.formData.get('email') }
+  get subject() { return this.formData.get('subject') }
+  get comment() { return this.formData.get('comment') }
+
+  emailValidator(nameRe: RegExp): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const isValidEmail = nameRe.test(control.value);
+      return isValidEmail ? null : { isValidEmail: true };
+    };
+  }
+
 
   ngOnInit(): void {
     this.isMobile = this.appStateService.getIsMobileResolution();
