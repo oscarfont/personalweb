@@ -105,7 +105,7 @@ export class PortfolioComponent implements OnInit {
           },
           data: [
             {
-              value: [75, 85, 90, 80, 75, 95, 95],
+              value: [80, 95, 90, 80, 85, 95, 85],
               name: 'My Skills (out of 100)',
               areaStyle: {
                 color: '#817c5f'
