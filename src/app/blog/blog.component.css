@@ -3,45 +3,15 @@
   color: #001E3E;
 }
 
-.list-group {
-  margin: 1rem 0rem 0rem 0rem;
-  overflow: auto;
-}
-
-/* MICRO DEVICES */
-@media (max-width: 280px) {
-  .list-group {
-    max-height: 20rem;
-    margin: 1rem 0rem 0rem 0rem;
-    overflow: auto;
-  }
-}
-
-/* SMALL DEVICES */
-@media (min-width:281px) and (max-width:375px) {
-  .list-group {
-    max-height: 23rem;
-    margin: 1rem 0rem 0rem 0rem;
-    overflow: auto;
-  }
-}
-
-/* BIG PHONES */
-@media (min-width:376px) and (max-width:576px) {
-  .list-group {
-    max-height: 35rem;
-    margin: 1rem 0rem 0rem 0rem;
-    overflow: auto;
-  }
+.posts-list {
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .list-group-item {
+  width: 100%;
   margin-top: 0.5rem;
 }
-
-/*.blog-card {
-  border-top: 4px solid var(--accent-color-2);
-}*/
 
 .blog-card:hover {
   background-color: #4a598d94 !important;
@@ -67,6 +37,14 @@
 }
 
 .blog-text {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
+  text-align: center;
+  font-style: italic;
+}
+
+.blog-summary {
   font-family: var(--body-font);
   font-size: var(--body-size);
   color: var(--secondary-color);

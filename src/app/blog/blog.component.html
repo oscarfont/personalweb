@@ -2,22 +2,27 @@
   <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
     [rightHexPos]="backgroundRight.pos">
   </app-background>
-  <div class="row flex-grow-1">
+  <div class="row flex-grow-1" style="height:100%; overflow-y:auto">
     <div class="col-12 d-flex flex-column align-items-center"
       style="margin-top: 3.5rem; margin-left: auto; margin-right: auto;">
       <!-- HEADER TITLE CARD -->
       <div *ngIf="!this.authService.isUserLoggedIn()" class="card standard-card">
-        <div class="card-header">
+        <div class="card-header d-flex align-items-center justify-content-center">
           <h4 class="blog-title">Welcome to my Blog!</h4>
         </div>
-        <div id="message" class="card-body">
-          <span class="blog-text">Find whatever post you need most or read the ones you get an eye on! Dive in and have
-            fun :)</span>
+        <div id="message" class="card-body d-flex align-items-center">
+          <span class="blog-text">
+            "Currently living in my favourite city of the world: Madrid, with the cutiest and most heart-warming
+            girlfriend possible
+            and I have a job on my passion: Software Engineering. So expect anything at this blog, from restaurant
+            reviews
+            to technical blog posts discussing the latest tech in the software industry."
+          </span>
         </div>
       </div>
       <!-- LOGGED HEADER TITLE CARD -->
       <div *ngIf="this.authService.isUserLoggedIn()" class="card standard-card">
-        <div class="card-header">
+        <div class="card-header d-flex align-items-center justify-content-center">
           <h4 class="blog-title">{{this.userName}} welcome to your blog :)</h4>
         </div>
         <div id="message" class="d-flex card-body justify-content-between">
@@ -31,7 +36,7 @@
         </div>
       </div>
       <!-- BLOG POST LIST-->
-      <div class="list-group" style="width: 100%">
+      <div class="posts-list">
         <div *ngFor="let cat of this.categories">
           <a *ngFor="let post of this.categoryPosts.get(cat)" [routerLink]="['/detail', cat, post.id]"
             class="list-group-item list-group-item-action flex-column align-items-start blog-card standard-card">
@@ -44,7 +49,7 @@
               </div>
             </div>
             <div class="d-flex align-items-start">
-              <p class="mb-1 blog-text">{{post.summary}}</p>
+              <p class="mb-1 blog-summary">{{post.summary}}</p>
             </div>
             <div class="d-flex align-items-start justify-content-between">
               <div class="tag-box">{{cat}}</div>
