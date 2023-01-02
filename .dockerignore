@@ -1,0 +1,7 @@
+.angular
+.git
+.gitignore
+/docs
+/e2e
+/node_modules
+package-lock.json
