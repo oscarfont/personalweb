@@ -5,7 +5,7 @@ WORKDIR /personalweb
 COPY . .
 
 RUN npm i
-RUN npm run build
+RUN npm run build --omit=dev
 
 #stage-2 - copy build output to nginx server
 FROM nginx:alpine

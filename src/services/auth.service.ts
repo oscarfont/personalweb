@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  baseURL: string = `http://${process.env.BACKEND}:3000/`;
+  baseURL: string = `http://${environment.backendHost}:3000/`;
 
   httpHeader = new HttpHeaders({
     'Content-Type': 'application/json'
