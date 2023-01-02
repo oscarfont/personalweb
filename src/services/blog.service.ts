@@ -7,7 +7,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class BlogService {
 
-  baseURL: string = "http://localhost:3000/";
+  baseURL: string = `http://${process.env.BACKEND}:3000/`;
   postMedia: Array<string>;
 
   httpHeader = new HttpHeaders({
