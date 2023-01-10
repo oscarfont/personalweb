@@ -49,3 +49,9 @@
   font-size: var(--body-size);
   color: var(--secondary-color);
 }
+
+.form-error {
+  font-family: var(--body-font);
+  font-size: var(--micro-body-size);
+  color: red;
+}

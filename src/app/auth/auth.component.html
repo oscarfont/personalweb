@@ -11,9 +11,9 @@
         <label for="inputEmail" class="sr-only">Email address</label>
         <input id="username" class="form-control form-box" formControlName="userName" placeholder="Username" required>
         <div *ngIf="(userName.touched || userName.dirty) && userName?.errors" style="padding-bottom: 0.5rem;">
-            <span *ngIf="userName?.errors?.['required']" class="form-error">Username is required </span>
+            <span *ngIf="userName?.errors?.['required']" class="form-error">User name is required </span>
             <span *ngIf="!userName?.errors?.['required'] && userName?.errors?.['isValidEmail']" class="form-error">
-                Username must be a valid email
+                User name must be a valid email
             </span>
         </div>
         <label for="inputPassword" class="sr-only">Password</label>
