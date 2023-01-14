@@ -2,7 +2,6 @@
   height: 100vh;
   background-color: var(--main-color);
   z-index: 2;
-  scroll-snap-align: start;
 }
 
 /* COVER typography classes */
