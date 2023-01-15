@@ -1,3 +1,13 @@
+#contact-page {
+  min-height: 100vh;
+}
+
+@media (max-width: 576px) {
+  #contact-page {
+    min-height: 200vh;
+  }
+}
+
 #contact-image {
   width: 100%;
   min-width: 20rem;

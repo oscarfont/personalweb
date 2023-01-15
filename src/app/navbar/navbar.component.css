@@ -3,7 +3,7 @@
   background-color: #2f4066;
   padding: 0;
   margin-top: 0;
-  height: 3.5rem;
+  height: 3rem;
   width: 100vw;
   border-bottom: 1px solid rgba(0, 0, 0, .125)
 }
@@ -11,7 +11,7 @@
 /*NAVBAR STANDARD OPTION*/
 .nav-link {
   font-family: "Montserrat";
-  font-size: large;
+  font-size: medium;
   text-align: center;
   color: var(--secondary-color);
   padding: 0 !important;
@@ -77,6 +77,6 @@
 
 .ofg-logo {
   width: 100%;
-  max-width: 3.5rem;
+  max-width: 3rem;
   min-width: 2rem;
 }

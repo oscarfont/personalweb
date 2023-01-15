@@ -66,6 +66,7 @@ body {
 }
 
 #app-content {
+  min-height: 100vh;
   background-color: var(--main-color);
 }
 

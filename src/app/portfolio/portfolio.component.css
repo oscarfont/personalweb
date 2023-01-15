@@ -1,3 +1,8 @@
+#portfolio-page {
+  min-height: 100vh;
+  margin-top: 1rem;
+}
+
 /* typography classes */
 .section-title {
   font-family: var(--titles-font);
