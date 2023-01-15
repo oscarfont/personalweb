@@ -1,10 +1,11 @@
 /*NAVBAR STANDARD COLORS*/
 .navbar {
-  background-color: transparent;
+  background-color: #2f4066;
   padding: 0;
   margin-top: 0;
   height: 3.5rem;
   width: 100vw;
+  border-bottom: 1px solid rgba(0, 0, 0, .125)
 }
 
 /*NAVBAR STANDARD OPTION*/
@@ -13,6 +14,7 @@
   font-size: large;
   text-align: center;
   color: var(--secondary-color);
+  padding: 0 !important;
   /*text-shadow: 2px 2px #f2f2f2;*/
 }
 

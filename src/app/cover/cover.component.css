@@ -2,6 +2,7 @@
   height: 100vh;
   background-color: var(--main-color);
   z-index: 2;
+  margin-top: 1.5rem;
 }
 
 /* COVER typography classes */
