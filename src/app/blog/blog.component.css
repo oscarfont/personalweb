@@ -1,3 +1,8 @@
+#blog-page {
+  min-height: 100vh;
+  margin-top: 1rem;
+}
+
 #message {
   font-family: "Hind";
   color: #001E3E;

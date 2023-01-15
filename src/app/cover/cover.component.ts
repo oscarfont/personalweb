@@ -66,7 +66,7 @@ export class CoverComponent implements OnInit {
       leftHexPos: 'bottom-left'
     }
     this.testimonialBackground = {
-      leftHex: 'hexagon',
+      leftHex: 'quarter-hexagon',
       leftHexPos: 'bottom-left'
     }
   }
