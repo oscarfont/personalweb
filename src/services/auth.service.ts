@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  baseURL: string = `http://${environment.backendHost}:3000/`;
+  baseURL: string = `${environment.backendHost}`;
 
   httpHeader = new HttpHeaders({
     'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ export class AuthService {
   login(userName: string, password: string) {
     const data = { 'email': userName, 'password': password };
 
-    return this.http.post<any>(this.baseURL + 'user/signin', data, { headers: this.httpHeader });
+    return this.http.post<any>(this.baseURL + '/user/signin', data, { headers: this.httpHeader });
   }
 
   getCookie(name: string) {

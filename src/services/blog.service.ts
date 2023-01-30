@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class BlogService {
 
-  baseURL: string = `http://${environment.backendHost}:3000/`;
+  baseURL: string = `${environment.backendHost}`;
   postMedia: Array<string>;
 
   httpHeader = new HttpHeaders({
@@ -20,19 +20,19 @@ export class BlogService {
   }
 
   getAllCategories() {
-    return this.http.get<any>(this.baseURL + 'blog/categories/get/all', { headers: this.httpHeader });
+    return this.http.get<any>(this.baseURL + '/blog/categories/get/all', { headers: this.httpHeader });
   }
 
   getAllBlogsOf(category: string) {
     let params = new HttpParams({
       fromString: `category=${category}`
     });
-    return this.http.get<any>(this.baseURL + 'blog/get/all', { headers: this.httpHeader, params: params });
+    return this.http.get<any>(this.baseURL + '/blog/get/all', { headers: this.httpHeader, params: params });
   }
 
   getBlogDetail(categoryName: string, blogId: string) {
     const body = { category: categoryName, id: blogId };
-    return this.http.post<any>(this.baseURL + 'blog/get/detail', body, { headers: this.httpHeader });
+    return this.http.post<any>(this.baseURL + '/blog/get/detail', body, { headers: this.httpHeader });
   }
 
   publishBlog(title: string, category: string, summary: string, content: string, media: Array<string>) {
@@ -42,7 +42,7 @@ export class BlogService {
 
     const data = { 'title': title, 'summary': summary, 'content': content, 'media': media };
 
-    return this.http.post<any>(this.baseURL + 'blog/publish', data, { headers: this.httpHeader, params: params });
+    return this.http.post<any>(this.baseURL + '/blog/publish', data, { headers: this.httpHeader, params: params });
   }
 
   deleteBlog(id: string) {
@@ -50,7 +50,7 @@ export class BlogService {
       headers: this.httpHeader
     };
 
-    return this.http.delete<any>(this.baseURL + 'blog/remove/' + id, options);
+    return this.http.delete<any>(this.baseURL + '/blog/remove/' + id, options);
   }
 
   addPostMedia(itemName: string) {
