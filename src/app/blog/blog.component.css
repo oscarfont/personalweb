@@ -1,9 +1,5 @@
 #blog-page {
   min-height: 100vh;
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: stretch;
-  margin-top: 1rem;
 }
 
 #message {

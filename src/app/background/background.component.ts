@@ -11,6 +11,7 @@ export class BackgroundComponent implements OnInit {
   @Input() leftHexPos: string;
   @Input() rightHex: string;
   @Input() rightHexPos: string;
+  @Input() positioned: boolean;
 
   ngOnInit(): void { }
 }

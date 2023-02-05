@@ -1,8 +1,8 @@
-<div id="blog-page" class="container-fluid d-flex flex-column mobile-scroll" (swipe)="onSwipe($event)">
+<div id="blog-page" class="container-fluid mobile-scroll" (swipe)="onSwipe($event)">
   <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
     [rightHexPos]="backgroundRight.pos">
   </app-background>
-  <div class="row flex-grow-1" style="height:100%; overflow-y:auto">
+  <div class="row flex-grow-1" style="height:100%; overflow-y:auto; margin-top: 1rem">
     <div class="col-12 d-flex flex-column align-items-center"
       style="margin-top: 3.5rem; margin-left: auto; margin-right: auto;">
       <!-- HEADER TITLE CARD -->

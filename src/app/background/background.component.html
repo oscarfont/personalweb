@@ -1,8 +1,16 @@
-<div class="background row">
-  <div class="col">
+<div *ngIf="!this.positioned" class="background row">
+  <div>
     <img *ngIf="leftHex" [src]="'../../assets/'+leftHex+'.png'" [ngClass]="leftHexPos+'-'+leftHex">
   </div>
-  <div class="col">
+  <div>
+    <img *ngIf="rightHex" [src]="'../../assets/'+rightHex+'.png'" [ngClass]="rightHexPos+'-'+rightHex">
+  </div>
+</div>
+<div *ngIf="this.positioned" class="background-abs row">
+  <div>
+    <img *ngIf="leftHex" [src]="'../../assets/'+leftHex+'.png'" [ngClass]="leftHexPos+'-'+leftHex">
+  </div>
+  <div>
     <img *ngIf="rightHex" [src]="'../../assets/'+rightHex+'.png'" [ngClass]="rightHexPos+'-'+rightHex">
   </div>
 </div>
