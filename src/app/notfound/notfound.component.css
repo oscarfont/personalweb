@@ -1,3 +1,10 @@
+#notfound-page {
+  min-height: 100vh;
+  background-image: url('../../assets/background/quarter-hexagon-bottom-left.png'), url('../../assets/background/quarter-hexagon-top-right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, top right;
+}
+
 .title {
   font-family: var(--titles-font);
   color: var(--accent-color-1);

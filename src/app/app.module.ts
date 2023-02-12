@@ -20,7 +20,6 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
 import { NewPostComponent } from './blog/new-post/new-post.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { BackgroundComponent } from './background/background.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import "froala-editor/js/plugins/font_size.min.js";
@@ -57,7 +56,6 @@ export class MyHammerConfig extends HammerGestureConfig {
     AuthComponent,
     BlogDetailComponent,
     NewPostComponent,
-    BackgroundComponent,
     ColleaguesCommentsComponent,
     ExperienceCarrouselComponent,
     HighlightProjectsComponent,

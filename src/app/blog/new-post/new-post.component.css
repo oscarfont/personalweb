@@ -1,6 +1,6 @@
 #new-post-page {
   min-height: 100vh;
-  background-image: url('../../assets/background/quarter-hexagon-top-left.png'), url('../../assets/background/quarter-hexagon-bottom-right.png');
+  background-image: url('../../../assets/background/quarter-hexagon-top-left.png'), url('../../../assets/background/quarter-hexagon-bottom-right.png');
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
 }
