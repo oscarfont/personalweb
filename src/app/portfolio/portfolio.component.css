@@ -1,5 +1,24 @@
 #portfolio-page {
+  overflow-x: hidden;
   margin-top: 1rem;
+}
+
+.background-desktop {
+  background-image: url('../../assets/background/quarter-hexagon-bottom-left.png'), url('../../assets/background/quarter-hexagon-top-right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, top right;
+}
+
+.background-column-1 {
+  background-image: url('../../assets/background/quarter-hexagon-bottom-left.png'), url('../../assets/background/quarter-hexagon-top-right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, top right;
+}
+
+.background-column-2 {
+  background-image: url('../../assets/background/quarter-hexagon-top-left.png'), url('../../assets/background/quarter-hexagon-bottom-right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
 }
 
 /* typography classes */
@@ -33,10 +52,6 @@
 }
 
 /* typography classes */
-
-#portfolio-page {
-  overflow-x: hidden;
-}
 
 .player-img {
   display: block;

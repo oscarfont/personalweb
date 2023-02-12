@@ -1,6 +1,9 @@
 #blog-detail-page {
   height: 100vh;
   overflow-y: auto;
+  background-image: url('../../../assets/background/quarter-hexagon-top-left.png'), url('../../../assets/background/quarter-hexagon-bottom-right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
 }
 
 .header-container {

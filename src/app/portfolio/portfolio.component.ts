@@ -27,13 +27,9 @@ export class PortfolioComponent implements OnInit {
   initOpts: any;
   chartToolTip: Array<string>;
 
-  // desktop background config
-  backgroundRight: { name: string, pos: string };
-  backgroundLeft: { name: string, pos: string };
-
-  // mobile background config
-  slide1Background: any;
-  slide2Background: any;
+  // background classes
+  bgDesktopClass: string;
+  bgMobileClasses: string[];
 
   // responsive variable
   isSmallDesktop: boolean;
@@ -42,27 +38,6 @@ export class PortfolioComponent implements OnInit {
 
   constructor(private appStateService: AppStateService, private swipeRoute: SwipeRouteService,
     private router: Router) {
-    // set background configs
-    this.backgroundRight = {
-      name: 'quarter-hexagon',
-      pos: 'top-right'
-    }
-    this.backgroundLeft = {
-      name: 'quarter-hexagon',
-      pos: 'bottom-left'
-    }
-
-    this.slide1Background = {
-      rightHex: 'quarter-hexagon',
-      rightHexPos: 'top-right',
-      leftHex: 'hexagon',
-      leftHexPos: 'bottom-left'
-    }
-    this.slide2Background = {
-      rightHex: 'quarter-hexagon',
-      rightHexPos: 'bottom-right'
-    }
-
     this.chartToolTip = ["Frontend", "Backend", "Database", "DevOps", "Quality Assurance", "Object Oriented Programming", "Machine Learning"];
   }
 
@@ -144,6 +119,11 @@ export class PortfolioComponent implements OnInit {
     };
   }
 
+  setBackgroundClasses() {
+    this.bgDesktopClass = this.isSmallDesktop || this.isMobile ? '' : 'background-desktop';
+    this.bgMobileClasses = this.isSmallDesktop || this.isMobile ? ['background-column-1', 'background-column-2'] : ['', ''];
+  }
+
   onChartInit(event: any) {
     this.skillsChart = event;
   }
@@ -151,6 +131,7 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
     this.isMobile = this.appStateService.getIsMobileResolution();
+    this.setBackgroundClasses();
     this.setSkillsChartOption();
     //this.navBarSync.sync();
   }
@@ -160,6 +141,7 @@ export class PortfolioComponent implements OnInit {
     var labelSize = getComputedStyle(document.body).getPropertyValue('--body-size');
     this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
     this.isMobile = this.appStateService.getIsMobileResolution();
+    this.setBackgroundClasses();
     var option = this.skillsChart.getOption();
     option.radar[0].axisName.fontSize = labelSize;
     this.skillsChart.setOption(option);

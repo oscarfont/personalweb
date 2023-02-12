@@ -1,14 +1,9 @@
 #projects-page {
-  height: 100vh;
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: stretch;
+  min-height: 100vh;
   background-color: var(--main-color);
-  z-index: 2;
-}
-
-.body-row {
-  height: 100vh;
+  background-image: url('../../../assets/background/quarter-hexagon-top-left.png'), url('../../../assets/background/quarter-hexagon-bottom-right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
 }
 
 .projects-grid {

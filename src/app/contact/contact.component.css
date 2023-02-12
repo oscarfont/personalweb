@@ -2,10 +2,22 @@
   min-height: 100vh;
 }
 
-@media (max-width: 576px) {
-  #contact-page {
-    min-height: 200vh;
-  }
+.background-desktop {
+  background-image: url('../../assets/background/quarter-hexagon-bottom-left.png'), url('../../assets/background/quarter-hexagon-top-right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, top right;
+}
+
+.background-column-1 {
+  background-image: url('../../assets/background/quarter-hexagon-bottom-left.png'), url('../../assets/background/quarter-hexagon-top-right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, top right;
+}
+
+.background-column-2 {
+  background-image: url('../../assets/background/quarter-hexagon-top-left.png'), url('../../assets/background/quarter-hexagon-bottom-right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
 }
 
 #contact-image {
