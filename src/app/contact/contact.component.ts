@@ -17,14 +17,9 @@ export class ContactComponent implements OnInit {
   isSmallDesktop: boolean;
   columnClass: string;
 
-  // desktop background config
-  changeBackground: boolean;
-  backgroundRight: { name: string, pos: string };
-  backgroundLeft: { name: string, pos: string };
-
-  // mobile background config
-  slide1Background: any;
-  slide2Background: any;
+  // background classes
+  bgDesktopClass: string;
+  bgMobileClasses: string[];
 
   // form data object
   formData: FormGroup;
@@ -32,27 +27,6 @@ export class ContactComponent implements OnInit {
   constructor(private toastrService: ToastrService,
     private appStateService: AppStateService, private utilsService: UtilsService,
     private swipeRoute: SwipeRouteService, private router: Router) {
-
-    // set background configs
-    this.backgroundRight = {
-      name: 'quarter-hexagon',
-      pos: 'top-right'
-    }
-    this.backgroundLeft = {
-      name: 'quarter-hexagon',
-      pos: 'bottom-left'
-    }
-
-    this.slide1Background = {
-      rightHex: 'quarter-hexagon',
-      rightHexPos: 'top-right',
-      leftHex: 'hexagon',
-      leftHexPos: 'bottom-left'
-    }
-    this.slide2Background = {
-      rightHex: 'quarter-hexagon',
-      rightHexPos: 'bottom-right'
-    }
 
     this.formData = new FormGroup({
       email: new FormControl('', [Validators.required, this.emailValidator(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]),
@@ -73,11 +47,10 @@ export class ContactComponent implements OnInit {
     };
   }
 
-
   ngOnInit(): void {
     this.isMobile = this.appStateService.getIsMobileResolution();
     this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
-    this.changeBackground = this.isSmallDesktop ? true : false;
+    this.setBackgroundClasses();
     this.columnClass = this.isMobile ? 'vh-100' : '';
   }
 
@@ -85,7 +58,7 @@ export class ContactComponent implements OnInit {
   onResize(event: any) {
     this.isMobile = this.appStateService.getIsMobileResolution();
     this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
-    this.changeBackground = this.isSmallDesktop ? true : false;
+    this.setBackgroundClasses();
     this.columnClass = this.isMobile ? 'vh-100' : '';
   }
 
@@ -107,6 +80,11 @@ export class ContactComponent implements OnInit {
       const newRoute = this.swipeRoute.getNextSwipeRoute('/contact', dir);
       this.router.navigateByUrl(newRoute);
     }
+  }
+
+  setBackgroundClasses() {
+    this.bgDesktopClass = this.isSmallDesktop || this.isMobile ? '' : 'background-desktop';
+    this.bgMobileClasses = this.isSmallDesktop || this.isMobile ? ['background-column-1', 'background-column-2'] : ['', ''];
   }
 
 }
