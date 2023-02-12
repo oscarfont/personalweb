@@ -1,16 +1,6 @@
 <div class="container-fluid mobile-scroll" id="portfolio-page" (swipe)="onSwipe($event)">
-  <div *ngIf="!this.isSmallDesktop">
-    <app-background [leftHex]="backgroundLeft.name" [leftHexPos]="backgroundLeft.pos" [rightHex]="backgroundRight.name"
-      [rightHexPos]="backgroundRight.pos">
-    </app-background>
-  </div>
-  <div class="row">
-    <div class="col-12 col-lg-6 col-xl-6">
-      <div *ngIf="this.isSmallDesktop">
-        <app-background [leftHex]="slide1Background.leftHex" [leftHexPos]="slide1Background.leftHexPos"
-          [rightHex]="slide1Background.rightHex" [rightHexPos]="slide1Background.rightHexPos">
-        </app-background>
-      </div>
+  <div class="row" [ngClass]="this.bgDesktopClass">
+    <div class="col-12 col-lg-6 col-xl-6" [ngClass]="this.bgMobileClasses[0]">
       <div class="row" style="margin-top: 3.5rem;">
         <div class="col-5 d-flex flex-row-reverse">
           <img src="../../assets/portfolio/profile-pic-transparent.png" class="player-img" />
@@ -86,11 +76,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-lg-6 col-xl-6">
-      <div *ngIf="this.isSmallDesktop">
-        <app-background [rightHex]="slide2Background.rightHex" [rightHexPos]="slide2Background.rightHexPos">
-        </app-background>
-      </div>
+    <div class="col-12 col-lg-6 col-xl-6" [ngClass]="this.bgMobileClasses[1]">
       <div class="row" id="curent-company-row">
         <div class="col-4 col-lg-2 col-xl-2">
           <img src="../../assets/portfolio/personio-logo.png" class="company-img" />
