@@ -1,7 +1,7 @@
 #contact-page {
   min-height: 100vh;
   background-color: var(--main-color);
-  background-image: url('../../../assets/background/quarter-hexagon-bottom-left.png'), url('../../../assets/background/quarter-hexagon-top-right.png');
+  background-image: url('../../../assets/background/quarter-hexagon-bottom-left.webp'), url('../../../assets/background/quarter-hexagon-top-right.webp');
   background-repeat: no-repeat, no-repeat;
   background-position: bottom left, top right;
 }
