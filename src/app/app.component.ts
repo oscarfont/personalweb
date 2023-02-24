@@ -28,6 +28,11 @@ export class AppComponent {
       name: 'viewport',
       content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0'
     }, 'name=viewport');
+    this.metaService.addTags([
+      {
+        description: 'Welcome to my personal porftolio plus blog site! Find my latest work experiences in the tech industry and my best projects.'
+      }
+    ]);
     this.document.documentElement.lang = 'en';
   }
 
