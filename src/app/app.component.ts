@@ -1,8 +1,9 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { slideInAnimations } from '../app/animations';
 import * as AOS from 'aos';
 import { Meta } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -17,15 +18,17 @@ export class AppComponent {
   title = 'personalweb';
 
   constructor(
-    private metaService: Meta
+    private metaService: Meta,
+    @Inject(DOCUMENT) private document: Document
   ) { }
 
   ngOnInit() {
     AOS.init();
     this.metaService.updateTag({
       name: 'viewport',
-      content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+      content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0'
     }, 'name=viewport');
+    this.document.documentElement.lang = 'en';
   }
 
   prepareRoute(outlet: RouterOutlet) {

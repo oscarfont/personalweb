@@ -30,7 +30,7 @@
             you
             can the following list from smaller to largest,
             left to right respectively, dragging the numbers!</p>
-          <h6 class="timer">Timer: <span class="accent-2">{{this.timerString}}</span> s</h6>
+          <div class="timer">Timer: <span class="accent-2">{{this.timerString}}</span> s</div>
           <div id="item-user-list" cdkDropList cdkDropListOrientation="horizontal" class="items-list"
             (cdkDropListDropped)="drop($event)">
             <div *ngFor="let number of this.numbersArray" [id]="'element_'+this.numbersArray.indexOf(number)"
@@ -59,9 +59,9 @@
             <button class="btn btn-outline-primary" (click)="startDemo()" style="margin: 1rem 0rem 0rem auto;"
               id="demo-button">Start Demo!</button>
           </div>
-          <h6 class="timer" style="display:none;" id="demo-timer">Timer: <span
+          <div class="timer" style="display:none;" id="demo-timer">Timer: <span
               class="accent-2">{{this.timerString}}</span> s
-          </h6>
+          </div>
           <div id="item-sol-list" cdkDropList cdkDropListOrientation="horizontal" class="items-list"
             (cdkDropListDropped)="drop($event)" style="display:none;">
             <div *ngFor="let number of this.numbersArray" [id]="'element_'+this.numbersArray.indexOf(number)"
