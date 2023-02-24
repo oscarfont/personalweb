@@ -5,33 +5,39 @@
         <!--<a id="login-tab" (click)="openAuthModal()" class="nav-link"> <fa-icon id="user-icon" [icon]="userIcon"></fa-icon></a>-->
       </div>
       <div class="col" style="padding: 0;">
-        <a id="home-tab" class="nav-link" routerLink="/home" routerLinkActive="active">
+        <a id="home-tab" class="nav-link" routerLink="/home" routerLinkActive="active"
+          aria-label="Find the main highlights of the portfolio at this cover">
           <!--<fa-icon id="home-icon" [icon]="homeIcon"></fa-icon>-->
-          <img *ngIf="this.getCurrentRoute() === '/home'" src="../../assets/cover/ofg-logo-active.webp"
-            class="ofg-logo" />
-          <img *ngIf="this.getCurrentRoute() !== '/home'" src="../../assets/cover/ofg-logo.webp" class="ofg-logo" />
+          <img *ngIf="this.getCurrentRoute() === '/home'" src="../../assets/cover/ofg-logo-active.webp" class="ofg-logo"
+            alt="OFG logo highlighted" />
+          <img *ngIf="this.getCurrentRoute() !== '/home'" src="../../assets/cover/ofg-logo.webp" class="ofg-logo"
+            alt="OFG logo" />
         </a>
       </div>
       <div class="col" style="padding: 0;">
-        <a id="portfolio-tab" class="nav-link" routerLink="/portfolio" routerLinkActive="active">
+        <a id="portfolio-tab" class="nav-link" routerLink="/portfolio" routerLinkActive="active"
+          aria-label="Discover what are my skills and past experiences here">
           <fa-icon id="portfolio-icon" [icon]="folderIcon"></fa-icon>
           <span id="portfolio-title">Portoflio</span>
         </a>
       </div>
       <div class="col" style="padding: 0;">
-        <a id="blog-tab" class="nav-link" routerLink="/blog" routerLinkActive="active">
+        <a id="blog-tab" class="nav-link" routerLink="/blog" routerLinkActive="active"
+          aria-label="Read about some of my findings at the tech industry and the world in general">
           <fa-icon id="blog-icon" [icon]="blogIcon"></fa-icon>
           <span id="blog-title">Blog</span>
         </a>
       </div>
       <div class="col" style="padding: 0;">
-        <a id="contact-tab" class="nav-link" routerLink="/contact" routerLinkActive="active">
+        <a id="contact-tab" class="nav-link" routerLink="/contact" routerLinkActive="active"
+          aria-label="Enter this page if you want have a chat with me or just leave me a message">
           <fa-icon id="contact-icon" [icon]="inboxIcon"></fa-icon>
           <span id="contact-title">Contact</span>
         </a>
       </div>
       <div [ngClass]="authClass" style="padding: 0;">
-        <a id="user-tab" (click)="openAuthModal()" class="nav-link">
+        <a id="user-tab" (click)="openAuthModal()" class="nav-link" href="#"
+          aria-label="Click here to log in to my portfolio site">
           <fa-icon id="user-icon" [icon]="userIcon"></fa-icon>
           <span id="user-title"></span>
         </a>

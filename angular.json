@@ -49,7 +49,6 @@
             "allowedCommonJsDependencies": [
               "aos",
               "lodash",
-              "rxjs-compat",
               "froala-editor"
             ]
           },
