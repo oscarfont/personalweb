@@ -6,20 +6,8 @@
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: local("Roboto"), url(./assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Montserrat";
   src: local("Montserrat"), url(./assets/fonts/montserrat/Montserrat-Regular.ttf) format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Hind";
-  src: local("Hind"), url(./assets/fonts/hind/Hind-Regular.ttf) format("truetype");
   font-display: swap;
 }
 
