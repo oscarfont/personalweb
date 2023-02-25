@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { slideInAnimations } from '../app/animations';
 import * as AOS from 'aos';
@@ -14,7 +14,7 @@ import { DOCUMENT } from '@angular/common';
     // animation triggers go here
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'personalweb';
 
   constructor(

@@ -6,7 +6,7 @@ import { AppStateService } from 'src/app/app-state.service';
   templateUrl: './colleagues-comments.component.html',
   styleUrls: ['./colleagues-comments.component.css']
 })
-export class ColleaguesCommentsComponent implements OnInit {
+export class ColleaguesCommentsComponent {
 
   @Input() background: any;
   isMobile: boolean;
@@ -15,8 +15,6 @@ export class ColleaguesCommentsComponent implements OnInit {
     //console.log(this.background)
     this.isMobile = this.appStateService.getIsMobileResolution();
   }
-
-  ngOnInit(): void { }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {

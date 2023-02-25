@@ -6,7 +6,7 @@ import { AppStateService } from 'src/app/app-state.service';
   templateUrl: './highlight-projects.component.html',
   styleUrls: ['./highlight-projects.component.css']
 })
-export class HighlightProjectsComponent implements OnInit {
+export class HighlightProjectsComponent {
 
   @Input() background: any;
   isMediumDesktop: boolean;
@@ -15,9 +15,6 @@ export class HighlightProjectsComponent implements OnInit {
   constructor(private appStateService: AppStateService) {
     this.isMediumDesktop = this.appStateService.getIsMediumDesktopResolution();
     this.isSmallDesktop = this.appStateService.getIsSmallDesktopResolution();
-  }
-
-  ngOnInit(): void {
   }
 
   @HostListener('window:resize', ['$event'])

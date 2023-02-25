@@ -9,7 +9,7 @@ import { UtilsService } from 'src/services/utils.service';
   templateUrl: './blog-detail.component.html',
   styleUrls: ['./blog-detail.component.css']
 })
-export class BlogDetailComponent implements OnInit {
+export class BlogDetailComponent {
 
   blogTitle: string;
   blogId: string;
@@ -43,8 +43,6 @@ export class BlogDetailComponent implements OnInit {
       //console.log(this);
     }, (error) => { console.log(error); });
   }
-
-  ngOnInit(): void { }
 
   goBack() {
     this.locationService.back();

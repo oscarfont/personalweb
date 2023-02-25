@@ -6,16 +6,13 @@ import { AppStateService } from 'src/app/app-state.service';
   templateUrl: './experience-carrousel.component.html',
   styleUrls: ['./experience-carrousel.component.css']
 })
-export class ExperienceCarrouselComponent implements OnInit {
+export class ExperienceCarrouselComponent {
 
   @Input() background: any;
   isMobile: boolean;
 
   constructor(private appStateService: AppStateService) {
     this.isMobile = this.appStateService.getIsMobileResolution();
-  }
-
-  ngOnInit(): void {
   }
 
   @HostListener('window:resize', ['$event'])

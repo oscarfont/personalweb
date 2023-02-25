@@ -11,24 +11,14 @@ import { UtilsService } from 'src/services/utils.service';
   templateUrl: './new-post.component.html',
   styleUrls: ['./new-post.component.css']
 })
-export class NewPostComponent implements OnInit {
+export class NewPostComponent {
 
   htmlContent: any;
   formData: FormGroup;
-  backgroundRight: { name: string, pos: string };
-  backgroundLeft: { name: string, pos: string };
   options: Object;
 
   constructor(private locationService: Location, private blogService: BlogService,
     private router: Router, private toastrService: ToastrService, private utilsService: UtilsService) {
-    this.backgroundRight = {
-      name: 'quarter-hexagon',
-      pos: 'bottom-right'
-    }
-    this.backgroundLeft = {
-      name: 'quarter-hexagon',
-      pos: 'top-left'
-    }
     this.options = {
       placeholderText: 'Add your post content here...',
 
@@ -81,8 +71,6 @@ export class NewPostComponent implements OnInit {
       htmlContent: new FormControl('')
     });
   }
-
-  ngOnInit(): void { }
 
   onPublishBlog(values: any) {
     //console.log(values);
