@@ -17,12 +17,12 @@ export class UtilsService {
 
   sendEmail(email: string, subject: string, comment: string) {
     const body = { 'from': email, 'subject': subject, 'text': comment };
-    return this.http.post<any>(this.baseURL + 'utils/sendMail', body, { headers: this.httpHeader });
+    return this.http.post<any>(this.baseURL + '/utils/sendMail', body, { headers: this.httpHeader });
   }
 
   deleteImage(imageId: string) {
     const body = { src: imageId }
-    return this.http.post<any>(this.baseURL + 'utils/deleteImage/', body);
+    return this.http.post<any>(this.baseURL + '/utils/deleteImage/', body);
   }
 
   computeNumberOfDaysString(date: number) {
