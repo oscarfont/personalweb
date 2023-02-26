@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilsService {
 
-  baseURL: string = "http://localhost:3000/";
+  baseURL: string = `${environment.backendHost}`;
 
   httpHeader = new HttpHeaders({
     'Content-Type': 'application/json'
