@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UtilsService } from 'src/services/utils.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-new-post',
@@ -29,7 +30,7 @@ export class NewPostComponent {
       },
 
       // Set the image upload URL.
-      imageUploadURL: 'http://localhost:3000/utils/uploadImage', // TODO change base path
+      imageUploadURL: `${environment.backendHost}/utils/uploadImage`,
 
       // Set request type.
       imageUploadMethod: 'POST',
@@ -43,7 +44,7 @@ export class NewPostComponent {
       events: {
         'image.uploaded': function (res: string) {
           const resObj = JSON.parse(res);
-          const imageUrl = `http://localhost:3000/${resObj.data}`; // TODO change this
+          const imageUrl = `${environment.backendHost}/${resObj.data}`;
           this.image.insert(imageUrl, false, null, this.image.get(), { link: imageUrl });
           blogService.addPostMedia(resObj.data);
           return false;

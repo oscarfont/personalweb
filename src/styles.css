@@ -60,6 +60,7 @@ body {
 
 #app-content {
   background-color: var(--main-color);
+  min-height: 100vh;
 }
 
 .page-title-container {
