@@ -80,3 +80,8 @@
   max-width: 3rem;
   min-width: 2rem;
 }
+
+#user-tab {
+  background-color: transparent;
+  border: none
+}

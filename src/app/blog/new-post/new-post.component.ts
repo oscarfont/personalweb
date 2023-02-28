@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UtilsService } from 'src/services/utils.service';
 import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-new-post',
@@ -19,7 +20,7 @@ export class NewPostComponent {
   options: Object;
 
   constructor(private locationService: Location, private blogService: BlogService,
-    private router: Router, private toastrService: ToastrService, private utilsService: UtilsService) {
+    private router: Router, private toastrService: ToastrService, private utilsService: UtilsService, private authService: AuthService) {
     this.options = {
       placeholderText: 'Add your post content here...',
 
@@ -40,6 +41,10 @@ export class NewPostComponent {
 
       // Allow to upload PNG and JPG.
       imageAllowedTypes: ['jpeg', 'jpg', 'png'],
+
+      requestHeaders: {
+        Authorization: `Bearer ${this.authService.getCookie('token')}`
+      },
 
       events: {
         'image.uploaded': function (res: string) {

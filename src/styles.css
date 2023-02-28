@@ -162,6 +162,10 @@ ngb-modal-backdrop {
   z-index: 1050 !important;
 }
 
+.modal-open {
+  padding: 0 !important;
+}
+
 /* agnular editor */
 .fr-toolbar,
 .fr-wrapper,
