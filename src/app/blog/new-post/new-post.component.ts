@@ -46,8 +46,6 @@ export class NewPostComponent {
         authorization: `Bearer ${this.authService.getCookie('token')}`
       },
 
-      requestWithCredentials: true,
-
       events: {
         'image.uploaded': function (res: string) {
           const resObj = JSON.parse(res);
