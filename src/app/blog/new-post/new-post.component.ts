@@ -43,8 +43,10 @@ export class NewPostComponent {
       imageAllowedTypes: ['jpeg', 'jpg', 'png'],
 
       requestHeaders: {
-        Authorization: `Bearer ${this.authService.getCookie('token')}`
+        authorization: `Bearer ${this.authService.getCookie('token')}`
       },
+
+      requestWithCredentials: true,
 
       events: {
         'image.uploaded': function (res: string) {
