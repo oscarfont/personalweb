@@ -52,7 +52,7 @@ export class NewPostComponent {
           const imageUrl = `${environment.backendHost}/public/${resObj.data}`;
           this.image.insert(imageUrl, false, null, this.image.get(), { link: imageUrl });
           blogService.addPostMedia(resObj.data);
-          return false;
+          return true;
         },
         'image.removed': function (img: any) {
           const fileName = img[0].src.split('/')[3];
