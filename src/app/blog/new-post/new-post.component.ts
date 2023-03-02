@@ -50,7 +50,7 @@ export class NewPostComponent {
         'image.uploaded': function (res: string) {
           const resObj = JSON.parse(res);
           const imageUrl = `${environment.backendHost}/public/${resObj.data}`;
-          this.image.insert(imageUrl, false, null, this.image.get(), { link: imageUrl });
+          this.image.insert(`/public/${resObj.data}`, false, null, this.image.get(), { link: imageUrl });
           blogService.addPostMedia(resObj.data);
           return false;
         },
