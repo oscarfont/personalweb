@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UtilsService {
 
-  baseURL: string = `${environment.backendHost}`;
+  baseURL: string = `${environment.backendHost}/api`;
 
   httpHeader = new HttpHeaders({
     'Content-Type': 'application/json'

@@ -31,7 +31,7 @@ export class NewPostComponent {
       },
 
       // Set the image upload URL.
-      imageUploadURL: `${environment.backendHost}/utils/uploadImage`,
+      imageUploadURL: `${environment.backendHost}/api/utils/uploadImage`,
 
       // Set request type.
       imageUploadMethod: 'POST',
@@ -52,7 +52,7 @@ export class NewPostComponent {
           const imageUrl = `${environment.backendHost}/public/${resObj.data}`;
           this.image.insert(imageUrl, false, null, this.image.get(), { link: imageUrl });
           blogService.addPostMedia(resObj.data);
-          return true;
+          return false;
         },
         'image.removed': function (img: any) {
           const fileName = img[0].src.split('/')[3];

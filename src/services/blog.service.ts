@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class BlogService {
 
-  baseURL: string = `${environment.backendHost}`;
+  baseURL: string = `${environment.backendHost}/api`;
   postMedia: Array<string>;
 
   httpHeader = new HttpHeaders({
