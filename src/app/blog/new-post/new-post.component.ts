@@ -50,7 +50,6 @@ export class NewPostComponent {
         'image.uploaded': async function (res: string) {
           const resObj = JSON.parse(res);
           const imageUrl = `${environment.backendHost}/public/${resObj.data}`;
-          await new Promise(resolve => setTimeout(resolve, 5000));
           this.image.insert(imageUrl, false, null, this.image.get(), resObj);
           blogService.addPostMedia(resObj.data);
           return false;
