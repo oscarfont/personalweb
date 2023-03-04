@@ -30,9 +30,7 @@ export class UtilsService {
     formData.append('image', file);
     const headers = new HttpHeaders({
       'accept': 'application/json',
-      'Accept-Language': 'en-US,en;q=0.8',
-      'enctype': 'multipart/form-data',
-      'Content-Type': `multipart/form-data`
+      'Accept-Language': 'en-US,en;q=0.8'
     })
     return this.http.post<any>(this.baseURL + '/utils/uploadImage/', formData, { headers: headers });
   }
