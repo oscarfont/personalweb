@@ -25,6 +25,17 @@ export class UtilsService {
     return this.http.post<any>(this.baseURL + '/utils/deleteImage/', body);
   }
 
+  uploadImage(file: File) {
+    const formData = new FormData();
+    formData.append('image', file);
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Accept-Language': 'en-US,en;q=0.8',
+      'Content-Type': `multipart/form-data`
+    })
+    return this.http.post<any>(this.baseURL + '/utils/uploadImage/', formData, { headers: headers });
+  }
+
   computeNumberOfDaysString(date: number) {
     // compute number of days between date and today
     const today = new Date().getTime();

@@ -30,11 +30,8 @@ export class NewPostComponent {
         "Katamaran": "Body Font"
       },
 
-      // Set the image upload URL.
-      imageUploadURL: `${environment.backendHost}/api/utils/uploadImage`,
-
-      // Set request type.
-      imageUploadMethod: 'POST',
+      // tell the editor that the image has to be uploaded
+      imageUpload: true,
 
       // Set max image size to 10MB.
       imageMaxSize: 10 * 1024 * 1024,
@@ -47,11 +44,14 @@ export class NewPostComponent {
       },
 
       events: {
-        'image.uploaded': async function (res: string) {
-          const resObj = JSON.parse(res);
-          const imageUrl = `${environment.backendHost}/public/${resObj.data}`;
-          this.image.insert(imageUrl, false, null, this.image.get(), resObj);
-          blogService.addPostMedia(resObj.data);
+        'image.beforeUpload': async function (images: Array<File>) {
+          const image = images[0];
+          utilsService.uploadImage(image).subscribe((res) => {
+            const resObj = JSON.parse(res);
+            const imageUrl = `${environment.backendHost}/public/${resObj.data}`;
+            this.image.insert(imageUrl, false, null, this.image.get(), resObj);
+            blogService.addPostMedia(resObj.data);
+          });
           return false;
         },
         'image.removed': function (img: any) {
