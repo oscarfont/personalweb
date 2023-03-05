@@ -50,8 +50,10 @@ export class NewPostComponent {
           utilsService.uploadImage(image).subscribe((res) => {
             const imageUrl = `${environment.backendHost}/public${res.data}`;
             const image = editor.image.get()[0];
-            if (image) image.src = imageUrl;
-            blogService.addPostMedia(`/public${res.data}`);
+            if (image) {
+              image.src = imageUrl;
+              blogService.addPostMedia(`/public${res.data}`);
+            }
           }, (error: any) => toastrService.error(error?.message));
           return false;
         },
