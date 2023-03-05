@@ -47,11 +47,10 @@ export class NewPostComponent {
         'image.beforeUpload': async function (images: Array<File>) {
           const image = images[0];
           utilsService.uploadImage(image).subscribe((res) => {
-            const resObj = JSON.parse(res);
-            const imageUrl = `${environment.backendHost}/public${resObj.data}`;
+            const imageUrl = `${environment.backendHost}/public${res.data}`;
             //this.image.insert(imageUrl, false, null, this.image.get(), resObj);
             image[0].url = imageUrl;
-            blogService.addPostMedia(`/public${resObj.data}`);
+            blogService.addPostMedia(`/public${res.data}`);
           });
           return false;
         },
