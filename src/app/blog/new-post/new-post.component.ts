@@ -52,14 +52,14 @@ export class NewPostComponent {
             const image = editor.image.get()[0];
             if (image) image.src = imageUrl;
             blogService.addPostMedia(`/public${res.data}`);
-          });
+          }, (error: any) => toastrService.error(error?.message));
           return false;
         },
-        'image.removed': function (img: any) {
+        'image.removed': async function (img: any) {
           const fileName = img[0].src.slice(img[0].src.lastIndexOf('/')).replace("/", "");
           utilsService.deleteImage(fileName).subscribe((res) => {
             toastrService.success('Image deleted successfully!');
-          });
+          }, (error: any) => toastrService.error(error?.message));
           blogService.removePostMedia(fileName);
         }
       },
@@ -84,7 +84,7 @@ export class NewPostComponent {
     this.blogService.publishBlog(values.title, values.category, values.summary, values.htmlContent, this.blogService.getPostMedia()).subscribe((res) => {
       this.toastrService.success('Post published successfully!');
       this.router.navigateByUrl('/blog');
-    }, (error: any) => { console.log(error); });
+    }, (error: any) => { this.toastrService.error(error?.message) });
   }
 
   goBack() {
