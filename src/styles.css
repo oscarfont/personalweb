@@ -42,8 +42,9 @@ html {
   /* some margins */
   --portfolio-rows-margin: -1.2rem;
 
-  /* mobile devices vh */
-  --height-of-slide: 100vh;
+  /* app max-width */
+  --app-max-width: 80rem;
+
 }
 
 .accent-1 {
@@ -95,6 +96,10 @@ body {
   background-color: #4a598d94 !important;
 }
 
+.body-row {
+  max-width: var(--app-max-width);
+}
+
 /* MICRO DEVICES */
 @media (max-width: 280px) {
   :root {
@@ -102,7 +107,6 @@ body {
     --body-size: 0.75rem;
     --micro-body-size: 0.5rem;
     --portfolio-rows-margin: 1.5rem;
-    --height-of-slide: 93vh;
   }
 }
 
@@ -113,7 +117,6 @@ body {
     --body-size: 1rem;
     --micro-body-size: 0.85rem;
     --portfolio-rows-margin: 1.5rem;
-    --height-of-slide: 93vh;
   }
 }
 

@@ -1,5 +1,6 @@
-<div id="contact-page" class="container-fluid mobile-scroll d-flex" (swipe)="onSwipe($event)">
-  <div class="row flex-grow-1" [ngClass]="this.bgDesktopClass">
+<div id="contact-page" class="container-fluid d-flex justify-content-center mobile-scroll" (swipe)="onSwipe($event)"
+  [ngClass]="this.bgDesktopClass">
+  <div class="row body-row flex-grow-1">
     <div [ngClass]="'col-12 col-lg-6 col-xl-6 ' + columnClass + ' ' + this.bgMobileClasses[0]">
       <div class="row d-flex flex-column under-navbar h-100" style="position: relative; z-index: 2;">
         <div style="padding: 1rem 0.25rem 1rem 0.25rem; text-align: center;">

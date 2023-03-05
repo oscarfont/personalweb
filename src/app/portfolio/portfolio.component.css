@@ -1,6 +1,6 @@
 #portfolio-page {
   overflow-x: hidden;
-  margin-top: 1rem;
+  min-height: 100vh;
 }
 
 .background-desktop {

@@ -1,5 +1,6 @@
-<div class="container-fluid mobile-scroll" id="portfolio-page" (swipe)="onSwipe($event)">
-  <div class="row" [ngClass]="this.bgDesktopClass">
+<div class="container-fluid d-flex flex-column align-items-center justify-content-center mobile-scroll"
+  id="portfolio-page" (swipe)="onSwipe($event)" [ngClass]="this.bgDesktopClass">
+  <div class="row body-row">
     <div class="col-12 col-lg-6 col-xl-6" [ngClass]="this.bgMobileClasses[0]">
       <div class="row" style="margin-top: 3.5rem;">
         <div class="col-5 d-flex flex-row-reverse">
@@ -12,12 +13,12 @@
           <div class="subtitle">25 years old (26/03/1997)</div>
         </div>
       </div>
-      <div class="row flex-column" id="skills-row">
+      <div class="row flex-column justify-content-center" id="skills-row">
         <div class="player-personal-section">
           <div class="section-title">Software Engineering Skills</div>
         </div>
-        <div style="height:24.875rem; margin-left: 0.25rem">
-          <div echarts (chartInit)="onChartInit($event)" [options]="this.option" style="height:100%; width:100%;">
+        <div style="height:21rem;">
+          <div echarts (chartInit)=" onChartInit($event)" [options]="this.option" style="height:100%; width:100%;">
           </div>
         </div>
       </div>
@@ -198,14 +199,14 @@
               <span class="stat-value">90</span>
             </div>
           </div>
-          <div class="row d-flex flex-column">
+          <!--<div class="row d-flex flex-column">
             <div class="col d-flex align-items-center padding-cell" style="justify-content: center;">
               <span class="section-text" id="check-cv">Wanna <span class="accent-1">know more</span>
                 details?</span>
               <span> <a class="btn btn-outline-primary" id="cv-button" (click)="this.openPdf()">Check my
                   CV!</a> </span>
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>

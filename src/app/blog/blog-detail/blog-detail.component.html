@@ -1,5 +1,5 @@
-<div class="container-fluid d-flex flex-column" id="blog-detail-page">
-  <div class="justify-content-center blog-detail-body">
+<div class="container-fluid d-flex flex-column align-items-center" id="blog-detail-page">
+  <div class="justify-content-center blog-detail-body body-row">
     <!-- HEADER TITLE CARD-->
     <div class="card standard-card">
       <div class="card-header header-container">
@@ -18,7 +18,7 @@
 
     <!-- BLOG POST CONTENT-->
     <div class="card standard-card blog-card">
-      <div class="card-body" [innerHTML]="this.blogContent"></div>
+      <article class="card-body" [innerHTML]="this.blogContent"></article>
     </div>
   </div>
 </div>
