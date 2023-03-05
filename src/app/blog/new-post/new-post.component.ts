@@ -49,7 +49,7 @@ export class NewPostComponent {
           const editor = this;
           utilsService.uploadImage(image).subscribe((res) => {
             const imageUrl = `${environment.backendHost}/public${res.data}`;
-            editor.image.insert(imageUrl, false, null, this.image.get(), res);
+            editor.image.insert(imageUrl, false, null, editor.image.get(), res);
             blogService.addPostMedia(`/public${res.data}`);
           });
           return false;
