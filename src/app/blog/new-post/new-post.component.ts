@@ -55,7 +55,7 @@ export class NewPostComponent {
           return false;
         },
         'image.removed': function (img: any) {
-          const fileName = img[0].src.split('/')[3];
+          const fileName = img[0].src.slice(img[0].src.lastIndexOf('/')).replace("/", "");
           utilsService.deleteImage(fileName).subscribe((res) => {
             toastrService.success('Image deleted successfully!');
           });
