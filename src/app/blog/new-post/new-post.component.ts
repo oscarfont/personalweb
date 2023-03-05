@@ -48,9 +48,9 @@ export class NewPostComponent {
           const image = images[0];
           utilsService.uploadImage(image).subscribe((res) => {
             const resObj = JSON.parse(res);
-            const imageUrl = `${environment.backendHost}/public/${resObj.data}`;
+            const imageUrl = `${environment.backendHost}/public${resObj.data}`;
             this.image.insert(imageUrl, false, null, this.image.get(), resObj);
-            blogService.addPostMedia(resObj.data);
+            blogService.addPostMedia(`/public${resObj.data}`);
           });
           return false;
         },
