@@ -47,6 +47,10 @@ html {
 
 }
 
+.secondary {
+  color: var(--secondary-color);
+}
+
 .accent-1 {
   color: var(--accent-color-1);
 }
