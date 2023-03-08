@@ -1,6 +1,5 @@
 #blog-detail-page {
-  height: 100vh;
-  overflow-y: auto;
+  min-height: 100vh;
   background-image: url('../../../assets/background/quarter-hexagon-top-left.webp'), url('../../../assets/background/quarter-hexagon-bottom-right.webp');
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
@@ -13,7 +12,6 @@
 }
 
 .blog-detail-body {
-  max-height: 100vh;
   text-align: center;
   margin-top: 3.5rem;
   padding: 1rem;
