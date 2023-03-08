@@ -1,17 +1,22 @@
 <div id="new-post-page" class="container-fluid d-flex flex-column align-items-center">
   <div class="row body-row flex-grow-1">
-    <div class="col-12 d-flex flex-column align-items-center" style="margin-top: 3.5rem;">
+    <div class="col-12 d-flex flex-column align-items-center" style="margin-top: 3.5rem; gap: 2rem;">
       <!-- HEADER TITLE CARD -->
-      <div class="card standard-card">
+      <div class="card standard-card" style="width: 100%">
         <div class="card-header header-container">
           <h4 class="blog-title">New Post</h4>
         </div>
         <div id="message" class="card-body">
-          <span class="blog-text">It's time to get creative, write whatever you feel like to!</span>
+          <span class="blog-text">
+            Fill the new post details: the title, the category to which the post belongs,
+            a summary that will serve as a preview of the post in the previous page and
+            the content of the post itself! Remember to add alt descriptions to pictures
+            and to use the font families provided to make the post fit the style of your site!
+          </span>
         </div>
       </div>
       <!-- FORM OF NEW POST -->
-      <div style="margin:2rem 0rem 0rem 0rem;">
+      <div style="width: 100%;">
         <form id="postForm" [formGroup]="formData" (ngSubmit)="this.onPublishBlog(formData.value)">
           <input id="inputTitle" class="form-control form-box" formControlName="title" placeholder="Enter a title..."
             required>
