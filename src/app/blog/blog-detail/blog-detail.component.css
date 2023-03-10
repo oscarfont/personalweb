@@ -5,12 +5,6 @@
   background-position: top left, bottom right;
 }
 
-.header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .blog-detail-body {
   text-align: center;
   margin-top: 3.5rem;

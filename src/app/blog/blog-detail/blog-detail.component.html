@@ -2,17 +2,16 @@
   <div class="justify-content-center blog-detail-body body-row">
     <!-- HEADER TITLE CARD-->
     <div class="card standard-card">
-      <div class="card-header header-container">
-        <div style="width:2rem;"></div>
-        <h4 class="blog-title">{{this.blogTitle}}</h4>
-        <div style="width:2rem;"></div>
-      </div>
-      <div class="blog-summary" style="padding: 1rem;">
-        {{this.blogSummary}}
-      </div>
-      <div class="card-footer d-flex justify-content-between">
-        <span class="tag-box">{{this.blogCategory}}</span>
-        <span class="date-text">{{this.blogDate}}</span>
+      <div class="card-body blog-summary d-flex flex-column align-items-center justify-content-center"
+        style="padding: 1rem;">
+        <div class="d-flex flex-column align-items-center justify-content-between">
+          <h4 class="blog-title">{{this.blogTitle}}</h4>
+        </div>
+        <span>{{this.blogSummary}}</span>
+        <div class="d-flex justify-content-between" style="width: 100%;">
+          <span class="tag-box">{{this.blogCategory}}</span>
+          <span class="date-text">{{this.blogDate}}</span>
+        </div>
       </div>
     </div>
 
