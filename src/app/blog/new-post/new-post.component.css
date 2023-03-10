@@ -40,3 +40,21 @@
   font-size: var(--body-size);
   color: var(--secondary-color);
 }
+
+::ng-deep.heading-text {
+  font-family: var(--titles-font);
+  font-size: var(--titles-size);
+  color: var(--accent-color-1);
+}
+
+::ng-deep.subtitle-text {
+  font-family: var(--subtitles-font);
+  font-size: var(--subtitles-size);
+  color: var(--accent-color-1);
+}
+
+::ng-deep.body-text {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
+}
