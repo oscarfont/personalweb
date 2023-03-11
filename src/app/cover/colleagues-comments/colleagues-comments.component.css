@@ -15,9 +15,9 @@
 }
 
 /* SLIDER CLASSES */
-.container {
+#comments-slider {
   overflow: hidden;
-  max-width: 90rem;
+  width: 100%;
 }
 
 .slider {
