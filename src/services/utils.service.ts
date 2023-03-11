@@ -65,4 +65,8 @@ export class UtilsService {
     return dateObj.toLocaleString('default', { day: 'numeric', month: 'short', year: 'numeric' });
   }
 
+  getColleaguesComments() {
+    return this.http.get<any>('/assets/cover/comments.json');
+  }
+
 }

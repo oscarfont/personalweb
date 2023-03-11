@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "name": "Román Rey",
+      "project": "dailyWordBot",
+      "companyImageSrc": "../../../assets/cover/dailyWordBot.webp",
+      "socialMedia": {
+        "image": "../../../assets/contact/linkedin-image.webp",
+        "profileLink": "https://www.linkedin.com/in/roman-rey"
+      },
+      "comment": "Óscar is the guy I love working with, endless source of ideas, pure talent, out of the box organised, and a truly motivator that draws everyone a smile at their face."
+    },
+    {
+      "name": "@Toshiwo_AK",
+      "project": "Gopick",
+      "companyImageSrc": "../../../assets/cover/gopick-logo.webp",
+      "socialMedia": {
+        "image": "",
+        "profileLink": "https://twitter.com/Toshiwo_AK"
+      },
+      "comment": "You'll hardly find a developer with whom it is easy to work with: we have a temper usually. Yet, Óscar's positive attitude made our code reviews as smooth as they possibly can be."
+    },
+    {
+      "name": "Rafael Gilete Mogena",
+      "project": "Gopick",
+      "companyImageSrc": "../../../assets/cover/gopick-logo.webp",
+      "socialMedia": {
+        "image": "../../../assets/contact/linkedin-image.webp",
+        "profileLink": "https://www.linkedin.com/in/rafael-gilete-mogena"
+      },
+      "comment": "Óscar is a versatile engineer capable of facing and take on tasks of different computing engineering areas (backend, devops, infrastructure...) with enough analytical skills to ask the right questions and make very logical decisions. Great professional and human being."
+    },
+    {
+      "project": "Fourthhub",
+      "companyImageSrc": "../../../assets/portfolio/fourthhub.webp",
+      "comment": "Excellent colleague and human being. As good as it gets at what he does."
+    },
+    {
+      "name": "Ana Picón",
+      "project": "Gopick",
+      "companyImageSrc": "../../../assets/cover/gopick-logo.webp",
+      "comment": "Óscar is a colleague that shows a lot of interest at what he does and learns so fast. It was a pleasure to work with him and I hope to work along with him again in the future."
+    },
+    {
+      "name": "Cyprien Roche",
+      "project": "Agent Software Development at UPM",
+      "companyImageSrc": "../../../assets/portfolio/upm.webp",
+      "socialMedia": {
+        "image": "../../../assets/contact/linkedin-image.webp",
+        "profileLink": "https://www.linkedin.com/in/cyprienroche"
+      },
+      "comment": "I really enjoyed working with Oscar at this project. Our clear communication and teamwork boosted our productivity, making our project the best int the course. I hope our paths will cross again in the future."
+    }
+  ]
+}

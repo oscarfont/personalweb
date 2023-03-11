@@ -1,0 +1,27 @@
+::ng-deep.quote-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  word-wrap: break-word;
+  white-space: normal;
+  padding: 1rem;
+}
+
+::ng-deep.quote {
+  font-family: var(--body-font);
+  font-size: var(--micro-body-size);
+  color: var(--secondary-color);
+  font-style: italic;
+}
+
+::ng-deep.author {
+  font-family: var(--body-font);
+  font-size: var(--micro-body-size);
+  color: var(--secondary-color);
+}
+
+::ng-deep.author-company {
+  width: 100%;
+  max-width: 3rem;
+  min-width: 1.5rem;
+}

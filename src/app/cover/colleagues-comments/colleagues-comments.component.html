@@ -1,5 +1,5 @@
 <div class="container-fluid d-flex flex-column align-items-center" id="contact-page">
-  <div class="row body-row d-flex flex-column flex-grow-1 align-items-center justify-content-center">
+  <div class="row d-flex flex-column flex-grow-1 align-items-center justify-content-center">
     <div class="subtitle-heading" style="margin-bottom: 4rem;">What <span class="accent-2">colleagues</span>
       <span class="accent-1"> say</span> about <span class="accent-2">me</span>...
     </div>
@@ -8,67 +8,19 @@
         <div class="slider">
           <div class="logos">
             <div class="d-flex flex-row justify-content-around" style="gap: 1rem">
-              <div class="col quote-box">
-                <p class="quote">
-                  "Very good developer. Always solving problems the best way possible
-                  and in a sensiteve
-                  way"</p>
-                <p class="author">Someone at <img src="../../assets/portfolio/redsys.webp" class="author-company"
-                    alt="Redsys Company Logo" /></p>
-              </div>
-              <div class="col quote-box">
-                <p class="quote">"Great engineer and better coalleague."</p>
-                <p class="author">Someone at <img src="../../assets/portfolio/fourthhub.webp" class="author-company"
-                    alt="Fourthub Company Logo" />
-                </p>
-              </div>
-              <div class="col quote-box">
-                <p class="quote">"Fast learnear and a passionate engineer. Very good team mate. Long live to the Backend
-                  Team!"</p>
-                <p class="author">Someone at <img src="../../assets/cover/gopick-logo.webp" alt="Gopick Company Logo"
-                    class="author-company-square" />
-                </p>
-              </div>
-              <div class="col quote-box">
-                <p class="quote">"A problem solver by nature. Technically proficient and great team mate."</p>
-                <p class="author">Someone at <img src="../../assets/portfolio/upm.webp" class="author-company-square"
-                    alt="UPM Logo" />
-                </p>
-              </div>
+              <app-comment *ngFor="let comment of this.comments" [name]="comment?.name" [project]="comment.project"
+                [companyImageSrc]="comment.companyImageSrc" [comment]="comment.comment"
+                [socialMedia]="comment?.socialMedia">
+              </app-comment>
             </div>
           </div>
           <div class="logos">
             <span class="second">
               <div class="d-flex flex-row justify-content-around" style="gap: 1rem">
-                <div class="col quote-box">
-                  <p class="quote">
-                    "Very good developer. Always solving problems the best way possible
-                    and in a sensiteve
-                    way"</p>
-                  <p class="author">Someone at <img src="../../assets/portfolio/redsys.webp" class="author-company"
-                      alt="Redsys Company Logo" />
-                  </p>
-                </div>
-                <div class="col quote-box">
-                  <p class="quote">"Great engineer and better coalleague."</p>
-                  <p class="author">Someone at <img src="../../assets/portfolio/fourthhub.webp"
-                      alt="Fourthub Company Logo" class="author-company" />
-                  </p>
-                </div>
-                <div class="col quote-box">
-                  <p class="quote">"Fast learnear and a passionate engineer. Very good team mate. Long live to the
-                    Backend
-                    Team!"</p>
-                  <p class="author">Someone at <img src="../../assets/cover/gopick-logo.webp" alt="Gopick Company Logo"
-                      class="author-company-square" />
-                  </p>
-                </div>
-                <div class="col quote-box">
-                  <p class="quote">"A problem solver by nature. Technically proficient and great team mate."</p>
-                  <p class="author">Someone at <img src="../../assets/portfolio/upm.webp" alt="UPM Logo"
-                      class="author-company-square" />
-                  </p>
-                </div>
+                <app-comment *ngFor="let comment of this.comments" [name]="comment?.name" [project]="comment.project"
+                  [companyImageSrc]="comment.companyImageSrc" [comment]="comment.comment"
+                  [socialMedia]="comment?.socialMedia">
+                </app-comment>
               </div>
             </span>
           </div>
