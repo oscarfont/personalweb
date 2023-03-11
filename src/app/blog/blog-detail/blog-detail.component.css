@@ -6,7 +6,6 @@
 }
 
 .blog-detail-body {
-  text-align: center;
   margin-top: 3.5rem;
   padding: 1rem;
 }
@@ -60,4 +59,17 @@
   font-family: var(--body-font);
   font-size: var(--body-size);
   color: var(--secondary-color);
+}
+
+::ng-deep.fr-view .fr-class-code {
+  font-size: var(--micro-body-size);
+  border-color: var(--main-lighter-color);
+  background: var(--main-color);
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 1rem;
 }
