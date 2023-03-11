@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../services/blog.service';
 import { AuthService } from 'src/services/auth.service';
-import { faTrashCan, faPenNib } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan, faPenNib, faLocationDot, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { ToastrService } from 'ngx-toastr';
 import { DIRECTION, SwipeRouteService } from 'src/services/swiperoute.service';
 import { Router } from '@angular/router';
@@ -21,7 +21,14 @@ export class BlogComponent implements OnInit {
   userName: string;
   trashCanIcon = faTrashCan;
   penIcon = faPenNib;
+  locationIcon = faLocationDot;
+  searchIcon = faMagnifyingGlass;
   isMobile = false;
+
+  /* labels that might change with time */
+  currentlyLearning = 'Kotlin';
+  location = 'Madrid';
+
 
   constructor(private blogService: BlogService, public authService: AuthService,
     private toastrService: ToastrService, private swipeRoute: SwipeRouteService,

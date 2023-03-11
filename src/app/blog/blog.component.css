@@ -5,7 +5,26 @@
   background-position: top left, bottom right;
 }
 
+.header-logo {
+  max-width: 6rem;
+}
+
+.header-title {
+  font-family: var(--titles-font);
+  font-size: var(--titles-size);
+  color: var(--accent-color-2);
+  font-weight: 600;
+}
+
+.location-container {
+  font-family: var(--body-font);
+  font-size: var(--micro-body-size);
+  color: var(--secondary-color);
+  gap: 0.5rem
+}
+
 #message {
+  width: 100%;
   font-family: "Hind";
   color: #001E3E;
 }
@@ -22,12 +41,6 @@
 
 .blog-card:hover {
   background-color: #4a598d94 !important;
-}
-
-.header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 /* HEADER ROW */
@@ -47,8 +60,6 @@
   font-family: var(--body-font);
   font-size: var(--body-size);
   color: var(--secondary-color);
-  text-align: center;
-  font-style: italic;
 }
 
 .blog-summary {
@@ -69,11 +80,41 @@
   border-left: 3px solid var(--accent-color-1);
   font-family: var(--body-font);
   font-size: var(--micro-body-size);
-  color: var(--accent-color-2);
 }
 
 .days-ago {
   font-family: var(--body-font);
   font-size: var(--micro-body-size);
   color: var(--accent-color-1);
+}
+
+::ng-deep.heading-text {
+  font-family: var(--titles-font);
+  font-size: var(--titles-size);
+  color: var(--accent-color-1);
+}
+
+::ng-deep.subtitle-text {
+  font-family: var(--subtitles-font);
+  font-size: var(--subtitles-size);
+  color: var(--accent-color-1);
+}
+
+::ng-deep.body-text {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
+}
+
+::ng-deep.fr-view .fr-class-code {
+  font-size: var(--micro-body-size);
+  border-color: var(--main-lighter-color);
+  background: var(--main-color);
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 1rem;
 }

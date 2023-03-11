@@ -24,10 +24,13 @@ export class NewPostComponent {
     this.options = {
       placeholderText: 'Add your post content here...',
 
-      fontFamily: {
-        "Domine": "Titles Font",
-        "Montserrat": "Subtitles Font",
-        "Katamaran": "Body Font"
+      inlineClasses: {
+        'fr-class-code': 'Code',
+        'fr-class-highlighted': 'Highlighted',
+        'fr-class-transparency': 'Transparent',
+        'heading-text': 'Heading',
+        'subtitle-text': 'Subtitle',
+        'body-text': 'Body'
       },
 
       // tell the editor that the image has to be uploaded
@@ -70,7 +73,7 @@ export class NewPostComponent {
         'post-style': 'imageStyle'
       },
 
-      imageEditButtons: ['imageReplace', 'imageAlign', 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '-', 'imageDisplay', 'imageStyle', 'imageAlt', 'imageSize']
+      imageEditButtons: ['imageReplace', 'imageAlign', 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '-', 'imageDisplay', 'imageStyle', 'imageAlt', 'imageSize', 'inlineClass']
 
     };
     this.formData = new FormGroup({
