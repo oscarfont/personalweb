@@ -30,6 +30,7 @@ import "froala-editor/js/plugins/link.min.js";
 import "froala-editor/js/plugins/lists.min.js";
 import "froala-editor/js/plugins/quote.min.js";
 import "froala-editor/js/plugins/image.min.js";
+import "froala-editor/js/plugins/inline_class.min.js";
 import { ColleaguesCommentsComponent } from './cover/colleagues-comments/colleagues-comments.component';
 import Hammer from 'hammerjs';
 import { HammerModule } from "../../node_modules/@angular/platform-browser";

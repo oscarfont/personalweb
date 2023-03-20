@@ -1,20 +1,11 @@
 #blog-detail-page {
-  height: 100vh;
-  overflow-y: auto;
+  min-height: 100vh;
   background-image: url('../../../assets/background/quarter-hexagon-top-left.webp'), url('../../../assets/background/quarter-hexagon-bottom-right.webp');
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
 }
 
-.header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .blog-detail-body {
-  max-height: 100vh;
-  text-align: center;
   margin-top: 3.5rem;
   padding: 1rem;
 }
@@ -35,8 +26,6 @@
 .blog-card {
   margin: 2rem 0rem 0rem 0rem;
   text-align: justify;
-  font-family: var(--body-font);
-  color: var(--secondary-color);
 }
 
 .tag-box {
@@ -52,4 +41,35 @@
   font-family: var(--body-font);
   font-size: var(--micro-body-size);
   color: var(--accent-color-1);
+}
+
+::ng-deep.heading-text {
+  font-family: var(--titles-font);
+  font-size: var(--titles-size);
+  color: var(--accent-color-1);
+}
+
+::ng-deep.subtitle-text {
+  font-family: var(--subtitles-font);
+  font-size: var(--subtitles-size);
+  color: var(--accent-color-1);
+}
+
+::ng-deep.body-text {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--secondary-color);
+}
+
+::ng-deep.fr-view .fr-class-code {
+  font-size: var(--micro-body-size);
+  border-color: var(--main-lighter-color);
+  background: var(--main-color);
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 1rem;
 }

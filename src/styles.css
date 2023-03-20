@@ -34,7 +34,7 @@ html {
   --subtitles-font: "Montserrat";
   --body-font: "Catamaran";
 
-  --titles-size: clamp(1rem, 4vw + 1rem, 5rem);
+  --titles-size: clamp(1rem, 4vw + 1rem, 2.5rem);
   --subtitles-size: 2rem;
   --body-size: 1.25rem;
   --micro-body-size: 1rem;
@@ -45,6 +45,10 @@ html {
   /* app max-width */
   --app-max-width: 80rem;
 
+}
+
+.secondary {
+  color: var(--secondary-color);
 }
 
 .accent-1 {

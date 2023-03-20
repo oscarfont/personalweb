@@ -18,19 +18,9 @@ export class BlogDetailComponent {
   blogSummary: string;
   blogDate: string;
   picsURL: string[] = [];
-  backgroundRight: { name: string, pos: string };
-  backgroundLeft: { name: string, pos: string };
 
   constructor(private blogService: BlogService, private activatedRoute: ActivatedRoute,
     private locationService: Location, private utilsService: UtilsService) {
-    this.backgroundRight = {
-      name: 'quarter-hexagon',
-      pos: 'bottom-right'
-    }
-    this.backgroundLeft = {
-      name: 'quarter-hexagon',
-      pos: 'top-left'
-    }
     this.blogService.getBlogDetail(activatedRoute.snapshot.params['category'], activatedRoute.snapshot.params['id']).subscribe((res) => {
       //console.log(res.data);
       this.blogTitle = res.data.title;
